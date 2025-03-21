@@ -30,11 +30,13 @@ import java.util.Set;
 public class ImportCsvService {
     private final Validator validator;
     private final CustomerDataPreparator customer;
+    private final TicketDataPreparator ticket;
 
     @Autowired
     public ImportCsvService(ImportCsvServiceDependence dependence) {
         this.validator = dependence.getValidator();
         this.customer = dependence.getCustomerDataPreparator();
+        this.ticket = dependence.getTicketDataPreparator();
     }
 
     public <T> List<T> parseCSVFile(MultipartFile file, Class<T> type, String separator) throws IOException {
@@ -80,6 +82,7 @@ public class ImportCsvService {
     public List<?> uploadCsvData(ImportCsvDTO info) throws ImportCsvException, IOException, TableNameNotFoundException {
         return switch (info.getTableName().toLowerCase()) {
             case "customer" -> this.customer.uploadOptionsData(this, info.getFile(), info.getSeparator());
+            case "ticket" -> this.ticket.uploadTicketData(this, info.getFile(), info.getSeparator());
             default -> throw new TableNameNotFoundException(info.getTableName());
         };
     }

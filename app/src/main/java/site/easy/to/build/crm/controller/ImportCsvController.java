@@ -1,5 +1,6 @@
 package site.easy.to.build.crm.controller;
 
+import jakarta.persistence.EntityManager;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
@@ -12,6 +13,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import org.springframework.web.servlet.view.RedirectView;
 import site.easy.to.build.crm.entity.*;
+import site.easy.to.build.crm.enums.TableName;
 import site.easy.to.build.crm.google.model.calendar.EventDisplay;
 import site.easy.to.build.crm.google.model.calendar.EventDisplayList;
 import site.easy.to.build.crm.google.service.acess.GoogleAccessService;
@@ -30,6 +32,7 @@ import site.easy.to.build.crm.service.weather.WeatherService;
 import site.easy.to.build.crm.util.AuthenticationUtils;
 import site.easy.to.build.crm.util.AuthorizationUtil;
 
+import javax.sql.DataSource;
 import java.io.IOException;
 import java.security.GeneralSecurityException;
 import java.sql.SQLException;
@@ -48,8 +51,9 @@ public class ImportCsvController {
     }
 
     @GetMapping("/import-csv")
-    public String importCsvPage(Model model, Authentication authentication) {
+    public String importCsvPage(Model model, Authentication authentication) throws SQLException {
         model.addAttribute("importCsv", new ImportCsvDTO());
+        model.addAttribute("tablesname", databaseResetService.getDbTablesName());
         return (!AuthorizationUtil.hasRole(authentication,"ROLE_MANAGER")) ? "error/access-denied" : "csv/import-csv";
     }
 

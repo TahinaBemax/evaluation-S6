@@ -108,7 +108,10 @@
 
                 <label class="m-t-20" for="tableName">Table name:</label>
                 <div class="input-group">
-                  <input type="text" id="tableName" th:field="*{tableName}" class="form-control" autocomplete="true">
+                  <select class="form-control" id="tableName" th:field="*{tableName}">
+                    <option th:each="t : ${tablesname}" th:value="${t}" th:text="${t}"></option>
+                  </select>
+
                 </div>
 
                 <div class="input-group">
