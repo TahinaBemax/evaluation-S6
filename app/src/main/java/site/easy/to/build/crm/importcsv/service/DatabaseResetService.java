@@ -1,5 +1,8 @@
 package site.easy.to.build.crm.importcsv.service;
 
+
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.metamodel.EntityType;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -7,16 +10,51 @@ import javax.sql.DataSource;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.Set;
+import java.util.stream.Collectors;
 
 @Service
 public class DatabaseResetService {
-    DataSource dataSource;
+    private final DataSource dataSource;
+    private final EntityManager manager;
 
     @Autowired
-    public DatabaseResetService(DataSource dataSource) {
+    public DatabaseResetService(DataSource dataSource, EntityManager manager) {
         this.dataSource = dataSource;
+        this.manager = manager;
     }
 
+    public Set<String> getDbTablesName() throws SQLException {
+        Set<EntityType<?>> entities = manager.getMetamodel().getEntities();
+        return entities.stream().map(e -> e.getName()).collect(Collectors.toSet());
+/*        Connection connection = null;
+        Set<String> tables = new HashSet<>();
+        try {
+            connection = this.dataSource.getConnection();
+            if (connection == null)
+                throw new SQLException("Failed to get connection");
+
+            String query = "SELECT table_name FROM information_schema.tables WHERE table_schema = 'public'";
+
+            try(Statement stmt = connection.createStatement();
+                    ResultSet rs = stmt.executeQuery(query))
+            {
+                while (rs.next()){
+                    tables.add(rs.getString("table_name"));
+                }
+            }
+            return tables;
+        } catch (SQLException e) {
+            if (connection != null) {
+                connection.rollback();  // Rollback in case of failure
+            }
+            throw new SQLException("Error resetting data", e);
+        } finally {
+            if (connection != null) {
+                connection.close();
+            }
+        }*/
+    }
     public boolean resetData() throws SQLException {
         Connection connection = null;
         Statement stmt = null;

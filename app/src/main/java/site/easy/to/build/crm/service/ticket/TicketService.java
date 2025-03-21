@@ -33,4 +33,6 @@ public interface TicketService {
     long countByCustomerCustomerId(int customerId);
 
     void deleteAllByCustomer(Customer customer);
+
+    List<Ticket> saveAll(List<Ticket> tickets);
 }
