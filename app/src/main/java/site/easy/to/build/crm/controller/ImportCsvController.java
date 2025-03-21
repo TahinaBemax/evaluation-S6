@@ -5,8 +5,10 @@ import org.springframework.security.authentication.UsernamePasswordAuthenticatio
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+import org.springframework.web.servlet.view.RedirectView;
 import site.easy.to.build.crm.entity.*;
 import site.easy.to.build.crm.google.model.calendar.EventDisplay;
 import site.easy.to.build.crm.google.model.calendar.EventDisplayList;
@@ -27,12 +29,28 @@ import java.security.GeneralSecurityException;
 import java.util.List;
 
 @Controller
-@RequestMapping("manager/import-csv")
+@RequestMapping("/manager")
 public class ImportCsvController {
 
-    @GetMapping()
+    @GetMapping("/import-csv")
     public String importCsvPage(Model model, Authentication authentication) {
         model.addAttribute("importCsv", new ImportCsvDTO());
         return (!AuthorizationUtil.hasRole(authentication,"ROLE_MANAGER")) ? "error/access-denied" : "csv/import-csv";
+    }
+
+    @GetMapping("/delete-data")
+    public String reinitDatabase(Authentication authentication, RedirectAttributes redirectAttributes) {
+        redirectAttributes.addFlashAttribute("deleteDataScuccessMessage", "Database cleaned successfuly");
+        return (!AuthorizationUtil.hasRole(authentication,"ROLE_MANAGER")) ? "error/access-denied" : "redirect:/manager/import-csv";
+    }
+
+    @PostMapping("/import-csv")
+    public String uploadData(@Validated
+                                 @ModelAttribute("importCsv")
+                                 @RequestParam("") ImportCsvDTO importCsvDTO,Authentication authentication, RedirectAttributes redirectAttributes)
+    {
+        redirectAttributes.addFlashAttribute("successMessage","File uploaded successfuly.");
+        //redirectAttributes.addFlashAttribute("errorMessage","Can't upload csv file.");
+        return (!AuthorizationUtil.hasRole(authentication,"ROLE_MANAGER")) ? "error/access-denied" : "redirect:/csv/import-csv";
     }
 }
