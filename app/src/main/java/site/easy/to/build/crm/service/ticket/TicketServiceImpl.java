@@ -90,4 +90,9 @@ public class TicketServiceImpl implements TicketService{
     public void deleteAllByCustomer(Customer customer) {
         ticketRepository.deleteAllByCustomer(customer);
     }
+
+    @Override
+    public List<Ticket> saveAll(List<Ticket> tickets) {
+        return this.ticketRepository.saveAll(tickets);
+    }
 }
