@@ -5,6 +5,8 @@ import org.springframework.security.authentication.UsernamePasswordAuthenticatio
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.BindingResultUtils;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
@@ -15,7 +17,10 @@ import site.easy.to.build.crm.google.model.calendar.EventDisplayList;
 import site.easy.to.build.crm.google.service.acess.GoogleAccessService;
 import site.easy.to.build.crm.google.service.calendar.GoogleCalendarApiService;
 import site.easy.to.build.crm.importcsv.ImportCsvDTO;
+import site.easy.to.build.crm.importcsv.exception.ImportCsvException;
+import site.easy.to.build.crm.importcsv.exception.TableNameNotFoundException;
 import site.easy.to.build.crm.importcsv.service.DatabaseResetService;
+import site.easy.to.build.crm.importcsv.service.ImportCsvService;
 import site.easy.to.build.crm.service.contract.ContractService;
 import site.easy.to.build.crm.service.customer.CustomerLoginInfoService;
 import site.easy.to.build.crm.service.customer.CustomerService;
@@ -33,11 +38,13 @@ import java.util.List;
 @Controller
 @RequestMapping("/manager")
 public class ImportCsvController {
-    DatabaseResetService databaseResetService;
+    private final DatabaseResetService databaseResetService;
+    private final ImportCsvService importCsvService;
 
     @Autowired
-    public ImportCsvController(DatabaseResetService databaseResetService) {
+    public ImportCsvController(DatabaseResetService databaseResetService, ImportCsvService importCsvService) {
         this.databaseResetService = databaseResetService;
+        this.importCsvService = importCsvService;
     }
 
     @GetMapping("/import-csv")
@@ -62,13 +69,30 @@ public class ImportCsvController {
         return (!AuthorizationUtil.hasRole(authentication,"ROLE_MANAGER")) ? "error/access-denied" : "redirect:/manager/import-csv";
     }
 
-    @PostMapping("/import-csv")
+
+    @PostMapping("/upload")
     public String uploadData(@Validated
                                  @ModelAttribute("importCsv")
-                                 @RequestParam("") ImportCsvDTO importCsvDTO,Authentication authentication, RedirectAttributes redirectAttributes)
+           ImportCsvDTO importCsvDTO,
+           Authentication authentication,
+           BindingResult bindingResult, RedirectAttributes redirectAttributes) throws IOException
     {
-        redirectAttributes.addFlashAttribute("successMessage","File uploaded successfuly.");
-        //redirectAttributes.addFlashAttribute("errorMessage","Can't upload csv file.");
-        return (!AuthorizationUtil.hasRole(authentication,"ROLE_MANAGER")) ? "error/access-denied" : "redirect:/csv/import-csv";
+        if (!AuthorizationUtil.hasRole(authentication,"ROLE_MANAGER")){
+            return "error/access-denied";
+        }
+
+        if (bindingResult.hasErrors()){
+            return "csv/import-csv";
+        }
+
+        try {
+            this.importCsvService.uploadCsvData(importCsvDTO);
+            redirectAttributes.addFlashAttribute("importSuccessMessage","Data uploaded successfuly.");
+        } catch (ImportCsvException e) {
+            redirectAttributes.addFlashAttribute("importErrorMessage","Can't upload csv file." + e.getMessage());
+        } catch (TableNameNotFoundException e) {
+            redirectAttributes.addFlashAttribute("importErrorMessage", e.getMessage());
+        }
+        return "redirect:/manager/import-csv";
     }
 }

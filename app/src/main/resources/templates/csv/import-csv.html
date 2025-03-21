@@ -100,11 +100,15 @@
           <div class="card">
             <div class="card-body">
               <h4 class="card-title">Import via csv</h4>
-              <form th:object="${importCsv}" th:action="@{/manager/import-csv}" method="post" enctype="multipart/form-data">
+              <div th:if="${importSuccessMessage}" class="alert alert-success" th:text="${importSuccessMessage}"></div>
+              <div th:if="${importErrorMessage}" class="alert alert-danger" th:text="${importErrorMessage}"></div>
+
+
+              <form th:object="${importCsv}" th:action="@{/manager/upload}" method="post" enctype="multipart/form-data">
 
                 <label class="m-t-20" for="tableName">Table name:</label>
                 <div class="input-group">
-                  <input type="text" id="tableName" th:field="*{tableName}" class="form-control">
+                  <input type="text" id="tableName" th:field="*{tableName}" class="form-control" autocomplete="true">
                 </div>
 
                 <div class="input-group">
