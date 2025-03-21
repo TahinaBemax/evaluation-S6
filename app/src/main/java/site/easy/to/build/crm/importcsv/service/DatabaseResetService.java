@@ -67,7 +67,9 @@ public class DatabaseResetService {
                 "DELETE FROM ticket_settings",
                 "DELETE FROM trigger_contract",
                 "DELETE FROM trigger_lead",
-                "DELETE FROM trigger_ticket"
+                "DELETE FROM trigger_ticket",
+                "DELETE FROM customer",
+                "DELETE FROM customer_login_info"
         };
 
         // Execute DELETE queries
@@ -89,7 +91,9 @@ public class DatabaseResetService {
                 "ALTER TABLE ticket_settings AUTO_INCREMENT = 1;",
                 "ALTER TABLE trigger_contract AUTO_INCREMENT = 1;",
                 "ALTER TABLE trigger_lead AUTO_INCREMENT = 1;",
-                "ALTER TABLE trigger_ticket AUTO_INCREMENT = 1;"
+                "ALTER TABLE trigger_ticket AUTO_INCREMENT = 1;",
+                "ALTER TABLE customer AUTO_INCREMENT = 1;",
+                "ALTER TABLE customer_login_info AUTO_INCREMENT = 1;"
         };
 
         for (String query : resetAutoIncrementQueries) {
