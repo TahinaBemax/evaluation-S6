@@ -1,0 +1,5 @@
+ClientID
+896621116156-rhr85103uq68071ki9m9o9prc20olqo2.apps.googleusercontent.com
+
+ClientSecret
+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
