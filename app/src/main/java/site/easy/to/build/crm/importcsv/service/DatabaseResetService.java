@@ -1,2 +1,100 @@
-package site.easy.to.build.crm.importcsv.service;public class DatabaseResetService {
+package site.easy.to.build.crm.importcsv.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import javax.sql.DataSource;
+import java.sql.Connection;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+@Service
+public class DatabaseResetService {
+    DataSource dataSource;
+
+    @Autowired
+    public DatabaseResetService(DataSource dataSource) {
+        this.dataSource = dataSource;
+    }
+
+    public boolean resetData() throws SQLException {
+        Connection connection = null;
+        Statement stmt = null;
+        try {
+            connection = dataSource.getConnection();
+            if (connection == null)
+                throw new SQLException("Failed to get connection");
+
+            connection.setAutoCommit(false);
+
+            // Disable foreign key checks
+            String disableFKChecks = "SET FOREIGN_KEY_CHECKS = 0;";
+
+            stmt = connection.createStatement();
+            stmt.executeUpdate(disableFKChecks);  // Disable foreign key checks
+
+            this.deleteAllData(stmt);
+            this.resetAutoIncrment(stmt);
+
+            stmt.executeUpdate("SET FOREIGN_KEY_CHECKS = 1;");  // Re-enable foreign key checks
+
+            connection.commit();  // Commit the transaction
+            return true;
+        } catch (SQLException e) {
+            if (connection != null) {
+                connection.rollback();  // Rollback in case of failure
+            }
+            throw new SQLException("Error resetting data", e);
+        } finally {
+            if (stmt != null) {
+                stmt.close();
+            }
+            if (connection != null) {
+                connection.close();
+            }
+        }
+    }
+
+    private boolean deleteAllData(Statement stmt) throws SQLException {
+        // Queries to delete data
+        String[] deleteQueries = {
+                "DELETE FROM contract_settings",
+                "DELETE FROM email_template",
+                "DELETE FROM file",
+                "DELETE FROM google_drive_file",
+                "DELETE FROM lead_action",
+                "DELETE FROM lead_settings",
+                "DELETE FROM ticket_settings",
+                "DELETE FROM trigger_contract",
+                "DELETE FROM trigger_lead",
+                "DELETE FROM trigger_ticket"
+        };
+
+        // Execute DELETE queries
+        for (String query : deleteQueries) {
+            stmt.executeUpdate(query);
+        }
+
+        return true;
+    }
+    private boolean resetAutoIncrment(Statement stmt) throws SQLException {
+        // Reset AUTO_INCREMENT for all tables
+        String[] resetAutoIncrementQueries = {
+                "ALTER TABLE contract_settings AUTO_INCREMENT = 1;",
+                "ALTER TABLE email_template AUTO_INCREMENT = 1;",
+                "ALTER TABLE file AUTO_INCREMENT = 1;",
+                "ALTER TABLE google_drive_file AUTO_INCREMENT = 1;",
+                "ALTER TABLE lead_action AUTO_INCREMENT = 1;",
+                "ALTER TABLE lead_settings AUTO_INCREMENT = 1;",
+                "ALTER TABLE ticket_settings AUTO_INCREMENT = 1;",
+                "ALTER TABLE trigger_contract AUTO_INCREMENT = 1;",
+                "ALTER TABLE trigger_lead AUTO_INCREMENT = 1;",
+                "ALTER TABLE trigger_ticket AUTO_INCREMENT = 1;"
+        };
+
+        for (String query : resetAutoIncrementQueries) {
+            stmt.executeUpdate(query);
+        }
+        return true;
+    }
 }
