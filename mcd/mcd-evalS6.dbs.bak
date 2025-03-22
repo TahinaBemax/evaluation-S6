@@ -11,18 +11,37 @@
 			<column name="created_at" type="TIMESTAMP" jt="93" mandatory="y" >
 				<defo><![CDATA[CURRENT_TIMESTAMP]]></defo>
 			</column>
-			<column name="start_at" type="TIMESTAMP" jt="93" mandatory="y" >
+			<column name="start_date" prior="start_at" type="TIMESTAMP" jt="93" mandatory="y" >
 				<defo><![CDATA[CURRENT_TIMESTAMP]]></defo>
 			</column>
-			<column name="end_at" type="TIMESTAMP" jt="93" >
+			<column name="end_date" prior="end_at" type="TIMESTAMP" jt="93" >
 				<defo><![CDATA[CURRENT_TIMESTAMP]]></defo>
 			</column>
 			<column name="customer_id" type="INT" jt="4" unsigned="y" />
+			<column name="description" type="TEXT" jt="-1" />
+			<column name="category_id" type="VARCHAR" length="50" jt="12" />
 			<index name="pk_budget" unique="PRIMARY_KEY" >
 				<column name="budget_id" />
 			</index>
+			<index name="unq_budget_category_id" unique="UNIQUE_KEY" >
+				<column name="category_id" />
+			</index>
 			<fk name="fk_budget_customer" to_schema="crm" to_table="customer" >
 				<fk_column name="customer_id" pk="customer_id" />
+			</fk>
+			<options><![CDATA[engine=InnoDB]]></options>
+		</table>
+		<table name="category_budget" >
+			<column name="category_id" type="VARCHAR" length="50" jt="12" mandatory="y" />
+			<column name="category_name" type="VARCHAR" length="255" jt="12" mandatory="y" />
+			<index name="unq_category_budget" unique="UNIQUE_KEY" >
+				<column name="category_name" />
+			</index>
+			<index name="pk_category_budget" unique="PRIMARY_KEY" >
+				<column name="category_id" />
+			</index>
+			<fk name="fk_category_budget_budget" to_schema="crm" to_table="budget" >
+				<fk_column name="category_id" pk="category_id" />
 			</fk>
 			<options><![CDATA[engine=InnoDB]]></options>
 		</table>
@@ -196,7 +215,7 @@
 			<column name="amount" prior="montant" type="NUMERIC" length="10" decimal="2" jt="2" mandatory="y" >
 				<defo><![CDATA[0]]></defo>
 			</column>
-			<column name="date_expense" prior="date_depense" type="DATE" jt="91" mandatory="y" >
+			<column name="expense_date" prior="date_expense" type="DATE" jt="91" mandatory="y" >
 				<defo><![CDATA[CURRENT_DATE]]></defo>
 			</column>
 			<column name="budget_id" type="INT" jt="4" unsigned="y" />
@@ -629,6 +648,7 @@
 	</schema>
 	<layout name="Main Layout" id="Layout-59d" joined_routing="y" show_column_type="y" show_relation="columns" >
 		<entity schema="crm" name="budget" color="C1D8EE" x="1728" y="1104" />
+		<entity schema="crm" name="category_budget" color="C1D8EE" x="2016" y="1136" />
 		<entity schema="crm" name="contract_settings" color="C7F4BE" x="288" y="704" />
 		<entity schema="crm" name="customer" color="BED3F4" x="1488" y="736" />
 		<entity schema="crm" name="customer_login_info" color="C7F4BE" x="624" y="864" />

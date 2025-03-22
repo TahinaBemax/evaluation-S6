@@ -35,6 +35,8 @@ public class Expense {
     @JsonIgnoreProperties("expenses")
     Budget budget;
 
+    private String description;
+
     @ManyToOne
     @JoinColumn(name = "ticket_id")
     Ticket ticket;

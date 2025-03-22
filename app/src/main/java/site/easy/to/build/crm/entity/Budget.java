@@ -30,6 +30,7 @@ public class Budget {
     @ManyToOne
     @JoinColumn(name = "customer_id", nullable=false)
     @JsonIgnoreProperties("budgets")
+    @NotNull
     Customer customer;
 
     @Column(name = "created_at", nullable = false)
@@ -41,8 +42,15 @@ public class Budget {
     @Column(name = "end_date")
     private LocalDateTime endDate;
 
+    private String description;
+
     @OneToMany()
     @JoinColumn(name = "expense_id")
     private List<Expense> expenses;
+
+    @ManyToOne()
+    @JoinColumn(name = "category_id", nullable = false)
+    @NotNull
+    CategoryBudget categoryBudget;
 
 }

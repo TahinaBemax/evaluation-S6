@@ -505,3 +505,40 @@ CREATE TABLE IF NOT EXISTS `google_drive_file` (
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+CREATE TABLE IF NOT EXISTS crm.category_budget
+(
+  category_id   VARCHAR(50)  NOT NULL PRIMARY KEY,
+  category_name VARCHAR(255) NOT NULL,
+  CONSTRAINT unq_category_budget UNIQUE (category_name)
+) engine = InnoDB;
+
+
+CREATE TABLE IF NOT EXISTS crm.budget
+(
+  budget_id   INT UNSIGNED                                        NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  amount      NUMERIC(10, 2) UNSIGNED DEFAULT (0)                 NOT NULL,
+  created_at  TIMESTAMP               DEFAULT (CURRENT_TIMESTAMP) NOT NULL,
+  start_date  TIMESTAMP               DEFAULT (CURRENT_TIMESTAMP) NOT NULL,
+  end_date    TIMESTAMP               DEFAULT (CURRENT_TIMESTAMP),
+  customer_id INT UNSIGNED not null ,
+  description TEXT,
+  category_id VARCHAR(50) NOT NULL ,
+  CONSTRAINT fk_budget_category FOREIGN KEY (category_id) REFERENCES crm.category_budget(category_id) ON DELETE CASCADE ,
+  CONSTRAINT fk_budget_customer FOREIGN KEY (customer_id) REFERENCES crm.customer (customer_id) ON DELETE CASCADE
+) engine = InnoDB;
+
+
+CREATE TABLE IF NOT EXISTS crm.expense
+(
+  expense_id   INT UNSIGNED                          NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  amount       NUMERIC(10, 2) DEFAULT (0)            NOT NULL,
+  expense_date DATE           DEFAULT (CURRENT_DATE) NOT NULL,
+  budget_id    INT UNSIGNED not null ,
+  lead_id      INT UNSIGNED,
+  ticket_id    INT UNSIGNED,
+  description  TEXT,
+  CONSTRAINT fk_expense_budget FOREIGN KEY (budget_id) REFERENCES crm.budget (budget_id) ON DELETE CASCADE,
+  CONSTRAINT fk_expense_trigger_lead FOREIGN KEY (lead_id) REFERENCES crm.trigger_lead (lead_id) ON DELETE CASCADE,
+  CONSTRAINT fk_expense_trigger_ticket FOREIGN KEY (ticket_id) REFERENCES crm.trigger_ticket (ticket_id) ON DELETE CASCADE
+) engine = InnoDB;
