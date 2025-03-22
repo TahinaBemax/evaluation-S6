@@ -9,6 +9,7 @@ import jakarta.validation.groups.Default;
 import site.easy.to.build.crm.customValidations.customer.UniqueEmail;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Entity
 @Table(name = "customer")
@@ -70,6 +71,10 @@ public class Customer {
     @JoinColumn(name = "profile_id")
     @JsonIgnore
     private CustomerLoginInfo customerLoginInfo;
+
+    @OneToMany
+    @JoinColumn(name = "budget_id")
+    private List<Budget> budgets;
 
     @Column(name = "created_at")
     private LocalDateTime createdAt;

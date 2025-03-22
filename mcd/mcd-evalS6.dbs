@@ -5,19 +5,18 @@
 			<column name="budget_id" type="INT" jt="4" mandatory="y" unsigned="y" >
 				<identity><![CDATA[AUTO_INCREMENT]]></identity>
 			</column>
-			<column name="amount" prior="montant" type="NUMERIC" length="15" decimal="2" jt="2" mandatory="y" unsigned="y" >
+			<column name="amount" prior="montant" type="NUMERIC" length="10" decimal="2" jt="2" mandatory="y" unsigned="y" >
 				<defo><![CDATA[0]]></defo>
 			</column>
 			<column name="created_at" type="TIMESTAMP" jt="93" mandatory="y" >
 				<defo><![CDATA[CURRENT_TIMESTAMP]]></defo>
 			</column>
-			<column name="start_at" type="TIMESTAMP" jt="93" mandatory="y" >
+			<column name="start_date" prior="start_at" type="TIMESTAMP" jt="93" mandatory="y" >
 				<defo><![CDATA[CURRENT_TIMESTAMP]]></defo>
 			</column>
-			<column name="end_at" type="TIMESTAMP" jt="93" >
+			<column name="end_date" prior="end_at" type="TIMESTAMP" jt="93" >
 				<defo><![CDATA[CURRENT_TIMESTAMP]]></defo>
 			</column>
-			<column name="statut" type="TEXT" jt="-1" mandatory="y" />
 			<column name="customer_id" type="INT" jt="4" unsigned="y" />
 			<index name="pk_budget" unique="PRIMARY_KEY" >
 				<column name="budget_id" />
@@ -194,10 +193,10 @@
 			<column name="expense_id" prior="depense_id" type="INT" jt="4" mandatory="y" unsigned="y" >
 				<identity><![CDATA[AUTO_INCREMENT]]></identity>
 			</column>
-			<column name="amount" prior="montant" type="NUMERIC" length="15" decimal="2" jt="2" mandatory="y" >
+			<column name="amount" prior="montant" type="NUMERIC" length="10" decimal="2" jt="2" mandatory="y" >
 				<defo><![CDATA[0]]></defo>
 			</column>
-			<column name="date_expense" prior="date_depense" type="DATE" jt="91" mandatory="y" >
+			<column name="expense_date" prior="date_expense" type="DATE" jt="91" mandatory="y" >
 				<defo><![CDATA[CURRENT_DATE]]></defo>
 			</column>
 			<column name="budget_id" type="INT" jt="4" unsigned="y" />
@@ -664,9 +663,9 @@ Edit tables by double-clicking the table headers.]]></comment>
 			<entity schema="crm" name="file" />
 			<entity schema="crm" name="lead_action" />
 			<entity schema="crm" name="customer" />
-			<entity schema="crm" name="expense" />
 			<entity schema="crm" name="trigger_lead" />
 			<entity schema="crm" name="trigger_ticket" />
+			<entity schema="crm" name="expense" />
 		</group>
 		<group name="email_template" color="EEF7EC" >
 			<entity schema="crm" name="email_template" />
