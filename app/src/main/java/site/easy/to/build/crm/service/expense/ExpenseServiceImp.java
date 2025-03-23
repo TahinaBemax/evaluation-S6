@@ -35,4 +35,14 @@ public class ExpenseServiceImp implements ExpenseService {
     public void delete(Expense budget) {
         expenseRepository.delete(budget);
     }
+
+    @Override
+    public List<Expense> findByTicketId(Integer id) {
+        return expenseRepository.findAllByTicket(id);
+    }
+
+    @Override
+    public List<Expense> findByLeadId(Integer id) {
+        return expenseRepository.findAllByLead(id);
+    }
 }

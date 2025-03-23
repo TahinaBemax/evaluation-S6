@@ -1,10 +1,8 @@
 package site.easy.to.build.crm.entity;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
+import jakarta.persistence.*;
 import lombok.Data;
+import net.minidev.json.annotate.JsonIgnore;
 
 import java.util.List;
 
@@ -18,6 +16,8 @@ public class CategoryBudget {
     @Column(name = "category_name", unique = true, nullable = false)
     String categoryName;
 
-    @OneToMany
+    @OneToMany(fetch = FetchType.LAZY)
+    @JoinColumn(name = "budget_id")
+    @JsonIgnore()
     List<Budget> budgets;
 }

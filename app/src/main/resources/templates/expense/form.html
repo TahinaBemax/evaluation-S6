@@ -67,38 +67,38 @@
             <!-- ============================================================== -->
             <div class="row">
                 <div class="col-lg-12">
+                    <div class="card" th:if="${needConfirmation != null}">
+                        <div class="card-body">
+                            <h4 class="card-title">Confirmation</h4>
+                            <div>
+                                <p class="alert alert-danger text-center" th:text="${alertConfirmation}"></p>
+                                <p class="text-center">If you want to continue click on the confirm button at the end the form.</p>
+                            </div>
+                        </div>
+                    </div>
+
                     <div class="card">
                         <div class="card-body">
-                            <h4 class="card-title">Create New budget</h4>
-                            <form th:object="${budget}" th:action="@{/manager/budgets}" method="post">
-                                <input type="hidden" th:value="${budget.getId()}">
+                            <h4 class="card-title">Create New depense</h4>
+                            <form th:object="${expense}" th:action="@{/manager/expense/save}" method="post">
+                                <input type="hidden" th:value="${expense.getId()}">
+                                <input type="hidden" th:if="${ticketId != null}" th:field="*{ticket.ticketId}" th:value="${ticketId}">
+                                <input type="hidden" th:if="${leadId != null}" th:field="*{lead.leadId}" th:value="${leadId}">
 
-                                <label class="m-t-20" for="status">Category:</label>
+                                <label class="m-t-20" for="budget">Budget:</label>
                                 <div class="input-group">
-                                    <select id="status" th:field="*{categoryBudget}" class="form-control">
-                                        <option value="">Chose ...</option>
-                                        <option th:each="categorie : ${categories}"
-                                                th:value="${categorie.getId()}"
-                                                th:text="${categorie.getCategoryName()}"
-                                                th:selected="${budget.getId() != null && budget.getCategoryBudget().getId() == categorie.getId()}"></option>
-                                    </select>
-                                </div>
-                                <div class="input-group">
-                                    <span class="text-danger font-weight-bold" th:if="${#fields.hasErrors('categoryBudget')}" th:errors="*{categoryBudget}"></span>
-                                </div>
-
-                                <label class="m-t-20" for="status">Customer:</label>
-                                <div class="input-group">
-                                    <select id="customer" th:field="*{customer}" class="form-control">
+                                    <select id="budget" th:field="*{budget}" class="form-control">
                                         <option value="">Chose...</option>
-                                        <option th:each="customer : ${customers}"
-                                                th:value="${customer.getCustomerId()}"
-                                                th:text="${customer.getName()}"
-                                                th:selected="${budget.getId() != null && budget.getCustomer().getCustomerId() == customer.getCustomerId()}"></option>
+                                        <option th:each="budget : ${budgets}"
+                                                th:value="${budget.getId()}"
+                                                th:text="${(budget.getEndDate() == null) ?
+                                                    'Periode entre ' + #temporals.format(budget.getStartDate(), 'yyyy-MM-dd') + ' et ' + #temporals.format(#temporals.createNow(), 'yyyy-MM-dd') :
+                                                    'Periode entre ' + #temporals.format(budget.getStartDate(), 'yyyy-MM-dd') + ' et ' + #temporals.format(budget.getEndDate(), 'yyyy-MM-dd')}"
+                                                th:selected="${expense.getId() != null && budget.getId() == expense.getBudget().getId()}"></option>
                                     </select>
                                 </div>
                                 <div class="input-group">
-                                    <span class="text-danger font-weight-bold" th:if="${#fields.hasErrors('customer')}" th:errors="*{customer}"></span>
+                                    <span class="text-danger font-weight-bold" th:if="${#fields.hasErrors('budget')}" th:errors="*{budget}"></span>
                                 </div>
 
                                 <label class="m-t-20" for="subject">Amount:</label>
@@ -109,28 +109,12 @@
                                     <span class="text-danger font-weight-bold" th:if="${#fields.hasErrors('amount')}" th:errors="*{amount}"></span>
                                 </div>
 
-                                <label class="m-t-20" for="start-date">Start Date:</label>
+                                <label class="m-t-20" for="expenseDate">Expense Date:</label>
                                 <div class="input-group">
-                                    <input type="datetime-local"  id="start-date" th:field="*{startDate}" class="form-control">
+                                    <input type="datetime-local"  id="expenseDate" th:field="*{expenseDate}" class="form-control">
                                 </div>
                                 <div class="input-group">
-                                    <span class="text-danger font-weight-bold" th:if="${#fields.hasErrors('startDate')}" th:errors="*{startDate}"></span>
-                                </div>
-
-                                <label class="m-t-20" for="end-date">End Date:</label>
-                                <div class="input-group">
-                                    <input type="datetime-local"  id="end-date" th:field="*{endDate}" class="form-control">
-                                </div>
-                                <div class="input-group">
-                                    <span class="text-danger font-weight-bold" th:if="${#fields.hasErrors('endDate')}" th:errors="*{endDate}"></span>
-                                </div>
-
-                                <label class="m-t-20" for="alert-rate">Alert Rate:</label>
-                                <div class="input-group">
-                                    <input type="number" step="any" id="alert-rate" th:field="*{alertRate}" class="form-control">
-                                </div>
-                                <div class="input-group">
-                                    <span class="text-danger font-weight-bold" th:if="${#fields.hasErrors('alertRate')}" th:errors="*{alertRate}"></span>
+                                    <span class="text-danger font-weight-bold" th:if="${#fields.hasErrors('expenseDate')}" th:errors="*{expenseDate}"></span>
                                 </div>
 
                                 <label class="m-t-20" for="description">Description:</label>
@@ -141,12 +125,18 @@
                                     <span class="text-danger font-weight-bold" th:if="${#fields.hasErrors('description')}" th:errors="*{description}" autocomplete="off"></span>
                                 </div>
 
-                                <button type="submit" class="btn btn-primary m-t-20">Create budget</button>
+                                <div th:if="${needConfirmation != null}" class="d-flex flex-column align-items-center justify-content-center">
+                                    <input type="hidden" name="confirmation" value="1">
+                                    <button type="submit" class="btn btn-primary m-t-20">Confirm</button>
+                                    <a th:href="@{/manager/expense}" type="" class="btn btn-secondary m-t-20">Back to expense list</a>
+                                </div>
+                                <button th:unless="${needConfirmation != null}" type="submit" class="btn btn-primary m-t-20">Set expense</button>
                             </form>
                         </div>
                     </div>
                 </div>
             </div>
+
             <!-- ============================================================== -->
             <!-- End Page Content -->
             <!-- ============================================================== -->
@@ -183,21 +173,21 @@
 <script th:inline="javascript">
     var home = /*[[${home}]]*/ null;
 </script>
-<script th:src="@{/js/library/jquery-3.2.1.min.js}" type="text/javascript">></script>
+<script th:src="@{/js/library/jquery-3.2.1.min.js}" type="text/javascript"></script>
 <!--    &lt;!&ndash; Bootstrap tether Core JavaScript &ndash;&gt;-->
-<script th:src="@{/js/library/popper.min.js}" type="text/javascript">></script>
-<script th:src="@{/js/library/bootstrap.min.js}" type="text/javascript">></script>
+<script th:src="@{/js/library/popper.min.js}" type="text/javascript"></script>
+<script th:src="@{/js/library/bootstrap.min.js}" type="text/javascript"></script>
 <!--    &lt;!&ndash; slimscrollbar scrollbar JavaScript &ndash;&gt;-->
-<script th:src="@{/js/library/perfect-scrollbar.jquery.min.js}" type="text/javascript">></script>
+<script th:src="@{/js/library/perfect-scrollbar.jquery.min.js}" type="text/javascript"></script>
 <!--Wave Effects -->
-<script th:src="@{/js/library/waves.js}" type="text/javascript">></script>
+<script th:src="@{/js/library/waves.js}" type="text/javascript"></script>
 <!--Menu sidebar -->
-<script th:src="@{/js/library/sidebarmenu.js}" type="text/javascript">></script>
+<script th:src="@{/js/library/sidebarmenu.js}" type="text/javascript"></script>
 <!--stickey kit -->
 <script th:src="@{/js/library/sticky-kit.min.js}"></script>
-<script th:src="@{/js/library/jquery.sparkline.min.js}" type="text/javascript">></script>
+<script th:src="@{/js/library/jquery.sparkline.min.js}" type="text/javascript"></script>
 <!--Custom JavaScript -->
-<script th:src="@{/js/library/custom.min.js}" type="text/javascript">></script>
+<script th:src="@{/js/library/custom.min.js}" type="text/javascript"></script>
 <!-- Editable -->
 
 <script th:src="@{/js/library/wysihtml5-0.3.0.js}"></script>

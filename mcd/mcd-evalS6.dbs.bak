@@ -221,6 +221,7 @@
 			<column name="budget_id" type="INT" jt="4" unsigned="y" />
 			<column name="lead_id" type="INT" jt="4" unsigned="y" />
 			<column name="ticket_id" type="INT" jt="4" unsigned="y" />
+			<column name="description" type="TEXT" jt="-1" />
 			<index name="pk_depense" unique="PRIMARY_KEY" >
 				<column name="expense_id" />
 			</index>

@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<project name="MySql" id="MySql-dc0" database="MySql" >
-	<schema name="crm" >
-		<table name="budget" >
+<project name="schema.sql" id="MySql-118f" database="MySql" >
+	<schema name="crm" options="crm" >
+		<table name="budget" spec="" >
 			<column name="budget_id" type="INT" jt="4" mandatory="y" unsigned="y" >
 				<identity><![CDATA[AUTO_INCREMENT]]></identity>
 			</column>
-			<column name="amount" prior="montant" type="NUMERIC" length="10" decimal="2" jt="2" mandatory="y" unsigned="y" >
+			<column name="amount" type="NUMERIC" length="10" decimal="2" jt="2" mandatory="y" unsigned="y" >
 				<defo><![CDATA[0]]></defo>
 			</column>
 			<column name="created_at" type="TIMESTAMP" jt="93" mandatory="y" >
 				<defo><![CDATA[CURRENT_TIMESTAMP]]></defo>
 			</column>
-			<column name="start_date" prior="start_at" type="TIMESTAMP" jt="93" mandatory="y" >
+			<column name="start_date" type="TIMESTAMP" jt="93" mandatory="y" >
 				<defo><![CDATA[CURRENT_TIMESTAMP]]></defo>
 			</column>
-			<column name="end_date" prior="end_at" type="TIMESTAMP" jt="93" >
+			<column name="end_date" type="TIMESTAMP" jt="93" >
 				<defo><![CDATA[CURRENT_TIMESTAMP]]></defo>
 			</column>
 			<column name="customer_id" type="INT" jt="4" unsigned="y" />
@@ -26,26 +26,32 @@
 			<index name="unq_budget_category_id" unique="UNIQUE_KEY" >
 				<column name="category_id" />
 			</index>
-			<fk name="fk_budget_customer" to_schema="crm" to_table="customer" >
+			<fk name="fk_budget_customer" to_schema="crm" to_table="customer" options="ON DELETE NO ACTION ON UPDATE NO ACTION" >
 				<fk_column name="customer_id" pk="customer_id" />
 			</fk>
 			<options><![CDATA[engine=InnoDB]]></options>
 		</table>
-		<table name="category_budget" >
+		<table name="budget_config" prior="budget_" >
+			<column name="taux_alert" type="DECIMAL" length="5" decimal="2" jt="3" mandatory="y" >
+				<defo><![CDATA[0]]></defo>
+			</column>
+			<options><![CDATA[engine=InnoDB]]></options>
+		</table>
+		<table name="category_budget" spec="" >
 			<column name="category_id" type="VARCHAR" length="50" jt="12" mandatory="y" />
 			<column name="category_name" type="VARCHAR" length="255" jt="12" mandatory="y" />
-			<index name="unq_category_budget" unique="UNIQUE_KEY" >
-				<column name="category_name" />
-			</index>
 			<index name="pk_category_budget" unique="PRIMARY_KEY" >
 				<column name="category_id" />
 			</index>
-			<fk name="fk_category_budget_budget" to_schema="crm" to_table="budget" >
+			<index name="unq_category_budget" unique="UNIQUE_KEY" >
+				<column name="category_name" />
+			</index>
+			<fk name="fk_category_budget_budget" to_schema="crm" to_table="budget" options="ON DELETE NO ACTION ON UPDATE NO ACTION" >
 				<fk_column name="category_id" pk="category_id" />
 			</fk>
 			<options><![CDATA[engine=InnoDB]]></options>
 		</table>
-		<table name="contract_settings" row_count="0" spec="" >
+		<table name="contract_settings" spec="" >
 			<column name="id" type="INT" jt="4" mandatory="y" unsigned="y" >
 				<identity><![CDATA[AUTO_INCREMENT]]></identity>
 			</column>
@@ -90,33 +96,33 @@
 			<index name="customer_id" unique="NORMAL" >
 				<column name="customer_id" />
 			</index>
-			<fk name="contract_settings_ibfk_1" to_schema="crm" to_table="users" options="" >
+			<fk name="contract_settings_ibfk_1" to_schema="crm" to_table="users" options="ON DELETE NO ACTION ON UPDATE NO ACTION" >
 				<fk_column name="user_id" pk="id" />
 			</fk>
-			<fk name="contract_settings_ibfk_2" to_schema="crm" to_table="email_template" options="" >
+			<fk name="contract_settings_ibfk_2" to_schema="crm" to_table="email_template" options="ON DELETE NO ACTION ON UPDATE NO ACTION" >
 				<fk_column name="status_email_template" pk="template_id" />
 			</fk>
-			<fk name="contract_settings_ibfk_3" to_schema="crm" to_table="email_template" options="" >
+			<fk name="contract_settings_ibfk_3" to_schema="crm" to_table="email_template" options="ON DELETE NO ACTION ON UPDATE NO ACTION" >
 				<fk_column name="amount_email_template" pk="template_id" />
 			</fk>
-			<fk name="contract_settings_ibfk_4" to_schema="crm" to_table="email_template" options="" >
+			<fk name="contract_settings_ibfk_4" to_schema="crm" to_table="email_template" options="ON DELETE NO ACTION ON UPDATE NO ACTION" >
 				<fk_column name="subject_email_template" pk="template_id" />
 			</fk>
-			<fk name="contract_settings_ibfk_5" to_schema="crm" to_table="email_template" options="" >
+			<fk name="contract_settings_ibfk_5" to_schema="crm" to_table="email_template" options="ON DELETE NO ACTION ON UPDATE NO ACTION" >
 				<fk_column name="description_email_template" pk="template_id" />
 			</fk>
-			<fk name="contract_settings_ibfk_6" to_schema="crm" to_table="email_template" options="" >
+			<fk name="contract_settings_ibfk_6" to_schema="crm" to_table="email_template" options="ON DELETE NO ACTION ON UPDATE NO ACTION" >
 				<fk_column name="start_email_template" pk="template_id" />
 			</fk>
-			<fk name="contract_settings_ibfk_7" to_schema="crm" to_table="email_template" options="" >
+			<fk name="contract_settings_ibfk_7" to_schema="crm" to_table="email_template" options="ON DELETE NO ACTION ON UPDATE NO ACTION" >
 				<fk_column name="end_email_template" pk="template_id" />
 			</fk>
-			<fk name="contract_settings_ibfk_8" to_schema="crm" to_table="customer_login_info" options="" >
+			<fk name="contract_settings_ibfk_8" to_schema="crm" to_table="customer_login_info" options="ON DELETE NO ACTION ON UPDATE NO ACTION" >
 				<fk_column name="customer_id" pk="id" />
 			</fk>
 			<options><![CDATA[ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci]]></options>
 		</table>
-		<table name="customer" row_count="0" spec="" >
+		<table name="customer" spec="" >
 			<column name="customer_id" type="INT" jt="4" mandatory="y" unsigned="y" >
 				<identity><![CDATA[AUTO_INCREMENT]]></identity>
 			</column>
@@ -144,15 +150,15 @@
 			<index name="profile_id" unique="NORMAL" >
 				<column name="profile_id" />
 			</index>
-			<fk name="customer_ibfk_1" to_schema="crm" to_table="users" options="" >
+			<fk name="customer_ibfk_1" to_schema="crm" to_table="users" options="ON DELETE NO ACTION ON UPDATE NO ACTION" >
 				<fk_column name="user_id" pk="id" />
 			</fk>
-			<fk name="customer_ibfk_2" to_schema="crm" to_table="customer_login_info" options="" >
+			<fk name="customer_ibfk_2" to_schema="crm" to_table="customer_login_info" options="ON DELETE NO ACTION ON UPDATE NO ACTION" >
 				<fk_column name="profile_id" pk="id" />
 			</fk>
 			<options><![CDATA[ENGINE=InnoDB AUTO_INCREMENT=43 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci]]></options>
 		</table>
-		<table name="customer_login_info" row_count="0" spec="" >
+		<table name="customer_login_info" spec="" >
 			<column name="id" type="INT" jt="4" mandatory="y" >
 				<identity><![CDATA[AUTO_INCREMENT]]></identity>
 			</column>
@@ -170,7 +176,7 @@
 			</index>
 			<options><![CDATA[ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci]]></options>
 		</table>
-		<table name="email_template" row_count="0" spec="" >
+		<table name="email_template" spec="" >
 			<column name="template_id" type="INT" jt="4" mandatory="y" unsigned="y" >
 				<identity><![CDATA[AUTO_INCREMENT]]></identity>
 			</column>
@@ -188,12 +194,12 @@
 			<index name="user_id" unique="NORMAL" >
 				<column name="user_id" />
 			</index>
-			<fk name="email_template_ibfk_1" to_schema="crm" to_table="users" options="" >
+			<fk name="email_template_ibfk_1" to_schema="crm" to_table="users" options="ON DELETE NO ACTION ON UPDATE NO ACTION" >
 				<fk_column name="user_id" pk="id" />
 			</fk>
 			<options><![CDATA[ENGINE=InnoDB AUTO_INCREMENT=35 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci]]></options>
 		</table>
-		<table name="employee" row_count="0" spec="" >
+		<table name="employee" spec="" >
 			<column name="id" type="INT" jt="4" mandatory="y" >
 				<identity><![CDATA[AUTO_INCREMENT]]></identity>
 			</column>
@@ -208,35 +214,35 @@
 			</index>
 			<options><![CDATA[ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1]]></options>
 		</table>
-		<table name="expense" prior="depense" >
-			<column name="expense_id" prior="depense_id" type="INT" jt="4" mandatory="y" unsigned="y" >
+		<table name="expense" spec="" >
+			<column name="expense_id" type="INT" jt="4" mandatory="y" unsigned="y" >
 				<identity><![CDATA[AUTO_INCREMENT]]></identity>
 			</column>
-			<column name="amount" prior="montant" type="NUMERIC" length="10" decimal="2" jt="2" mandatory="y" >
+			<column name="amount" type="NUMERIC" length="10" decimal="2" jt="2" mandatory="y" >
 				<defo><![CDATA[0]]></defo>
 			</column>
-			<column name="expense_date" prior="date_expense" type="DATE" jt="91" mandatory="y" >
+			<column name="expense_date" type="DATE" jt="91" mandatory="y" >
 				<defo><![CDATA[CURRENT_DATE]]></defo>
 			</column>
 			<column name="budget_id" type="INT" jt="4" unsigned="y" />
 			<column name="lead_id" type="INT" jt="4" unsigned="y" />
 			<column name="ticket_id" type="INT" jt="4" unsigned="y" />
 			<column name="description" type="TEXT" jt="-1" />
-			<index name="pk_depense" unique="PRIMARY_KEY" >
+			<index name="pk_expense" unique="PRIMARY_KEY" >
 				<column name="expense_id" />
 			</index>
-			<fk name="fk_expense_budget" to_schema="crm" to_table="budget" >
+			<fk name="fk_expense_budget" to_schema="crm" to_table="budget" options="ON DELETE NO ACTION ON UPDATE NO ACTION" >
 				<fk_column name="budget_id" pk="budget_id" />
 			</fk>
-			<fk name="fk_expense_trigger_lead" to_schema="crm" to_table="trigger_lead" >
+			<fk name="fk_expense_trigger_lead" to_schema="crm" to_table="trigger_lead" options="ON DELETE NO ACTION ON UPDATE NO ACTION" >
 				<fk_column name="lead_id" pk="lead_id" />
 			</fk>
-			<fk name="fk_expense_trigger_ticket" to_schema="crm" to_table="trigger_ticket" >
+			<fk name="fk_expense_trigger_ticket" to_schema="crm" to_table="trigger_ticket" options="ON DELETE NO ACTION ON UPDATE NO ACTION" >
 				<fk_column name="ticket_id" pk="ticket_id" />
 			</fk>
 			<options><![CDATA[engine=InnoDB]]></options>
 		</table>
-		<table name="file" row_count="0" spec="" >
+		<table name="file" spec="" >
 			<column name="file_id" type="INT" jt="4" mandatory="y" >
 				<identity><![CDATA[AUTO_INCREMENT]]></identity>
 			</column>
@@ -254,15 +260,15 @@
 			<index name="contract_id" unique="NORMAL" >
 				<column name="contract_id" />
 			</index>
-			<fk name="file_ibfk_1" to_schema="crm" to_table="trigger_lead" options="" >
+			<fk name="file_ibfk_1" to_schema="crm" to_table="trigger_lead" options="ON DELETE NO ACTION ON UPDATE NO ACTION" >
 				<fk_column name="lead_id" pk="lead_id" />
 			</fk>
-			<fk name="file_ibfk_2" to_schema="crm" to_table="trigger_contract" options="" >
+			<fk name="file_ibfk_2" to_schema="crm" to_table="trigger_contract" options="ON DELETE NO ACTION ON UPDATE NO ACTION" >
 				<fk_column name="contract_id" pk="contract_id" />
 			</fk>
 			<options><![CDATA[ENGINE=InnoDB AUTO_INCREMENT=140 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci]]></options>
 		</table>
-		<table name="google_drive_file" row_count="0" spec="" >
+		<table name="google_drive_file" spec="" >
 			<column name="id" type="INT" jt="4" mandatory="y" unsigned="y" >
 				<identity><![CDATA[AUTO_INCREMENT]]></identity>
 			</column>
@@ -279,15 +285,15 @@
 			<index name="contract_id" unique="NORMAL" >
 				<column name="contract_id" />
 			</index>
-			<fk name="google_drive_file_ibfk_1" to_schema="crm" to_table="trigger_lead" options="" >
+			<fk name="google_drive_file_ibfk_1" to_schema="crm" to_table="trigger_lead" options="ON DELETE NO ACTION ON UPDATE NO ACTION" >
 				<fk_column name="lead_id" pk="lead_id" />
 			</fk>
-			<fk name="google_drive_file_ibfk_2" to_schema="crm" to_table="trigger_contract" options="" >
+			<fk name="google_drive_file_ibfk_2" to_schema="crm" to_table="trigger_contract" options="ON DELETE NO ACTION ON UPDATE NO ACTION" >
 				<fk_column name="contract_id" pk="contract_id" />
 			</fk>
 			<options><![CDATA[ENGINE=InnoDB AUTO_INCREMENT=52 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci]]></options>
 		</table>
-		<table name="lead_action" row_count="0" spec="" >
+		<table name="lead_action" spec="" >
 			<column name="id" type="INT" jt="4" mandatory="y" unsigned="y" >
 				<identity><![CDATA[AUTO_INCREMENT]]></identity>
 			</column>
@@ -300,12 +306,12 @@
 			<index name="lead_id" unique="NORMAL" >
 				<column name="lead_id" />
 			</index>
-			<fk name="lead_action_ibfk_1" to_schema="crm" to_table="trigger_lead" options="" >
+			<fk name="lead_action_ibfk_1" to_schema="crm" to_table="trigger_lead" options="ON DELETE NO ACTION ON UPDATE NO ACTION" >
 				<fk_column name="lead_id" pk="lead_id" />
 			</fk>
 			<options><![CDATA[ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci]]></options>
 		</table>
-		<table name="lead_settings" row_count="0" spec="" >
+		<table name="lead_settings" spec="" >
 			<column name="id" type="INT" jt="4" mandatory="y" unsigned="y" >
 				<identity><![CDATA[AUTO_INCREMENT]]></identity>
 			</column>
@@ -340,27 +346,27 @@
 			<index name="customer_id" unique="NORMAL" >
 				<column name="customer_id" />
 			</index>
-			<fk name="lead_settings_ibfk_1" to_schema="crm" to_table="users" options="" >
+			<fk name="lead_settings_ibfk_1" to_schema="crm" to_table="users" options="ON DELETE NO ACTION ON UPDATE NO ACTION" >
 				<fk_column name="user_id" pk="id" />
 			</fk>
-			<fk name="lead_settings_ibfk_2" to_schema="crm" to_table="email_template" options="" >
+			<fk name="lead_settings_ibfk_2" to_schema="crm" to_table="email_template" options="ON DELETE NO ACTION ON UPDATE NO ACTION" >
 				<fk_column name="status_email_template" pk="template_id" />
 			</fk>
-			<fk name="lead_settings_ibfk_3" to_schema="crm" to_table="email_template" options="" >
+			<fk name="lead_settings_ibfk_3" to_schema="crm" to_table="email_template" options="ON DELETE NO ACTION ON UPDATE NO ACTION" >
 				<fk_column name="phone_email_template" pk="template_id" />
 			</fk>
-			<fk name="lead_settings_ibfk_4" to_schema="crm" to_table="email_template" options="" >
+			<fk name="lead_settings_ibfk_4" to_schema="crm" to_table="email_template" options="ON DELETE NO ACTION ON UPDATE NO ACTION" >
 				<fk_column name="meeting_email_template" pk="template_id" />
 			</fk>
-			<fk name="lead_settings_ibfk_5" to_schema="crm" to_table="email_template" options="" >
+			<fk name="lead_settings_ibfk_5" to_schema="crm" to_table="email_template" options="ON DELETE NO ACTION ON UPDATE NO ACTION" >
 				<fk_column name="name_email_template" pk="template_id" />
 			</fk>
-			<fk name="lead_settings_ibfk_6" to_schema="crm" to_table="customer_login_info" options="" >
+			<fk name="lead_settings_ibfk_6" to_schema="crm" to_table="customer_login_info" options="ON DELETE NO ACTION ON UPDATE NO ACTION" >
 				<fk_column name="customer_id" pk="id" />
 			</fk>
 			<options><![CDATA[ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci]]></options>
 		</table>
-		<table name="oauth_users" row_count="0" spec="" >
+		<table name="oauth_users" spec="" >
 			<column name="id" type="INT" jt="4" mandatory="y" >
 				<identity><![CDATA[AUTO_INCREMENT]]></identity>
 			</column>
@@ -382,12 +388,12 @@
 			<index name="oauth_users_ibfk_1" unique="NORMAL" >
 				<column name="user_id" />
 			</index>
-			<fk name="oauth_users_ibfk_1" to_schema="crm" to_table="users" options="" >
+			<fk name="oauth_users_ibfk_1" to_schema="crm" to_table="users" options="ON DELETE NO ACTION ON UPDATE NO ACTION" >
 				<fk_column name="user_id" pk="id" />
 			</fk>
 			<options><![CDATA[ENGINE=InnoDB AUTO_INCREMENT=30 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci]]></options>
 		</table>
-		<table name="roles" row_count="3" spec="" >
+		<table name="roles" spec="" >
 			<column name="id" type="INT" jt="4" mandatory="y" >
 				<identity><![CDATA[AUTO_INCREMENT]]></identity>
 			</column>
@@ -397,7 +403,7 @@
 			</index>
 			<options><![CDATA[ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci]]></options>
 		</table>
-		<table name="ticket_settings" row_count="0" spec="" >
+		<table name="ticket_settings" spec="" >
 			<column name="id" type="INT" jt="4" mandatory="y" unsigned="y" >
 				<identity><![CDATA[AUTO_INCREMENT]]></identity>
 			</column>
@@ -432,27 +438,27 @@
 			<index name="customer_id" unique="NORMAL" >
 				<column name="customer_id" />
 			</index>
-			<fk name="ticket_settings_ibfk_1" to_schema="crm" to_table="users" options="" >
+			<fk name="ticket_settings_ibfk_1" to_schema="crm" to_table="users" options="ON DELETE NO ACTION ON UPDATE NO ACTION" >
 				<fk_column name="user_id" pk="id" />
 			</fk>
-			<fk name="ticket_settings_ibfk_2" to_schema="crm" to_table="email_template" options="" >
+			<fk name="ticket_settings_ibfk_2" to_schema="crm" to_table="email_template" options="ON DELETE NO ACTION ON UPDATE NO ACTION" >
 				<fk_column name="status_email_template" pk="template_id" />
 			</fk>
-			<fk name="ticket_settings_ibfk_3" to_schema="crm" to_table="email_template" options="" >
+			<fk name="ticket_settings_ibfk_3" to_schema="crm" to_table="email_template" options="ON DELETE NO ACTION ON UPDATE NO ACTION" >
 				<fk_column name="subject_email_template" pk="template_id" />
 			</fk>
-			<fk name="ticket_settings_ibfk_4" to_schema="crm" to_table="email_template" options="" >
+			<fk name="ticket_settings_ibfk_4" to_schema="crm" to_table="email_template" options="ON DELETE NO ACTION ON UPDATE NO ACTION" >
 				<fk_column name="priority_email_template" pk="template_id" />
 			</fk>
-			<fk name="ticket_settings_ibfk_5" to_schema="crm" to_table="email_template" options="" >
+			<fk name="ticket_settings_ibfk_5" to_schema="crm" to_table="email_template" options="ON DELETE NO ACTION ON UPDATE NO ACTION" >
 				<fk_column name="description_email_template" pk="template_id" />
 			</fk>
-			<fk name="ticket_settings_ibfk_6" to_schema="crm" to_table="customer_login_info" options="" >
+			<fk name="ticket_settings_ibfk_6" to_schema="crm" to_table="customer_login_info" options="ON DELETE NO ACTION ON UPDATE NO ACTION" >
 				<fk_column name="customer_id" pk="id" />
 			</fk>
 			<options><![CDATA[ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci]]></options>
 		</table>
-		<table name="trigger_contract" row_count="0" spec="" >
+		<table name="trigger_contract" spec="" >
 			<column name="contract_id" type="INT" jt="4" mandatory="y" unsigned="y" >
 				<identity><![CDATA[AUTO_INCREMENT]]></identity>
 			</column>
@@ -480,18 +486,18 @@
 			<index name="customer_id" unique="NORMAL" >
 				<column name="customer_id" />
 			</index>
-			<fk name="trigger_contract_ibfk_1" to_schema="crm" to_table="trigger_lead" options="" >
+			<fk name="trigger_contract_ibfk_1" to_schema="crm" to_table="trigger_lead" options="ON DELETE NO ACTION ON UPDATE NO ACTION" >
 				<fk_column name="lead_id" pk="lead_id" />
 			</fk>
-			<fk name="trigger_contract_ibfk_2" to_schema="crm" to_table="users" options="" >
+			<fk name="trigger_contract_ibfk_2" to_schema="crm" to_table="users" options="ON DELETE NO ACTION ON UPDATE NO ACTION" >
 				<fk_column name="user_id" pk="id" />
 			</fk>
-			<fk name="trigger_contract_ibfk_3" to_schema="crm" to_table="customer" options="" >
+			<fk name="trigger_contract_ibfk_3" to_schema="crm" to_table="customer" options="ON DELETE NO ACTION ON UPDATE NO ACTION" >
 				<fk_column name="customer_id" pk="customer_id" />
 			</fk>
 			<options><![CDATA[ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci]]></options>
 		</table>
-		<table name="trigger_lead" row_count="0" spec="" >
+		<table name="trigger_lead" spec="" >
 			<column name="lead_id" type="INT" jt="4" mandatory="y" unsigned="y" >
 				<identity><![CDATA[AUTO_INCREMENT]]></identity>
 			</column>
@@ -520,18 +526,18 @@
 			<index name="employee_id" unique="NORMAL" >
 				<column name="employee_id" />
 			</index>
-			<fk name="trigger_lead_ibfk_1" to_schema="crm" to_table="customer" options="" >
+			<fk name="trigger_lead_ibfk_1" to_schema="crm" to_table="customer" options="ON DELETE NO ACTION ON UPDATE NO ACTION" >
 				<fk_column name="customer_id" pk="customer_id" />
 			</fk>
-			<fk name="trigger_lead_ibfk_2" to_schema="crm" to_table="users" options="" >
+			<fk name="trigger_lead_ibfk_2" to_schema="crm" to_table="users" options="ON DELETE NO ACTION ON UPDATE NO ACTION" >
 				<fk_column name="user_id" pk="id" />
 			</fk>
-			<fk name="trigger_lead_ibfk_3" to_schema="crm" to_table="users" options="" >
+			<fk name="trigger_lead_ibfk_3" to_schema="crm" to_table="users" options="ON DELETE NO ACTION ON UPDATE NO ACTION" >
 				<fk_column name="employee_id" pk="id" />
 			</fk>
 			<options><![CDATA[ENGINE=InnoDB AUTO_INCREMENT=56 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci]]></options>
 		</table>
-		<table name="trigger_ticket" row_count="0" spec="" >
+		<table name="trigger_ticket" spec="" >
 			<column name="ticket_id" type="INT" jt="4" mandatory="y" unsigned="y" >
 				<identity><![CDATA[AUTO_INCREMENT]]></identity>
 			</column>
@@ -555,18 +561,18 @@
 			<index name="fk_ticket_employee" unique="NORMAL" >
 				<column name="employee_id" />
 			</index>
-			<fk name="fk_ticket_customer" to_schema="crm" to_table="customer" options="" >
+			<fk name="fk_ticket_customer" to_schema="crm" to_table="customer" options="ON DELETE NO ACTION ON UPDATE NO ACTION" >
 				<fk_column name="customer_id" pk="customer_id" />
 			</fk>
-			<fk name="fk_ticket_employee" to_schema="crm" to_table="users" options="" >
+			<fk name="fk_ticket_employee" to_schema="crm" to_table="users" options="ON DELETE NO ACTION ON UPDATE NO ACTION" >
 				<fk_column name="employee_id" pk="id" />
 			</fk>
-			<fk name="fk_ticket_manager" to_schema="crm" to_table="users" options="" >
+			<fk name="fk_ticket_manager" to_schema="crm" to_table="users" options="ON DELETE NO ACTION ON UPDATE NO ACTION" >
 				<fk_column name="manager_id" pk="id" />
 			</fk>
 			<options><![CDATA[ENGINE=InnoDB AUTO_INCREMENT=47 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci]]></options>
 		</table>
-		<table name="user_profile" row_count="0" spec="" >
+		<table name="user_profile" spec="" >
 			<column name="id" type="INT" jt="4" mandatory="y" unsigned="y" >
 				<identity><![CDATA[AUTO_INCREMENT]]></identity>
 			</column>
@@ -592,12 +598,12 @@
 			<index name="user_id" unique="NORMAL" >
 				<column name="user_id" />
 			</index>
-			<fk name="user_profile_ibfk_1" to_schema="crm" to_table="users" options="" >
+			<fk name="user_profile_ibfk_1" to_schema="crm" to_table="users" options="ON DELETE NO ACTION ON UPDATE NO ACTION" >
 				<fk_column name="user_id" pk="id" />
 			</fk>
 			<options><![CDATA[ENGINE=InnoDB AUTO_INCREMENT=35 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci]]></options>
 		</table>
-		<table name="user_roles" row_count="0" spec="" >
+		<table name="user_roles" spec="" >
 			<column name="user_id" type="INT" jt="4" mandatory="y" />
 			<column name="role_id" type="INT" jt="4" mandatory="y" />
 			<index name="pk_user_roles" unique="PRIMARY_KEY" >
@@ -607,15 +613,15 @@
 			<index name="role_id" unique="NORMAL" >
 				<column name="role_id" />
 			</index>
-			<fk name="user_roles_ibfk_1" to_schema="crm" to_table="users" options="" >
+			<fk name="user_roles_ibfk_1" to_schema="crm" to_table="users" options="ON DELETE NO ACTION ON UPDATE NO ACTION" >
 				<fk_column name="user_id" pk="id" />
 			</fk>
-			<fk name="user_roles_ibfk_2" to_schema="crm" to_table="roles" options="" >
+			<fk name="user_roles_ibfk_2" to_schema="crm" to_table="roles" options="ON DELETE NO ACTION ON UPDATE NO ACTION" >
 				<fk_column name="role_id" pk="id" />
 			</fk>
 			<options><![CDATA[ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci]]></options>
 		</table>
-		<table name="users" row_count="0" spec="" >
+		<table name="users" spec="" >
 			<column name="id" type="INT" jt="4" mandatory="y" >
 				<identity><![CDATA[AUTO_INCREMENT]]></identity>
 			</column>
@@ -647,206 +653,32 @@
 			<options><![CDATA[ENGINE=InnoDB AUTO_INCREMENT=54 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci]]></options>
 		</table>
 	</schema>
-	<layout name="Main Layout" id="Layout-59d" joined_routing="y" show_column_type="y" show_relation="columns" >
-		<entity schema="crm" name="budget" color="C1D8EE" x="1728" y="1104" />
-		<entity schema="crm" name="category_budget" color="C1D8EE" x="2016" y="1136" />
-		<entity schema="crm" name="contract_settings" color="C7F4BE" x="288" y="704" />
-		<entity schema="crm" name="customer" color="BED3F4" x="1488" y="736" />
-		<entity schema="crm" name="customer_login_info" color="C7F4BE" x="624" y="864" />
-		<entity schema="crm" name="email_template" color="C7F4BE" x="384" y="432" />
-		<entity schema="crm" name="employee" color="3986C1" x="128" y="1296" />
-		<entity schema="crm" name="expense" color="C1D8EE" x="2000" y="896" />
-		<entity schema="crm" name="file" color="BED3F4" x="1264" y="464" />
-		<entity schema="crm" name="google_drive_file" color="BED3F4" x="1248" y="736" />
-		<entity schema="crm" name="lead_action" color="BED3F4" x="1264" y="144" />
-		<entity schema="crm" name="lead_settings" color="C7F4BE" x="384" y="80" />
-		<entity schema="crm" name="oauth_users" color="C7F4BE" x="880" y="432" />
-		<entity schema="crm" name="roles" color="F4DDBE" x="1424" y="1296" />
-		<entity schema="crm" name="ticket_settings" color="C7F4BE" x="48" y="352" />
-		<entity schema="crm" name="trigger_contract" color="BED3F4" x="1776" y="384" />
-		<entity schema="crm" name="trigger_lead" color="BED3F4" x="1488" y="384" />
-		<entity schema="crm" name="trigger_ticket" color="BED3F4" x="1728" y="848" />
-		<entity schema="crm" name="user_profile" color="C7F4BE" x="880" y="768" />
-		<entity schema="crm" name="user_roles" color="F4DDBE" x="1248" y="1296" />
-		<entity schema="crm" name="users" color="C7F4BE" x="624" y="432" />
-		<callout x="688" y="128" pointer="Round" >
-			<comment><![CDATA[This is a layout. You can create multiple layouts with the same or different tables. 
-
-Edit tables by double-clicking the table headers.]]></comment>
+	<layout name="Layout" id="Layout-17ce" show_relation="columns" >
+		<entity schema="crm" name="budget" color="BED3F4" x="2128" y="464" />
+		<entity schema="crm" name="budget_config" color="C1D8EE" x="2384" y="640" />
+		<entity schema="crm" name="category_budget" color="BED3F4" x="2336" y="464" />
+		<entity schema="crm" name="contract_settings" color="F4DDBE" x="1280" y="128" />
+		<entity schema="crm" name="customer" color="C7F4BE" x="3152" y="288" />
+		<entity schema="crm" name="customer_login_info" color="C7F4BE" x="3392" y="288" />
+		<entity schema="crm" name="email_template" color="F4DDBE" x="1040" y="128" />
+		<entity schema="crm" name="employee" color="3986C1" x="1616" y="864" />
+		<entity schema="crm" name="expense" color="BED3F4" x="2336" y="160" />
+		<entity schema="crm" name="file" color="C7F4BE" x="2608" y="368" />
+		<entity schema="crm" name="google_drive_file" color="C7F4BE" x="2592" y="640" />
+		<entity schema="crm" name="lead_action" color="C7F4BE" x="2624" y="48" />
+		<entity schema="crm" name="lead_settings" color="F4DDBE" x="720" y="48" />
+		<entity schema="crm" name="oauth_users" color="BED3F4" x="1616" y="464" />
+		<entity schema="crm" name="roles" color="BED3F4" x="1904" y="640" />
+		<entity schema="crm" name="ticket_settings" color="F4DDBE" x="944" y="400" />
+		<entity schema="crm" name="trigger_contract" color="C7F4BE" x="2848" y="640" />
+		<entity schema="crm" name="trigger_lead" color="C7F4BE" x="2848" y="288" />
+		<entity schema="crm" name="trigger_ticket" color="BED3F4" x="2128" y="160" />
+		<entity schema="crm" name="user_profile" color="BED3F4" x="1632" y="48" />
+		<entity schema="crm" name="user_roles" color="BED3F4" x="1904" y="464" />
+		<entity schema="crm" name="users" color="BED3F4" x="1904" y="160" />
+		<callout x="48" y="272" pointer="Round" >
+			<comment><![CDATA[Add tables to the layout diagram (here) by drag & drop from the Project Tree.
+Drop this callout from its right-click pop-up.]]></comment>
 		</callout>
-		<group name="user_roles" color="F7F2EC" >
-			<entity schema="crm" name="user_roles" />
-			<entity schema="crm" name="roles" />
-		</group>
-		<group name="trigger_lead" color="ECF0F7" >
-			<entity schema="crm" name="trigger_contract" />
-			<entity schema="crm" name="google_drive_file" />
-			<entity schema="crm" name="file" />
-			<entity schema="crm" name="lead_action" />
-			<entity schema="crm" name="customer" />
-			<entity schema="crm" name="trigger_lead" />
-			<entity schema="crm" name="trigger_ticket" />
-			<entity schema="crm" name="expense" />
-		</group>
-		<group name="email_template" color="EEF7EC" >
-			<entity schema="crm" name="email_template" />
-			<entity schema="crm" name="users" />
-			<entity schema="crm" name="contract_settings" />
-			<entity schema="crm" name="ticket_settings" />
-			<entity schema="crm" name="lead_settings" />
-			<entity schema="crm" name="customer_login_info" />
-			<entity schema="crm" name="oauth_users" />
-			<entity schema="crm" name="user_profile" />
-		</group>
-		<query id="Query-262c" name="fk_budget_customer" confirmed="y" >
-			<query_table schema="crm" name="customer" alias="c" x="48" y="48" >
-				<column name="customer_id" />
-				<column name="name" />
-				<column name="phone" />
-				<column name="address" />
-				<column name="city" />
-				<column name="state" />
-				<column name="country" />
-				<column name="user_id" />
-				<column name="description" />
-				<column name="position" />
-				<column name="twitter" />
-				<column name="facebook" />
-				<column name="youtube" />
-				<column name="created_at" />
-				<column name="email" />
-				<column name="profile_id" />
-				<query_table schema="crm" name="budget" alias="b" x="240" y="48" fk="fk_budget_customer" type="Inner Join" />
-			</query_table>
-		</query>
-	</layout>
-	<layout name="~Layout with Sample Tools" id="Layout-b8" show_column_type="y" show_relation="columns" >
-		<entity schema="crm" name="contract_settings" color="C7F4BE" x="320" y="672" />
-		<entity schema="crm" name="customer" color="BED3F4" x="1648" y="640" />
-		<entity schema="crm" name="customer_login_info" color="C7F4BE" x="656" y="832" />
-		<entity schema="crm" name="email_template" color="C7F4BE" x="384" y="400" />
-		<entity schema="crm" name="employee" color="3986C1" x="48" y="1200" />
-		<entity schema="crm" name="file" color="BED3F4" x="1344" y="368" />
-		<entity schema="crm" name="google_drive_file" color="BED3F4" x="1328" y="640" />
-		<entity schema="crm" name="lead_action" color="BED3F4" x="1360" y="48" />
-		<entity schema="crm" name="lead_settings" color="C7F4BE" x="384" y="48" />
-		<entity schema="crm" name="oauth_users" color="C7F4BE" x="960" y="400" />
-		<entity schema="crm" name="roles" color="F4DDBE" x="1520" y="1200" />
-		<entity schema="crm" name="ticket_settings" color="C7F4BE" x="48" y="320" />
-		<entity schema="crm" name="trigger_contract" color="BED3F4" x="2016" y="288" />
-		<entity schema="crm" name="trigger_lead" color="BED3F4" x="1648" y="288" />
-		<entity schema="crm" name="trigger_ticket" color="BED3F4" x="1952" y="752" />
-		<entity schema="crm" name="user_profile" color="C7F4BE" x="960" y="736" />
-		<entity schema="crm" name="user_roles" color="F4DDBE" x="1328" y="1200" />
-		<entity schema="crm" name="users" color="C7F4BE" x="656" y="400" />
-		<script name="SQL Editor" id="Editor-dfd" language="SQL" >
-			<string><![CDATA[SELECT
-	template_id, name, content, user_id, json_design, created_at
-FROM
-	crm.email_template e;]]></string>
-		</script>
-		<browser id="Browse-1f24" name="Relational Data Explorer" confirm_updates="y" >
-			<browse_table schema="crm" entity="email_template" x="-2147483648" y="-2147483648" width="-2147483648" height="-2147483648" >
-				<browse_table schema="crm" entity="contract_settings" fk="contract_settings_ibfk_2" x="40" y="-2147483648" width="500" height="350" >
-					<browse_table schema="crm" entity="users" fk="contract_settings_ibfk_1" x="580" y="-2147483648" width="500" height="350" record_view="y" />
-				</browse_table>
-			</browse_table>
-		</browser>
-		<query id="Query-193" name="Query Builder" >
-			<query_table schema="crm" name="email_template" alias="et" x="48" y="48" >
-				<column name="template_id" />
-				<column name="name" />
-				<column name="content" />
-				<column name="user_id" />
-				<column name="json_design" />
-				<column name="created_at" />
-				<query_table schema="crm" name="contract_settings" alias="cs" x="256" y="48" fk="contract_settings_ibfk_2" type="Inner Join" >
-					<column name="id" />
-					<column name="amount" />
-					<column name="subject" />
-					<column name="description" />
-					<column name="end_date" />
-					<column name="start_date" />
-					<column name="status" />
-					<column name="user_id" />
-					<column name="status_email_template" />
-					<column name="amount_email_template" />
-					<column name="subject_email_template" />
-					<column name="description_email_template" />
-					<column name="start_email_template" />
-					<column name="end_email_template" />
-					<column name="customer_id" />
-					<query_table schema="crm" name="users" alias="u" x="544" y="48" fk="contract_settings_ibfk_1" type="Inner Join" >
-						<column name="id" />
-						<column name="email" />
-						<column name="password" />
-						<column name="hire_date" />
-						<column name="created_at" />
-						<column name="updated_at" />
-						<column name="username" />
-						<column name="status" />
-						<column name="token" />
-						<column name="is_password_set" />
-					</query_table>
-				</query_table>
-			</query_table>
-		</query>
-		<form name="Report" id="Report-579" template="Page" css="container-fluid" view="frame" >
-			<var name="samplePageNumber" type="4" value="0" mandatory="n" />
-			<var name="sampleRecordsPerPage" type="4" value="100" mandatory="n" />
-			<body name="Body" template="Grid" max_records="100" pos="0,0,0,0,f,f" layout="{{-2,-2,-2,-2,-1},{-2,-2,-2,-2}}" generate_path="y" scroll="n" html="n" header_rows="0" footer_rows="0" >
-				<cell type="label" name="Email_template Data" template="H3" pos="0,0,1,0,l,c" />
-				<cell type="chart" name="Pie" template="Pie" pos="0,1,4,1,l,c" max_records="20" generate_path="y" >
-					<form_script type="DataSource" language="SQL" >
-						<var name="template_id" type="4" />
-						<var name="name" type="-1" />
-						<var name="content" type="-1" />
-						<var name="user_id" type="4" />
-						<var name="json_design" type="-1" />
-						<var name="created_at" type="93" />
-						<script ><![CDATA[SELECT * FROM crm.email_template]]></script>
-					</form_script>
-					<param name="item" value="name" />
-					<param name="width" value="100%" />
-					<param name="title" value="Sample Chart" />
-					<param name="value" value="template_id" />
-					<param name="height" value="400px" />
-				</cell>
-				<tableview name="sample" template="Table" max_records="100" css="sortable table table-striped table-sm table-hover" pos="0,2,4,2,f,f" layout="{{-2,-2,-2,-2,-2,-2,-2},{-2,-2}}" generate_path="y" scroll="n" html="n" header_rows="1" footer_rows="0" >
-					<form_script type="DataSource" language="SQL" >
-						<var name="template_id" type="4" />
-						<var name="name" type="-1" />
-						<var name="content" type="-1" />
-						<var name="user_id" type="4" />
-						<var name="json_design" type="-1" />
-						<var name="created_at" type="93" />
-						<script ><![CDATA[SELECT * FROM crm.email_template]]></script>
-					</form_script>
-					<cell type="label" name="template_id" template="Plain" pos="0,0,0,0,c,c" />
-					<cell type="label" name="name" template="Plain" pos="1,0,1,0,c,c" />
-					<cell type="label" name="content" template="Plain" pos="2,0,2,0,c,c" />
-					<cell type="label" name="user_id" template="Plain" pos="3,0,3,0,c,c" />
-					<cell type="label" name="json_design" template="Plain" pos="4,0,4,0,c,c" />
-					<cell type="label" name="created_at" template="Plain" pos="5,0,5,0,c,c" />
-					<cell type="label" name="${template_id}" template="Plain" pos="0,1,0,1,l,c" />
-					<cell type="label" name="${name}" template="Plain" pos="1,1,1,1,l,c" />
-					<cell type="label" name="${content}" template="Plain" pos="2,1,2,1,l,c" />
-					<cell type="label" name="${user_id}" template="Plain" pos="3,1,3,1,l,c" />
-					<cell type="label" name="${json_design}" template="Plain" pos="4,1,4,1,l,c" />
-					<cell type="label" name="${created_at}" template="Plain" pos="5,1,5,1,l,c" />
-					<cell type="button" name="More" template="Plain" css="btn btn-sm btn-secondary" pos="6,1,6,1,c,c" ref_id="Report-579" />
-				</tableview>
-				<cell type="href" name="" template="Plain" disabled="${samplePageNumber&lt;1}" pos="0,3,0,3,l,c" glyph="bi-chevron_double_left" ref_id="Report-579" >
-					<var name="samplePageNumber" value="0" />
-				</cell>
-				<cell type="href" name="" template="Plain" disabled="${samplePageNumber&lt;1}" pos="1,3,1,3,l,c" glyph="bi-chevron_left" ref_id="Report-579" >
-					<var name="samplePageNumber" value="${Math.max(0,samplePageNumber-1)}" />
-				</cell>
-				<cell type="label" name="Page ${samplePageNumber+1}" template="Plain" pos="2,3,2,3,l,c" />
-				<cell type="href" name="" template="Plain" disabled="${!sampleHasNextPage}" pos="3,3,3,3,l,c" glyph="bi-chevron_right" ref_id="Report-579" >
-					<var name="samplePageNumber" value="${( samplePageNumber+1 )}" />
-				</cell>
-			</body>
-		</form>
 	</layout>
 </project>

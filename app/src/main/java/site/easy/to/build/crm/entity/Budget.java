@@ -2,15 +2,13 @@ package site.easy.to.build.crm.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
-import jakarta.validation.constraints.DecimalMax;
-import jakarta.validation.constraints.DecimalMin;
-import jakarta.validation.constraints.Digits;
-import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.*;
 import lombok.Data;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Entity
 @Data
@@ -33,6 +31,10 @@ public class Budget {
     @NotNull
     Customer customer;
 
+    @Column(name = "alert_rate", nullable = false)
+    @PositiveOrZero
+    double alertRate;
+
     @Column(name = "created_at", nullable = false)
     private LocalDateTime createdAt;
 
@@ -53,4 +55,24 @@ public class Budget {
     @NotNull
     CategoryBudget categoryBudget;
 
+
+    public BigDecimal getConsomation(){
+        if (this.expenses == null || this.expenses.size() == 0)
+            return new BigDecimal(0);
+
+        return this.expenses.stream()
+                .map(Expense::getAmount)
+                .reduce(BigDecimal::add)
+                .get();
+    }
+
+    public BigDecimal getReste(){
+        BigDecimal reste = this.amount.subtract(getConsomation());
+        return (getConsomation().compareTo(this.amount) <= 0 ) ? reste : new BigDecimal(0);
+    }
+
+    public boolean isAlertRateReached(){
+        BigDecimal pourcentage = this.getConsomation().multiply(BigDecimal.valueOf(100)).divide(this.getAmount());
+        return pourcentage.compareTo(BigDecimal.valueOf(this.alertRate)) >= 0;
+    }
 }

@@ -523,6 +523,7 @@ CREATE TABLE IF NOT EXISTS crm.budget
   end_date    TIMESTAMP               DEFAULT (CURRENT_TIMESTAMP),
   customer_id INT UNSIGNED not null ,
   description TEXT,
+  alert_rate DECIMAL(2, 2) DEFAULT 100 NOT NULL CHECK ( alert_rate >= 0 AND alert_rate <= 100 ) ,
   category_id VARCHAR(50) NOT NULL ,
   CONSTRAINT fk_budget_category FOREIGN KEY (category_id) REFERENCES crm.category_budget(category_id) ON DELETE CASCADE ,
   CONSTRAINT fk_budget_customer FOREIGN KEY (customer_id) REFERENCES crm.customer (customer_id) ON DELETE CASCADE
