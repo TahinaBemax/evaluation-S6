@@ -9,32 +9,41 @@
 				<defo><![CDATA[0]]></defo>
 			</column>
 			<column name="created_at" type="TIMESTAMP" jt="93" mandatory="y" >
-				<defo><![CDATA[CURRENT_TIMESTAMP]]></defo>
+				<defo><![CDATA[now()]]></defo>
 			</column>
 			<column name="start_date" type="TIMESTAMP" jt="93" mandatory="y" >
-				<defo><![CDATA[CURRENT_TIMESTAMP]]></defo>
+				<defo><![CDATA[now()]]></defo>
 			</column>
 			<column name="end_date" type="TIMESTAMP" jt="93" >
+				<defo><![CDATA[now()]]></defo>
+			</column>
+			<column name="customer_id" type="INT" jt="4" mandatory="y" unsigned="y" />
+			<column name="description" type="TEXT" jt="-1" />
+			<column name="category_id" type="VARCHAR" length="50" jt="12" mandatory="y" />
+			<column name="alert_rate" type="DECIMAL" length="5" decimal="2" jt="3" mandatory="y" >
+				<defo><![CDATA['100.00']]></defo>
+			</column>
+			<column name="archived_at" type="TIMESTAMP" jt="93" >
 				<defo><![CDATA[CURRENT_TIMESTAMP]]></defo>
 			</column>
-			<column name="customer_id" type="INT" jt="4" unsigned="y" />
-			<column name="description" type="TEXT" jt="-1" />
-			<column name="category_id" type="VARCHAR" length="50" jt="12" />
 			<index name="pk_budget" unique="PRIMARY_KEY" >
 				<column name="budget_id" />
 			</index>
-			<index name="unq_budget_category_id" unique="UNIQUE_KEY" >
+			<index name="unq_budget_category_id" unique="NORMAL" >
 				<column name="category_id" />
 			</index>
-			<fk name="fk_budget_customer" to_schema="crm" to_table="customer" options="ON DELETE NO ACTION ON UPDATE NO ACTION" >
+			<index name="fk_budget_customer" unique="NORMAL" >
+				<column name="customer_id" />
+			</index>
+			<constraint name="check_alert_rate" type="CHECK" options="" >
+				<string><![CDATA[((`alert_rate` >= 0) and (`alert_rate` <= 100))]]></string>
+			</constraint>
+			<fk name="fk_budget_customer" to_schema="crm" to_table="customer" delete_action="cascade" options="ON DELETE NO ACTION ON UPDATE NO ACTION" >
 				<fk_column name="customer_id" pk="customer_id" />
 			</fk>
-			<options><![CDATA[engine=InnoDB]]></options>
-		</table>
-		<table name="budget_config" prior="budget_" >
-			<column name="taux_alert" type="DECIMAL" length="5" decimal="2" jt="3" mandatory="y" >
-				<defo><![CDATA[0]]></defo>
-			</column>
+			<fk name="fk_budget_category" to_schema="crm" to_table="category_budget" delete_action="cascade" options="" >
+				<fk_column name="category_id" pk="category_id" />
+			</fk>
 			<options><![CDATA[engine=InnoDB]]></options>
 		</table>
 		<table name="category_budget" spec="" >
@@ -46,9 +55,6 @@
 			<index name="unq_category_budget" unique="UNIQUE_KEY" >
 				<column name="category_name" />
 			</index>
-			<fk name="fk_category_budget_budget" to_schema="crm" to_table="budget" options="ON DELETE NO ACTION ON UPDATE NO ACTION" >
-				<fk_column name="category_id" pk="category_id" />
-			</fk>
 			<options><![CDATA[engine=InnoDB]]></options>
 		</table>
 		<table name="contract_settings" spec="" >
@@ -222,22 +228,31 @@
 				<defo><![CDATA[0]]></defo>
 			</column>
 			<column name="expense_date" type="DATE" jt="91" mandatory="y" >
-				<defo><![CDATA[CURRENT_DATE]]></defo>
+				<defo><![CDATA[curdate()]]></defo>
 			</column>
-			<column name="budget_id" type="INT" jt="4" unsigned="y" />
+			<column name="budget_id" type="INT" jt="4" mandatory="y" unsigned="y" />
 			<column name="lead_id" type="INT" jt="4" unsigned="y" />
 			<column name="ticket_id" type="INT" jt="4" unsigned="y" />
 			<column name="description" type="TEXT" jt="-1" />
 			<index name="pk_expense" unique="PRIMARY_KEY" >
 				<column name="expense_id" />
 			</index>
-			<fk name="fk_expense_budget" to_schema="crm" to_table="budget" options="ON DELETE NO ACTION ON UPDATE NO ACTION" >
+			<index name="fk_expense_budget" unique="NORMAL" >
+				<column name="budget_id" />
+			</index>
+			<index name="fk_expense_trigger_lead" unique="NORMAL" >
+				<column name="lead_id" />
+			</index>
+			<index name="fk_expense_trigger_ticket" unique="NORMAL" >
+				<column name="ticket_id" />
+			</index>
+			<fk name="fk_expense_budget" to_schema="crm" to_table="budget" delete_action="cascade" options="ON DELETE NO ACTION ON UPDATE NO ACTION" >
 				<fk_column name="budget_id" pk="budget_id" />
 			</fk>
-			<fk name="fk_expense_trigger_lead" to_schema="crm" to_table="trigger_lead" options="ON DELETE NO ACTION ON UPDATE NO ACTION" >
+			<fk name="fk_expense_trigger_lead" to_schema="crm" to_table="trigger_lead" delete_action="cascade" options="ON DELETE NO ACTION ON UPDATE NO ACTION" >
 				<fk_column name="lead_id" pk="lead_id" />
 			</fk>
-			<fk name="fk_expense_trigger_ticket" to_schema="crm" to_table="trigger_ticket" options="ON DELETE NO ACTION ON UPDATE NO ACTION" >
+			<fk name="fk_expense_trigger_ticket" to_schema="crm" to_table="trigger_ticket" delete_action="cascade" options="ON DELETE NO ACTION ON UPDATE NO ACTION" >
 				<fk_column name="ticket_id" pk="ticket_id" />
 			</fk>
 			<options><![CDATA[engine=InnoDB]]></options>
@@ -652,10 +667,23 @@
 			</index>
 			<options><![CDATA[ENGINE=InnoDB AUTO_INCREMENT=54 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci]]></options>
 		</table>
+		<view name="view_budget" >
+			<comment><![CDATA[VIEW]]></comment>
+			<view_script><![CDATA[CREATE VIEW ${nameWithSchemaName} AS select `b`.`budget_id` AS `budget_id`,`b`.`amount` AS `amount`,`b`.`created_at` AS `created_at`,`b`.`start_date` AS `start_date`,`b`.`end_date` AS `end_date`,`b`.`customer_id` AS `customer_id`,`b`.`description` AS `description`,`b`.`category_id` AS `category_id`,`b`.`alert_rate` AS `alert_rate`,`b`.`archived_at` AS `archived_at` from `crm`.`budget` `b` where (`b`.`archived_at` is null)]]></view_script>
+			<column name="budget_id" type="INT" />
+			<column name="amount" type="DECIMAL" />
+			<column name="created_at" type="TIMESTAMP" />
+			<column name="start_date" type="TIMESTAMP" />
+			<column name="end_date" type="TIMESTAMP" />
+			<column name="customer_id" type="INT" />
+			<column name="description" type="TEXT" />
+			<column name="category_id" type="VARCHAR" />
+			<column name="alert_rate" type="DECIMAL" />
+			<column name="archived_at" type="TIMESTAMP" />
+		</view>
 	</schema>
 	<layout name="Layout" id="Layout-17ce" show_relation="columns" >
 		<entity schema="crm" name="budget" color="BED3F4" x="2128" y="464" />
-		<entity schema="crm" name="budget_config" color="C1D8EE" x="2384" y="640" />
 		<entity schema="crm" name="category_budget" color="BED3F4" x="2336" y="464" />
 		<entity schema="crm" name="contract_settings" color="F4DDBE" x="1280" y="128" />
 		<entity schema="crm" name="customer" color="C7F4BE" x="3152" y="288" />
@@ -676,6 +704,7 @@
 		<entity schema="crm" name="user_profile" color="BED3F4" x="1632" y="48" />
 		<entity schema="crm" name="user_roles" color="BED3F4" x="1904" y="464" />
 		<entity schema="crm" name="users" color="BED3F4" x="1904" y="160" />
+		<entity schema="crm" name="view_budget" color="3986C1" x="2464" y="624" />
 		<callout x="48" y="272" pointer="Round" >
 			<comment><![CDATA[Add tables to the layout diagram (here) by drag & drop from the Project Tree.
 Drop this callout from its right-click pop-up.]]></comment>
