@@ -1,6 +1,7 @@
 package site.easy.to.build.crm.controller;
 
 import jakarta.validation.Valid;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -15,6 +16,7 @@ import site.easy.to.build.crm.service.budget.BudgetService;
 import site.easy.to.build.crm.service.budget.CategoryBudgetService;
 import site.easy.to.build.crm.service.customer.CustomerService;
 import site.easy.to.build.crm.service.expense.ExpenseService;
+import site.easy.to.build.crm.service.lead.LeadService;
 import site.easy.to.build.crm.service.ticket.TicketService;
 
 import java.math.BigDecimal;
@@ -23,27 +25,30 @@ import java.time.LocalDateTime;
 import java.util.Formatter;
 import java.util.List;
 import java.util.Locale;
+import java.util.logging.Logger;
 
+@Slf4j
 @Controller
 @RequestMapping("/manager/expense")
 public class ExpenseController {
     private final TicketService ticketService;
+    private final LeadService leadService;
     private final BudgetService budgetService;
     private final ExpenseService expenseService;
     private final CustomerService customerService;
     private final CategoryBudgetService categoryBudgetService;
 
     @Autowired
-    public ExpenseController(BudgetService budgetService, ExpenseService expenseService,
-                             CustomerService customerService,
-                             CategoryBudgetService categoryBudgetService,
-                             TicketService ticketService) {
+    public ExpenseController(TicketService ticketService, LeadService leadService, BudgetService budgetService, ExpenseService expenseService, CustomerService customerService, CategoryBudgetService categoryBudgetService) {
+        this.ticketService = ticketService;
+        this.leadService = leadService;
         this.budgetService = budgetService;
+        this.expenseService = expenseService;
         this.customerService = customerService;
         this.categoryBudgetService = categoryBudgetService;
-        this.expenseService = expenseService;
-        this.ticketService = ticketService;
     }
+
+
 
     @GetMapping()
     public String allExpensePage(Model model) {
@@ -79,23 +84,84 @@ public class ExpenseController {
         }
 
         Expense e = expenseService.findById(id);
+        if (e == null)
+            return "error/500";
+
         model.addAttribute("expense", e);
         return "/expense/show";
     }
 
+    @GetMapping("/{id}/form")
+    public String updateFormPage(@PathVariable("id") Integer id, Model model) throws BudgetNotFoundException {
+        if (id == null){
+            log.error("Expense id is null");
+            return "error/500";
+        }
+
+        Expense b = expenseService.findById(id);
+        if (b == null){
+            log.error(String.format("Expense id: %s not found", String.valueOf(id)));
+            return "error/500";
+        }
+
+        Budget budget = budgetService.findById(b.getBudget().getId());
+        if (budget == null){
+            throw new BudgetNotFoundException(String.format("Bugdet id: %s not found", b.getBudget().getId()));
+        }
+
+        model.addAttribute("budgets", budgetService.findAllByCustomer(budget.getCustomer().getCustomerId(), LocalDateTime.now()));
+        model.addAttribute("expense", b);
+
+        return "/expense/update-form";
+    }
+
     @GetMapping("/ticket/{ticketId}/form")
-    public String formPage(
+    public String ticketformPage(
             @PathVariable("ticketId") Integer ticketId,
             @RequestParam(value = "expenseId",required = false) Integer expenseId, Model model)
     {
-        Expense b = (expenseId != null) ? expenseService.findById(expenseId) : new Expense();
-        if (ticketId == null)
-            return "error/500";
+        Expense b = new Expense();
+        if (expenseId == null){
+            if(ticketId == null)
+                return "error/500";
 
-        model.addAttribute("ticketId", ticketId);
-        model.addAttribute("leadId", null);
-        model.addAttribute("budgets", budgetService.findAll());
+            Ticket t = ticketService.findByTicketId(ticketId);
+            if (t == null)
+                return "error/500";
+
+            b.setTicket(t);
+        } else {
+            b = expenseService.findById(expenseId);
+        }
+
+        model.addAttribute("budgets", budgetService.findAllByCustomer(b.getTicket().getCustomer().getCustomerId(), LocalDateTime.now()));
         model.addAttribute("expense", b);
+
+        return "/expense/form";
+    }
+
+    @GetMapping("/lead/{leadId}/form")
+    public String expenseformPage(
+            @PathVariable("leadId") Integer leadId,
+            @RequestParam(value = "expenseId",required = false) Integer expenseId, Model model)
+    {
+        Expense e = new Expense();
+        if (expenseId == null){
+            if (leadId == null) {
+                return "error/500";
+            }
+
+            Lead l = leadService.findByLeadId(leadId);
+            if (l == null) {
+                return "error/500";
+            }
+            e.setLead(l);
+        } else {
+            e = expenseService.findById(expenseId);
+        }
+
+        model.addAttribute("budgets", budgetService.findAllByCustomer(e.getLead().getCustomer().getCustomerId(), LocalDateTime.now()));
+        model.addAttribute("expense", e);
 
         return "/expense/form";
     }
@@ -108,7 +174,7 @@ public class ExpenseController {
     {
         try {
             if (bindingResult.hasErrors()){
-                model.addAttribute("budgets", budgetService.findAll());
+                model.addAttribute("budgets", budgetService.findAllByCustomer(expense.getBudget().getCustomer().getCustomerId(), LocalDateTime.now()));
                 return "expense/form";
             }
 
@@ -123,11 +189,9 @@ public class ExpenseController {
                 String message = String.format("Budget insufficent! Budget amount: %s but expense amount: %s", format.format(budget.getAmount()), format.format(totalExpense));
 
                 model.addAttribute("expense", expense);
-                model.addAttribute("ticketId", expense.getTicket().getTicketId());
-                model.addAttribute("leadId", null);
                 model.addAttribute("alertConfirmation", message);
                 model.addAttribute("needConfirmation", false);
-                model.addAttribute("budgets", budgetService.findAll());
+                model.addAttribute("budgets", budgetService.findAllByCustomer(budget.getCustomer().getCustomerId(), LocalDateTime.now()));
                 return "expense/form";
             }
 
@@ -136,6 +200,54 @@ public class ExpenseController {
                 redirectAttributes.addFlashAttribute("successMessage", "Expense attributed successfuly");
             }
         } catch (Exception e){
+            log.error(e.getMessage());
+            return "error/500";
+        }
+
+        return "redirect:/manager/expense/" + expense.getId();
+    }
+
+    @PostMapping("/save-update")
+    public String saveUpdateExpense(@Valid @ModelAttribute("expense") Expense expense,
+                              @RequestParam(name = "confirmation", required = false) Integer confirmation,
+                              BindingResult bindingResult,
+                              RedirectAttributes redirectAttributes, Model model)
+    {
+        try {
+            if (bindingResult.hasErrors()){
+                model.addAttribute("budgets",
+                        budgetService.findAllByCustomer(expense.getBudget().getCustomer().getCustomerId(), LocalDateTime.now()));
+                return "expense/form";
+            }
+
+            Budget budget = budgetService.findById(expense.getBudget().getId());
+            if (budget == null){
+                throw new BudgetNotFoundException(String.format("Bugdet id: %s not found", expense.getBudget().getId()));
+            }
+
+            final Integer newExpenseId = expense.getId();
+            List<Expense> expenses = budget.getExpenses()
+                    .stream().filter(exp -> !exp.getId().equals(newExpenseId)).toList();
+
+            budget.setExpenses(expenses);
+            BigDecimal totalExpense = budget.getConsomation();
+            if (confirmation == null && totalExpense.compareTo(budget.getAmount()) > 0){
+                NumberFormat format = NumberFormat.getCurrencyInstance(Locale.ENGLISH);
+                String message = String.format("Budget insufficent! Budget amount: %s but expense amount: %s", format.format(budget.getAmount()), format.format(totalExpense));
+
+                model.addAttribute("expense", expense);
+                model.addAttribute("alertConfirmation", message);
+                model.addAttribute("needConfirmation", false);
+                model.addAttribute("budgets", budgetService.findAllByCustomer(budget.getCustomer().getCustomerId(), LocalDateTime.now()));
+                return "expense/form";
+            }
+
+            if ((confirmation !=null && confirmation == 1) || totalExpense.compareTo(budget.getAmount()) <=0){
+                expense = expenseService.save(expense);
+                redirectAttributes.addFlashAttribute("successMessage", "Expense attributed successfuly");
+            }
+        } catch (Exception e){
+            log.error(e.getMessage());
             return "error/500";
         }
 

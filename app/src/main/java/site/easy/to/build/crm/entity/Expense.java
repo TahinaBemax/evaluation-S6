@@ -49,4 +49,5 @@ public class Expense {
     @ManyToOne
     @JoinColumn(name = "lead_id")
     Lead lead;
+
 }

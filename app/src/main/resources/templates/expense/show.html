@@ -74,7 +74,7 @@
         <div class="col-lg-12">
           <div class="card">
             <div class="card-body">
-              <h4 class="card-title">Expenses</h4>
+              <h4 class="card-title">Expense Details</h4>
               <div class="table-responsive m-t-40">
                 <table id="config-table" class="table display table-bordered table-striped no-wrap">
                   <thead>
@@ -82,28 +82,23 @@
                     <th>#</th>
                     <th>Ticket/Lead</th>
                     <th>Amount</th>
-                    <th>Date</th>
                     <th>Budget</th>
+                    <th>Date</th>
                     <th>Edit</th>
                     <th>Delete</th>
                   </tr>
                   </thead>
                   <tbody>
-                  <tr th:if="${expenses != null}" th:each="expense : ${expenses}">
-                    <td>
-                      <a th:href="@{/manager/expense/{id}(id=${expense.getId()})}"
-                         th:text="${expense.getId()}"></a>
-                    </td>
+                  <tr th:if="${expense != null}">
+                    <td th:text="${expense.getId()}"></td>
                     <td th:if="${expense.getTicket() != null && expense.getLead() == null}"
                         th:text="${expense.getTicket().getSubject()}"></td>
                     <td th:unless="${expense.getTicket() != null && expense.getLead() == null}"
                         th:text="${expense.getLead().getStatus()}"></td>
                     <td th:text="${#numbers.formatCurrency(expense.getAmount())}"></td>
-                    <td th:text="${#temporals.format(expense.getExpenseDate(), 'yyyy-MM-dd')}"></td>
-                    <td>
-                      <a th:href="@{/manager/budgets/{id}(id=${expense.getBudget().getId()})}"
-                         th:text="${#numbers.formatCurrency(expense.getBudget().getAmount())}"></a>
+                    <td th:text="${#numbers.formatCurrency(expense.getBudget().getAmount())}"></a>
                     </td>
+                    <td th:text="${#temporals.format(expense.getExpenseDate(), 'yyyy-MM-dd')}"></td>
                     <td><a th:href="@{/manager/expense/{id}/form(id=${expense.getId()})}"><i class="fas fa-edit"></i></a></td>
                     <td>
                       <form th:action="@{/manager/expense/delete/{id}(id=${expense.getId()})}" method="post">

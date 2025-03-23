@@ -88,8 +88,8 @@
                     <th>#</th>
                     <th>Customer</th>
                     <th>Amount</th>
+                    <th>Consommation</th>
                     <th>Start date</th>
-                    <th>End date</th>
                     <th>Category</th>
                     <th>Show Full Details</th>
                     <th>Delete</th>
@@ -99,13 +99,13 @@
                   <tr th:if="${budgets != null}" th:each="budget : ${budgets}">
                     <td th:text="${budget.getId()}"></td>
                     <td th:text="${budget.getCustomer().getEmail()}"></td>
-                    <td th:text="${#numbers.formatCurrency(budget.getAmount())}"></td>
+                    <td th:text="${#numbers.formatCurrency(budget.getAmount())}" class="text-right"></td>
+                    <td th:text="${#numbers.formatCurrency(budget.getConsomation())}" class="text-info text-right" ></td>
                     <td th:text="${#temporals.format(budget.getStartDate(), 'yyyy-MM-dd')}"></td>
-                    <td th:text="${#temporals.format(budget.getEndDate(), 'yyyy-MM-dd')}"></td>
                     <td th:text="${budget.getCategoryBudget().getCategoryName()}"></td>
-                    <td><a th:href="@{/manager/budgets/{id}(id=${budget.getId()})}"><i class="fas fa-eye"></i></a></td>
+                    <td class="text-center"><a th:href="@{/manager/budgets/{id}(id=${budget.getId()})}"><i class="fas fa-eye"></i></a></td>
                     <td>
-                      <form th:action="@{/manager/budgets/delete-budget/{id}(id=${budget.getId()})}" method="post">
+                      <form th:action="@{/manager/budgets/delete/{id}(id=${budget.getId()})}" method="post">
                         <button type="submit" class="btn btn-primary">
                           <i class="mdi mdi-delete"></i>
                         </button>

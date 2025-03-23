@@ -1,12 +1,15 @@
 package site.easy.to.build.crm.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.*;
 import lombok.Data;
+import lombok.ToString;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -46,14 +49,18 @@ public class Budget {
 
     private String description;
 
-    @OneToMany()
-    @JoinColumn(name = "expense_id")
-    private List<Expense> expenses;
+    @OneToMany(mappedBy = "budget", fetch = FetchType.LAZY)
+    @JsonManagedReference
+    @ToString.Exclude()
+    private List<Expense> expenses = new ArrayList<>();
 
-    @ManyToOne()
+    @ManyToOne
     @JoinColumn(name = "category_id", nullable = false)
     @NotNull
     CategoryBudget categoryBudget;
+
+    @Column(name = "archived_at")
+    LocalDateTime achivedAt;
 
 
     public BigDecimal getConsomation(){

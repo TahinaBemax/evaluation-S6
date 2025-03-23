@@ -14,4 +14,5 @@ public interface ExpenseService {
 
     public List<Expense> findByTicketId(Integer id);
     public List<Expense> findByLeadId(Integer id);
+    public List<Expense> findAllByBudgetId(Integer id);
 }

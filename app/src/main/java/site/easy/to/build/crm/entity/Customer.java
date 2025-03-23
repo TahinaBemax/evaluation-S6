@@ -6,6 +6,7 @@ import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.groups.Default;
+import lombok.ToString;
 import site.easy.to.build.crm.customValidations.customer.UniqueEmail;
 
 import java.time.LocalDateTime;
@@ -72,8 +73,9 @@ public class Customer {
     @JsonIgnore
     private CustomerLoginInfo customerLoginInfo;
 
-    @OneToMany
-    @JoinColumn(name = "budget_id")
+    @OneToMany(mappedBy = "customer",fetch = FetchType.LAZY)
+    @JsonIgnoreProperties("customer")
+    @ToString.Exclude()
     private List<Budget> budgets;
 
     @Column(name = "created_at")

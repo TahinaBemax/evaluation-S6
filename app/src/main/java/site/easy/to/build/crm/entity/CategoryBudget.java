@@ -1,9 +1,11 @@
 package site.easy.to.build.crm.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import lombok.Data;
 import net.minidev.json.annotate.JsonIgnore;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -16,8 +18,4 @@ public class CategoryBudget {
     @Column(name = "category_name", unique = true, nullable = false)
     String categoryName;
 
-    @OneToMany(fetch = FetchType.LAZY)
-    @JoinColumn(name = "budget_id")
-    @JsonIgnore()
-    List<Budget> budgets;
 }

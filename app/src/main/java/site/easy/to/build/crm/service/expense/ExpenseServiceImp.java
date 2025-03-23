@@ -45,4 +45,9 @@ public class ExpenseServiceImp implements ExpenseService {
     public List<Expense> findByLeadId(Integer id) {
         return expenseRepository.findAllByLead(id);
     }
+
+    @Override
+    public List<Expense> findAllByBudgetId(Integer id) {
+        return expenseRepository.findAllByBudgetId(id);
+    }
 }

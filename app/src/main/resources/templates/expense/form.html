@@ -72,7 +72,8 @@
                             <h4 class="card-title">Confirmation</h4>
                             <div>
                                 <p class="alert alert-danger text-center" th:text="${alertConfirmation}"></p>
-                                <p class="text-center">If you want to continue click on the confirm button at the end the form.</p>
+                                <p class="text-center">If you want to continue click on the assign button at the end the form.
+                                    <br/> Or you can update the amount and then click the assign button</p>
                             </div>
                         </div>
                     </div>
@@ -81,9 +82,9 @@
                         <div class="card-body">
                             <h4 class="card-title">Create New depense</h4>
                             <form th:object="${expense}" th:action="@{/manager/expense/save}" method="post">
-                                <input type="hidden" th:value="${expense.getId()}">
-                                <input type="hidden" th:if="${ticketId != null}" th:field="*{ticket.ticketId}" th:value="${ticketId}">
-                                <input type="hidden" th:if="${leadId != null}" th:field="*{lead.leadId}" th:value="${leadId}">
+                                <input type="hidden" th:field="*{id}">
+                                <input type="hidden" th:field="*{ticket}">
+                                <input type="hidden" th:field="*{lead}">
 
                                 <label class="m-t-20" for="budget">Budget:</label>
                                 <div class="input-group">
@@ -127,10 +128,10 @@
 
                                 <div th:if="${needConfirmation != null}" class="d-flex flex-column align-items-center justify-content-center">
                                     <input type="hidden" name="confirmation" value="1">
-                                    <button type="submit" class="btn btn-primary m-t-20">Confirm</button>
+                                    <button type="submit" class="btn btn-primary m-t-20">Assign</button>
                                     <a th:href="@{/manager/expense}" type="" class="btn btn-secondary m-t-20">Back to expense list</a>
                                 </div>
-                                <button th:unless="${needConfirmation != null}" type="submit" class="btn btn-primary m-t-20">Set expense</button>
+                                <button th:unless="${needConfirmation != null}" type="submit" class="btn btn-primary m-t-20">Assign</button>
                             </form>
                         </div>
                     </div>
