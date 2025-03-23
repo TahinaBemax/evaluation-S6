@@ -6,6 +6,7 @@ import site.easy.to.build.crm.entity.Budget;
 import site.easy.to.build.crm.exception.BudgetNotFoundException;
 import site.easy.to.build.crm.repository.BudgetRepository;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Service
@@ -23,6 +24,11 @@ public class BudgetServiceImp implements BudgetService{
     }
 
     @Override
+    public List<Budget> findAllByCustomer(Integer id, LocalDateTime now) {
+        return budgetRepository.findAllByCustomerCustomerId(id, now);
+    }
+
+    @Override
     public Budget findById(Integer id) {
         return budgetRepository.findById(id).orElseThrow();
     }
@@ -34,6 +40,7 @@ public class BudgetServiceImp implements BudgetService{
 
     @Override
     public void delete(Budget budget) {
-        budgetRepository.delete(budget);
+        budget.setAchivedAt(LocalDateTime.now());
+        budgetRepository.save(budget);
     }
 }

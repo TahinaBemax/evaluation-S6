@@ -10,8 +10,7 @@
       th:href="@{/css/dataTables.bootstrap4.css}">
 <link rel="stylesheet" type="text/css"
       th:href="@{/css/responsive.dataTables.min.css}">
-<link th:href="@{/css/login-register-lock.css}" rel="stylesheet">
-<link th:href="@{/css/jquery.toast.css}" rel="stylesheet">
+
 <!-- Custom CSS -->
 <link th:href="@{/css/style.min.css}" rel="stylesheet">
 <!-- page css -->
@@ -75,37 +74,34 @@
         <div class="col-lg-12">
           <div class="card">
             <div class="card-body">
-              <div th:if="${bindingResult != null && bindingResult.hasFieldErrors('failedErrorMessage')}" class="alert alert-danger">
-                <button type="button" class="close" data-dismiss="alert" aria-label="Close"> <span aria-hidden="true">&times;</span> </button>
-                <h3 class="text-info"><i class="fa fa-exclamation-circle"></i> Not Allowed
-                </h3><span th:text="${bindingResult.getFieldError('failedErrorMessage').defaultMessage}"></span>
-              </div>
-              <h4 class="card-title">Budgets</h4>
+              <h4 class="card-title">Expense Details</h4>
               <div class="table-responsive m-t-40">
                 <table id="config-table" class="table display table-bordered table-striped no-wrap">
                   <thead>
                   <tr>
                     <th>#</th>
-                    <th>Customer</th>
+                    <th>Ticket/Lead</th>
                     <th>Amount</th>
-                    <th>Consommation</th>
-                    <th>Start date</th>
-                    <th>Category</th>
-                    <th>Show Full Details</th>
+                    <th>Budget</th>
+                    <th>Date</th>
+                    <th>Edit</th>
                     <th>Delete</th>
                   </tr>
                   </thead>
                   <tbody>
-                  <tr th:if="${budgets != null}" th:each="budget : ${budgets}">
-                    <td th:text="${budget.getId()}"></td>
-                    <td th:text="${budget.getCustomer().getEmail()}"></td>
-                    <td th:text="${#numbers.formatCurrency(budget.getAmount())}" class="text-right"></td>
-                    <td th:text="${#numbers.formatCurrency(budget.getConsomation())}" class="text-info text-right" ></td>
-                    <td th:text="${#temporals.format(budget.getStartDate(), 'yyyy-MM-dd')}"></td>
-                    <td th:text="${budget.getCategoryBudget().getCategoryName()}"></td>
-                    <td class="text-center"><a th:href="@{/manager/budgets/{id}(id=${budget.getId()})}"><i class="fas fa-eye"></i></a></td>
+                  <tr th:if="${expense != null}">
+                    <td th:text="${expense.getId()}"></td>
+                    <td th:if="${expense.getTicket() != null && expense.getLead() == null}"
+                        th:text="${expense.getTicket().getSubject()}"></td>
+                    <td th:unless="${expense.getTicket() != null && expense.getLead() == null}"
+                        th:text="${expense.getLead().getStatus()}"></td>
+                    <td th:text="${#numbers.formatCurrency(expense.getAmount())}"></td>
+                    <td th:text="${#numbers.formatCurrency(expense.getBudget().getAmount())}"></a>
+                    </td>
+                    <td th:text="${#temporals.format(expense.getExpenseDate(), 'yyyy-MM-dd')}"></td>
+                    <td><a th:href="@{/manager/expense/{id}/form(id=${expense.getId()})}"><i class="fas fa-edit"></i></a></td>
                     <td>
-                      <form th:action="@{/manager/budgets/delete/{id}(id=${budget.getId()})}" method="post">
+                      <form th:action="@{/manager/expense/delete/{id}(id=${expense.getId()})}" method="post">
                         <button type="submit" class="btn btn-primary">
                           <i class="mdi mdi-delete"></i>
                         </button>
@@ -169,10 +165,7 @@
 <script th:src="@{/js/library/sticky-kit.min.js}"></script>
 <script th:src="@{/js/library/jquery.sparkline.min.js}" type="text/javascript">></script>
 <!--Custom JavaScript -->
-
 <script th:src="@{/js/library/custom.min.js}" type="text/javascript">></script>
-<script th:src="@{/js/library/jquery.toast.js}"></script>
-<script th:src="@{/js/library/toastr.js}"></script>
 <!-- Editable -->
 <script th:src="@{/js/library/jquery.dataTables.min.js}"></script>
 <script th:src="@{/js/library/dataTables.responsive.min.js}"></script>

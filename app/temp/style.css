@@ -1,0 +1,26 @@
+body {
+    background-color: #f4f4f4;
+    font-family: Arial, sans-serif;
+}
+
+.card {
+    border-radius: 15px;
+}
+
+.card-body {
+    padding: 2rem;
+}
+
+.card-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.card-text {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.progress-bar {
+    transition: width 0.5s ease;
+}

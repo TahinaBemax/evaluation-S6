@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Budget Client</title>
+    <!-- Lien vers Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Lien vers notre CSS -->
+    <link href="styles.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+
+<div class="container mt-5">
+    <div class="row">
+        <!-- Card pour le Budget initial -->
+        <div class="col-12 col-md-4 mb-3">
+            <div class="card shadow-sm">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Budget Initial</h5>
+                    <p class="card-text" id="budget-initial">1000 €</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card pour le Montant Consommé -->
+        <div class="col-12 col-md-4 mb-3">
+            <div class="card shadow-sm">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Montant Consommé</h5>
+                    <p class="card-text" id="montant-consomme">600 €</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card pour le Reste à Dépenser -->
+        <div class="col-12 col-md-4 mb-3">
+            <div class="card shadow-sm">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Reste à Dépenser</h5>
+                    <p class="card-text" id="reste">400 €</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Barre de progression -->
+    <div class="row">
+        <div class="col-12">
+            <h4>Progression du Budget</h4>
+            <div class="progress">
+                <div id="progress-bar" class="progress-bar" role="progressbar" style="width: 60%;" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Lien vers jQuery et Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Script JavaScript pour gérer la barre de progression -->
+<script src="budget-script.js"></script>
+
+</body>
+</html>

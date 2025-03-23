@@ -1,6 +1,7 @@
 package site.easy.to.build.crm.controller;
 
 import jakarta.validation.Valid;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Controller;
@@ -12,27 +13,36 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import site.easy.to.build.crm.entity.Budget;
 import site.easy.to.build.crm.entity.CategoryBudget;
 import site.easy.to.build.crm.entity.Customer;
+import site.easy.to.build.crm.entity.Expense;
+import site.easy.to.build.crm.exception.BudgetNotFoundException;
 import site.easy.to.build.crm.service.budget.BudgetService;
 import site.easy.to.build.crm.service.budget.BudgetServiceImp;
 import site.easy.to.build.crm.service.budget.CategoryBudgetService;
 import site.easy.to.build.crm.service.customer.CustomerService;
+import site.easy.to.build.crm.service.expense.ExpenseService;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 
+@Slf4j
 @Controller
 @RequestMapping("/manager/budgets")
 public class BudgetController {
     private final BudgetService budgetService;
     private final CustomerService customerService;
     private final CategoryBudgetService categoryBudgetService;
+    private final ExpenseService expenseService;
 
     @Autowired
-    public BudgetController(BudgetService budgetService, CustomerService customerService, CategoryBudgetService categoryBudgetService) {
+    public BudgetController(BudgetService budgetService, CustomerService customerService, CategoryBudgetService categoryBudgetService, ExpenseService expenseService) {
         this.budgetService = budgetService;
         this.customerService = customerService;
         this.categoryBudgetService = categoryBudgetService;
+        this.expenseService = expenseService;
     }
+
+
 
     @GetMapping
     public String listeBudgetPage(Model model) {
@@ -48,7 +58,15 @@ public class BudgetController {
         }
 
         Budget budget = budgetService.findById(id);
+        if (budget == null) {
+            log.error("Budget is null");
+            return "error/500";
+        }
+
+        List<Expense> expenses = new ArrayList<>();
+        expenses = expenseService.findAllByBudgetId(budget.getId());
         model.addAttribute("budget", budget);
+        model.addAttribute("expenses", expenses);
         return "/budget/show";
     }
 
@@ -87,6 +105,19 @@ public class BudgetController {
         return "redirect:/manager/budgets";
     }
 
+    @PostMapping("/delete/{id}")
+    public String deleteBudget(@PathVariable("id") Integer id) throws BudgetNotFoundException {
+        if (id == null)
+            return "error/500";
+
+        Budget budget = budgetService.findById(id);
+
+        if (budget == null)
+            throw new BudgetNotFoundException(id);
+
+        budgetService.delete(budget);
+        return "redirect:/manager/budgets";
+    }
 
     private List<Customer> getAllCustomer(){
         return customerService.findAll();

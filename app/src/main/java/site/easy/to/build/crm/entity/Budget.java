@@ -1,16 +1,17 @@
 package site.easy.to.build.crm.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
-import jakarta.validation.constraints.DecimalMax;
-import jakarta.validation.constraints.DecimalMin;
-import jakarta.validation.constraints.Digits;
-import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.*;
 import lombok.Data;
+import lombok.ToString;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Entity
 @Data
@@ -33,6 +34,10 @@ public class Budget {
     @NotNull
     Customer customer;
 
+    @Column(name = "alert_rate", nullable = false)
+    @PositiveOrZero
+    double alertRate;
+
     @Column(name = "created_at", nullable = false)
     private LocalDateTime createdAt;
 
@@ -44,13 +49,37 @@ public class Budget {
 
     private String description;
 
-    @OneToMany()
-    @JoinColumn(name = "expense_id")
-    private List<Expense> expenses;
+    @OneToMany(mappedBy = "budget", fetch = FetchType.LAZY)
+    @JsonManagedReference
+    @ToString.Exclude()
+    private List<Expense> expenses = new ArrayList<>();
 
-    @ManyToOne()
+    @ManyToOne
     @JoinColumn(name = "category_id", nullable = false)
     @NotNull
     CategoryBudget categoryBudget;
 
+    @Column(name = "archived_at")
+    LocalDateTime achivedAt;
+
+
+    public BigDecimal getConsomation(){
+        if (this.expenses == null || this.expenses.size() == 0)
+            return new BigDecimal(0);
+
+        return this.expenses.stream()
+                .map(Expense::getAmount)
+                .reduce(BigDecimal::add)
+                .get();
+    }
+
+    public BigDecimal getReste(){
+        BigDecimal reste = this.amount.subtract(getConsomation());
+        return (getConsomation().compareTo(this.amount) <= 0 ) ? reste : new BigDecimal(0);
+    }
+
+    public boolean isAlertRateReached(){
+        BigDecimal pourcentage = this.getConsomation().multiply(BigDecimal.valueOf(100)).divide(this.getAmount());
+        return pourcentage.compareTo(BigDecimal.valueOf(this.alertRate)) >= 0;
+    }
 }

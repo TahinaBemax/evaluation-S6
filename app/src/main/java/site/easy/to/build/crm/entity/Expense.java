@@ -7,12 +7,15 @@ import jakarta.validation.constraints.DecimalMin;
 import jakarta.validation.constraints.Digits;
 import jakarta.validation.constraints.NotNull;
 import lombok.Data;
+import org.springframework.format.annotation.DateTimeFormat;
+import site.easy.to.build.crm.customValidations.expense.OneNullAndOneNotNull;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
 @Entity
 @Data
+@OneNullAndOneNotNull
 public class Expense {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -28,11 +31,13 @@ public class Expense {
 
     @Column(name = "expense_date", nullable = false)
     @NotNull
+    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm")
     private LocalDateTime expenseDate;
 
     @ManyToOne
     @JoinColumn(name = "budget_id", nullable = false)
     @JsonIgnoreProperties("expenses")
+    @NotNull
     Budget budget;
 
     private String description;
@@ -44,4 +49,5 @@ public class Expense {
     @ManyToOne
     @JoinColumn(name = "lead_id")
     Lead lead;
+
 }

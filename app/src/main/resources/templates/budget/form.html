@@ -76,7 +76,7 @@
                                 <label class="m-t-20" for="status">Category:</label>
                                 <div class="input-group">
                                     <select id="status" th:field="*{categoryBudget}" class="form-control">
-                                        <option value="open">Chose ...</option>
+                                        <option value="">Chose ...</option>
                                         <option th:each="categorie : ${categories}"
                                                 th:value="${categorie.getId()}"
                                                 th:text="${categorie.getCategoryName()}"
@@ -90,7 +90,7 @@
                                 <label class="m-t-20" for="status">Customer:</label>
                                 <div class="input-group">
                                     <select id="customer" th:field="*{customer}" class="form-control">
-                                        <option value="open">Chose...</option>
+                                        <option value="">Chose...</option>
                                         <option th:each="customer : ${customers}"
                                                 th:value="${customer.getCustomerId()}"
                                                 th:text="${customer.getName()}"
@@ -98,7 +98,7 @@
                                     </select>
                                 </div>
                                 <div class="input-group">
-                                    <span class="text-danger font-weight-bold" th:if="${#fields.hasErrors('customer')}" th:errors="*{categoryBudget}"></span>
+                                    <span class="text-danger font-weight-bold" th:if="${#fields.hasErrors('customer')}" th:errors="*{customer}"></span>
                                 </div>
 
                                 <label class="m-t-20" for="subject">Amount:</label>
@@ -109,14 +109,6 @@
                                     <span class="text-danger font-weight-bold" th:if="${#fields.hasErrors('amount')}" th:errors="*{amount}"></span>
                                 </div>
 
-                                <label class="m-t-20" for="description">Description:</label>
-                                <div class="input-group">
-                                    <textarea class="textarea_editor form-control" id="description" rows="15" placeholder="Enter text ..." th:field="*{description}"></textarea>
-                                </div>
-                                <div class="input-group">
-                                    <span class="text-danger font-weight-bold" th:if="${#fields.hasErrors('description')}" th:errors="*{description}" autocomplete="off"></span>
-                                </div>
-
                                 <label class="m-t-20" for="start-date">Start Date:</label>
                                 <div class="input-group">
                                     <input type="datetime-local"  id="start-date" th:field="*{startDate}" class="form-control">
@@ -125,13 +117,28 @@
                                     <span class="text-danger font-weight-bold" th:if="${#fields.hasErrors('startDate')}" th:errors="*{startDate}"></span>
                                 </div>
 
-
                                 <label class="m-t-20" for="end-date">End Date:</label>
                                 <div class="input-group">
                                     <input type="datetime-local"  id="end-date" th:field="*{endDate}" class="form-control">
                                 </div>
                                 <div class="input-group">
                                     <span class="text-danger font-weight-bold" th:if="${#fields.hasErrors('endDate')}" th:errors="*{endDate}"></span>
+                                </div>
+
+                                <label class="m-t-20" for="alert-rate">Alert Rate:</label>
+                                <div class="input-group">
+                                    <input type="number" step="any" id="alert-rate" th:field="*{alertRate}" class="form-control">
+                                </div>
+                                <div class="input-group">
+                                    <span class="text-danger font-weight-bold" th:if="${#fields.hasErrors('alertRate')}" th:errors="*{alertRate}"></span>
+                                </div>
+
+                                <label class="m-t-20" for="description">Description:</label>
+                                <div class="input-group">
+                                    <textarea class="textarea_editor form-control" id="description" rows="15" placeholder="Enter text ..." th:field="*{description}"></textarea>
+                                </div>
+                                <div class="input-group">
+                                    <span class="text-danger font-weight-bold" th:if="${#fields.hasErrors('description')}" th:errors="*{description}" autocomplete="off"></span>
                                 </div>
 
                                 <button type="submit" class="btn btn-primary m-t-20">Create budget</button>
