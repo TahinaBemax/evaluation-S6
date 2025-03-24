@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analyse Budget Client - Diagramme Circulaire</title>
+    <!-- Inclure la bibliothèque Plotly -->
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f8ff;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        .container {
+            width: 80%;
+            margin: 50px auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 30px;
+            color: #007bff;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+
+        #pieChart {
+            margin: 40px 0;
+            border-radius: 10px;
+        }
+
+        .details {
+            font-size: 20px;
+            font-weight: bold;
+            color: #007bff;
+            cursor: pointer;
+            padding: 10px 20px;
+            border-radius: 5px;
+            display: inline-block;
+            background-color: #ffffff;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: background-color 0.3s ease;
+        }
+
+        .details:hover {
+            background-color: #e7f4ff;
+        }
+
+        /* Style de la modale */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+            padding-top: 60px;
+            text-align: center;
+        }
+
+        .modal-content {
+            background-color: #fff;
+            margin: 5% auto;
+            padding: 20px;
+            border-radius: 10px;
+            width: 50%;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Analyse du Budget pour <span id="clientName">Client ABC</span></h1>
+
+        <!-- Diagramme circulaire -->
+        <div id="pieChart"></div>
+
+        <!-- Affichage des montants cliquables -->
+        <div class="details" onclick="openModal()">
+            <span id="totalBudget">Total Budget: 5000</span> | 
+            <span id="totalDepense">Dépenses: 1500</span> | 
+            <span id="reste">Reste: 3500</span>
+        </div>
+    </div>
+
+    <!-- Modale pour afficher les détails -->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2>Détails du Budget</h2>
+            <p><strong>Total Budget:</strong> 5000 €</p>
+            <p><strong>Dépenses:</strong> 1500 €</p>
+            <p><strong>Reste:</strong> 3500 €</p>
+        </div>
+    </div>
+
+    <script>
+        // Données fictives
+        const clientName = "Client ABC";
+        const totalBudget = 5000;
+        const totalDepense = 1500;
+        const reste = totalBudget - totalDepense;
+
+        // Afficher le nom du client
+        document.getElementById("clientName").innerText = clientName;
+
+        // Afficher les montants (budget total, dépenses, reste)
+        document.getElementById("totalBudget").innerText = `Total Budget: ${totalBudget}`;
+        document.getElementById("totalDepense").innerText = `Dépenses: ${totalDepense}`;
+        document.getElementById("reste").innerText = `Reste: ${reste}`;
+
+        // Diagramme circulaire avec Plotly
+        var data = [{
+            values: [totalDepense, reste],  // Dépenses et reste
+            labels: ['Dépenses', 'Reste'],   // Étiquettes
+            type: 'pie',
+            textinfo: 'label+percent',  // Afficher les étiquettes et pourcentages
+            hoverinfo: 'label+value',  // Informations à afficher au survol
+            pull: [0.1, 0],  // Déplacer légèrement le segment des dépenses pour attirer l'attention
+            marker: {
+                colors: ['#FF6347', '#32CD32'],  // Couleurs attrayantes des segments
+                line: {
+                    width: 2,
+                    color: '#ffffff'  // Bordures blanches pour un contraste net
+                }
+            },
+            opacity: 0.85
+        }];
+
+        var layout = {
+            title: `Répartition du Budget pour ${clientName}`,
+            showlegend: true,
+            plot_bgcolor: '#f0f8ff',  // Fond du graphique
+            paper_bgcolor: '#ffffff',  // Fond général
+            height: 400,
+            width: 400,
+            margin: { t: 30, b: 30, l: 30, r: 30 }
+        };
+
+        // Création du graphique
+        Plotly.newPlot('pieChart', data, layout);
+
+        // Fonction pour ouvrir la modale
+        function openModal() {
+            document.getElementById("myModal").style.display = "block";
+        }
+
+        // Fonction pour fermer la modale
+        function closeModal() {
+            document.getElementById("myModal").style.display = "none";
+        }
+
+        // Fermer la modale si l'utilisateur clique à l'extérieur de celle-ci
+        window.onclick = function(event) {
+            var modal = document.getElementById("myModal");
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        };
+    </script>
+</body>
+</html>

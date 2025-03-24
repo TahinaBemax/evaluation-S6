@@ -18,8 +18,16 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\TahinaBemax\Desktop\Evaluation S6\evaluation\evaluation-S6\newApp\crm
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/TahinaBemax/Desktop/Evaluation S6/evaluation/evaluation-S6/newApp/crm/Views/budget/list.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcYnVkZ2V0XGxpc3QuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/TahinaBemax/Desktop/Evaluation S6/evaluation/evaluation-S6/newApp/crm/Views/dashboard/index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcZGFzaGJvYXJkXGluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/TahinaBemax/Desktop/Evaluation S6/evaluation/evaluation-S6/newApp/crm/Views/dashboard/ticket.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcZGFzaGJvYXJkXHRpY2tldC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/TahinaBemax/Desktop/Evaluation S6/evaluation/evaluation-S6/newApp/crm/Views/Home/Index.cshtml]

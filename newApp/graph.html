@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monthly Ticket Statistics</title>
+    <!-- Plotly.js integration -->
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f7f7f7;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            color: #333;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        #ticketChart {
+            width: 90%;
+            max-width: 800px;
+            height: 600px;
+            border-radius: 12px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            background-color: #ffffff;
+        }
+
+        .container {
+            text-align: center;
+            padding: 30px;
+            max-width: 1000px;
+            margin: 20px;
+            background-color: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .footer {
+            margin-top: 50px;
+            color: #888;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Monthly Ticket Statistics - 2025</h1>
+        <div id="ticketChart"></div>
+    </div>
+
+    <div class="footer">
+        <p>&copy; 2025 All rights reserved.</p>
+    </div>
+
+    <script>
+        // Ticket data for each month
+        const ticketsPerMonth = [120, 150, 170, 200, 220, 190, 210, 240, 180, 160, 210, 230];
+
+        // Plotly bar chart trace
+        const trace = {
+            x: ['January', 'February', 'March', 'April', 'May', 'June', 
+                'July', 'August', 'September', 'October', 'November', 'December'],  // Months
+            y: ticketsPerMonth,  // Number of tickets per month
+            type: 'bar',  // Bar chart type
+            marker: {
+                color: 'rgb(54, 162, 235)',  // Bar color
+                line: {
+                    color: 'rgb(33, 128, 206)',  // Bar border color
+                    width: 2
+                }
+            }
+        };
+
+        const layout = {
+            title: {
+                text: 'Tickets per Month',
+                font: {
+                    size: 28,
+                    family: 'Roboto, sans-serif',
+                    color: '#333'
+                },
+                x: 0.5,
+                y: 0.95,
+                xanchor: 'center',
+                yanchor: 'top'
+            },
+            xaxis: {
+                title: 'Month',
+                tickangle: -45,  // Rotate month labels for better readability
+                tickfont: {
+                    size: 14,
+                    family: 'Roboto, sans-serif',
+                    color: '#555'
+                },
+                showgrid: false,  // Hide grid under X axis
+                zeroline: false  // Hide the zero line
+            },
+            yaxis: {
+                title: 'Number of Tickets',
+                tickfont: {
+                    size: 14,
+                    family: 'Roboto, sans-serif',
+                    color: '#555'
+                },
+                rangemode: 'tozero',  // Start Y axis at zero
+                showgrid: true,
+                zeroline: true,
+                gridcolor: '#e6e6e6'  // Light grid lines
+            },
+            paper_bgcolor: '#f7f7f7',  // Background color for the page
+            plot_bgcolor: '#ffffff',  // Background color for the plot
+            showlegend: false,  // Hide legend
+            font: {
+                family: 'Roboto, sans-serif',
+                color: '#333'
+            },
+            margin: {
+                t: 80,  // Top margin
+                b: 80,  // Bottom margin
+                l: 50,  // Left margin
+                r: 50   // Right margin
+            },
+            hovermode: 'closest',  // Show hover details on the closest point
+        };
+
+        // Create the plot with Plotly
+        Plotly.newPlot('ticketChart', [trace], layout);
+    </script>
+
+</body>
+</html>
