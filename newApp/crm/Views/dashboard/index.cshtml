@@ -1,6 +1,12 @@
 @{
     ViewData["Title"] = "Dashboard";
 }
+
+@{
+    var customers = ViewData["customers"] as List<Customer>;
+    var budget = ViewData["budget"] as Dashboard;
+}
+
 @section Styles {
         <!-- Inclure la bibliothèque Plotly -->
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
@@ -18,18 +24,18 @@
                                 <label class="form-label">Customer:</label>
                                 <select class="form-control" aria-label="">
                                     <option selected>Chose...</option>
-                                    <option value="1">One</option>
-                                    <option value="2">Two</option>
-                                    <option value="3">Three</option>
+                                    @foreach(var c in customers ?? new List<Customer>()){
+                                        <option value="@c.CustomerId">@c.Name</option>
+                                    }
                                 </select>
                             </div>
                             <div class="col-2">
                                 <label class="form-label">From</label>
-                                <input type="date" class="form-control" aria-label="First name">
+                                <input type="date" class="form-control" name="startDate">
                             </div>
                             <div class="col-2">
                                 <label class="form-label">To</label>
-                                <input type="date" class="form-control" aria-label="Last name">
+                                <input type="date" class="form-control" name="endDate">
                             </div>
                             <div class="col align-self-end">
                                 <input type="submit" value="Filter" class="btn-primary form-control">
@@ -65,19 +71,19 @@
                                     <th>Total Budget</th>
                                 </tr>
                                 <tr class="text-right">
-                                    <td><a href="@("/manager/customer/1/budgets")" class="counter text-primary">3.000.000Ar</a></td>
+                                    <td><a href="@("/manager/customer/1/budgets")" class="counter text-primary">@string.Format("{0:C2}", budget?.TotalBudget?? 0)</a></td>
                                 </tr>
                                 <tr>
                                     <th>Total Expense</th>
                                 </tr>
                                 <tr class="text-right">
-                                    <td><a href="@("/manager/customer/1/expenses")" class="counter text-purple">3.000.000Ar</a></td>
+                                    <td><a href="@("/manager/customer/1/expenses")" class="counter text-purple">@string.Format("{0:C2}", @budget?.TotalExpense?? 0)</a></td>
                                 </tr>
                                 <tr>
                                     <th>Total Rest</th>
                                 </tr>
                                 <tr class="text-right">
-                                    <td><a href="#" class="counter text-info">3.000.000Ar</a></td>
+                                    <td><a href="#" class="counter text-info">@string.Format("{0:C2}", budget?.TotalRest?? 0)</a></td>
                                 </tr>
                             </tbody>
                         </table>
@@ -95,8 +101,8 @@
     <script>
         // Données fictives
         const clientName = "Client ABC";
-        const totalBudget = 5000;
-        const totalDepense = 1500;
+        const totalBudget = @budget?.TotalBudget??0;
+        const totalDepense = @budget?.TotalExpense??0;
         const reste = totalBudget - totalDepense;
 
         // Diagramme circulaire avec Plotly

@@ -8,16 +8,22 @@ namespace crm.Controllers;
 public class ManagerController : Controller
 {
     private readonly ILogger<ManagerController> _logger;
+    private readonly DashboardService _dashboardService;
+    private readonly CustomerService _customerService;
 
-    public ManagerController(ILogger<ManagerController> logger)
+    public ManagerController(ILogger<ManagerController> logger, DashboardService dashboardService, CustomerService customerService)
     {
         _logger = logger;
+        _dashboardService = dashboardService;
+        _customerService = customerService;
     }
 
     [HttpGet("")]
-    public IActionResult Index()
+    public async Task<IActionResult> Index()
     {
-        return View("~/Views/dashboard/index.cshtml");
+        ViewData["budget"] = await _dashboardService.GetBudgetStatisticAsync();
+        ViewData["customers"] = await _customerService.GetCustomersAsync();
+        return View("~/Views/dashboard/index.cshtml", ViewData);
     }
 
     [HttpGet("customer/{id}/budgets")]

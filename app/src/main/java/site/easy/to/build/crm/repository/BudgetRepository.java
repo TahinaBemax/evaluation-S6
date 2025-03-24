@@ -22,12 +22,12 @@ public interface BudgetRepository extends JpaRepository<Budget, Integer> {
 
 
     @Query(value = "SELECT\n" +
-            "    SUM(vbe.budget_amount) as totalBudget,\n" +
-            "    SUM(vbe.expense_amount) as totalExpense\n" +
+            "    COALESCE(SUM(vbe.budget_amount), 0) as totalBudget,\n" +
+            "    COALESCE(SUM(vbe.expense_amount), 0) as totalExpense\n" +
             "FROM view_budget_expense vbe;" , nativeQuery = true)
     Map<String, Object> getTotalBudgetAndExpenses();
 
-    @Query(value = "SELECT sum(vbe.budget_amount) as totalBudget, sum(vbe.expense_amount) as totalExpense, vbe.customer_id, c.name\n" +
+    @Query(value = "SELECT COALESCE(sum(vbe.budget_amount), 0) as totalBudget, COALESCE(sum(vbe.expense_amount),0) as totalExpense, vbe.customer_id, c.name\n" +
             "FROM view_budget_expense vbe \n" +
             "JOIN (SELECT c.customer_id, c.name FROM customer c \n" +
             "WHERE c.customer_id = :id) as c ON c.customer_id = vbe.customer_id\n" +

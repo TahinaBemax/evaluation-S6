@@ -1,31 +1,29 @@
 package site.easy.to.build.crm.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.condition.ConditionalOnBean;
-import org.springframework.boot.autoconfigure.condition.ConditionalOnExpression;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.annotation.Order;
 import org.springframework.core.env.Environment;
+import org.springframework.security.authentication.AuthenticationProvider;
+import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
+import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.access.AccessDeniedHandler;
+import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 import org.springframework.security.web.csrf.HttpSessionCsrfTokenRepository;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 import site.easy.to.build.crm.config.oauth2.CustomOAuth2UserService;
 import site.easy.to.build.crm.config.oauth2.OAuthLoginSuccessHandler;
-import site.easy.to.build.crm.service.user.OAuthUserService;
-import site.easy.to.build.crm.util.StringUtils;
 
-import java.util.Optional;
 
 
 @Configuration
 public class SecurityConfig {
-
-
     private final OAuthLoginSuccessHandler oAuth2LoginSuccessHandler;
 
     private final CustomOAuth2UserService oauthUserService;
@@ -36,14 +34,35 @@ public class SecurityConfig {
 
     private final Environment environment;
 
-    @Autowired
-    public SecurityConfig(OAuthLoginSuccessHandler oAuth2LoginSuccessHandler, CustomOAuth2UserService oauthUserService, CrmUserDetails crmUserDetails,
-                          CustomerUserDetails customerUserDetails, Environment environment) {
+    public SecurityConfig( OAuthLoginSuccessHandler oAuth2LoginSuccessHandler, CustomOAuth2UserService oauthUserService, CrmUserDetails crmUserDetails, CustomerUserDetails customerUserDetails, Environment environment) {
         this.oAuth2LoginSuccessHandler = oAuth2LoginSuccessHandler;
         this.oauthUserService = oauthUserService;
         this.crmUserDetails = crmUserDetails;
         this.customerUserDetails = customerUserDetails;
         this.environment = environment;
+    }
+
+    @Autowired
+
+
+    /**
+     * Security for REST API (Used by C# Client)
+     */
+    @Bean
+    @Order(1)
+    public SecurityFilterChain apiSecurityFilterChain(HttpSecurity http) throws Exception {
+        http
+                .csrf(AbstractHttpConfigurer::disable)
+                .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
+                .authorizeHttpRequests(auth -> auth
+                        .requestMatchers("/api/auth/**").permitAll() // Public login endpoint
+                        .requestMatchers("/api/public/**").permitAll() // Public API endpoints
+                        .requestMatchers("/api/crm/**").permitAll() // Public API endpoints
+                        .anyRequest().authenticated()
+                )
+                .authenticationProvider(authenticationProvider());
+
+        return http.build();
     }
 
     @Bean
@@ -145,5 +164,16 @@ public class SecurityConfig {
     @Bean
     public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
+    }
+
+    /**
+     * Authentication Provider
+     */
+    @Bean
+    public AuthenticationProvider authenticationProvider() {
+        DaoAuthenticationProvider authProvider = new DaoAuthenticationProvider();
+        authProvider.setUserDetailsService(crmUserDetails);
+        authProvider.setPasswordEncoder(passwordEncoder());
+        return authProvider;
     }
 }

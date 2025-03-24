@@ -2,10 +2,16 @@ package site.easy.to.build.crm.service.ticket;
 
 import site.easy.to.build.crm.entity.Customer;
 import site.easy.to.build.crm.entity.Ticket;
+import site.easy.to.build.crm.service.ticket.dto.StatistiqueTicketDto;
 
+import java.time.LocalDateTime;
 import java.util.List;
+import java.util.Map;
 
 public interface TicketService {
+    public List<StatistiqueTicketDto> statistiqueByCustomerBetweenDate(Integer id, LocalDateTime startDate, LocalDateTime endDate);
+    public List<Map<String, Object>> countTicketByYearOrNot(Integer year);
+
     public Ticket findByTicketId(int id);
 
     public Ticket save(Ticket ticket);

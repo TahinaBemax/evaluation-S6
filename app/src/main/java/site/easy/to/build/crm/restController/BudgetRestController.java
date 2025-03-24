@@ -13,7 +13,7 @@ import site.easy.to.build.crm.service.budget.dto.StatistiqueBudgetDto;
 import java.time.LocalDateTime;
 
 @RestController
-@RequestMapping("/api/manager/budgets")
+@RequestMapping("/api/crm/budgets")
 public class BudgetRestController {
     private final BudgetService budgetService;
 
