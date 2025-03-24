@@ -551,3 +551,11 @@ CREATE TABLE IF NOT EXISTS crm.expense
 /* ========================================================== */
 CREATE OR REPLACE VIEW view_budget AS
     SELECT * FROM budget b WHERE b.archived_at is null;
+
+CREATE OR REPLACE VIEW view_budget_expense As
+SELECT
+  budget.budget_id, budget.amount as budget_amount, budget.customer_id, budget.start_date, budget.end_date,
+  e.amount as expense_amount, e.expense_date
+FROM budget
+       LEFT JOIN
+     expense e on budget.budget_id = e.budget_id;
