@@ -6,9 +6,11 @@ import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Pattern;
 import lombok.Data;
+import lombok.ToString;
 import org.hibernate.mapping.ToOne;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -42,15 +44,16 @@ public class Ticket {
     @JoinColumn(name = "manager_id")
     private User manager;
 
-    @OneToMany(mappedBy = "ticket", cascade = CascadeType.PERSIST)
+    @OneToMany(mappedBy = "ticket", cascade = CascadeType.ALL)
     @JsonIgnoreProperties({"ticket", "budget"})
-    private List<Expense> expense;
+    @ToString.Exclude
+    private List<Expense> expense = new ArrayList<>();
 
     @ManyToOne
     @JoinColumn(name = "employee_id")
     private User employee;
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "customer_id")
     private Customer customer;
 

@@ -3,13 +3,17 @@ package site.easy.to.build.crm.entity;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Pattern;
+import lombok.Data;
+import lombok.ToString;
 import net.minidev.json.annotate.JsonIgnore;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
 @Table(name = "trigger_lead")
+@Data
 public class Lead {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -46,9 +50,10 @@ public class Lead {
     @OneToMany(mappedBy = "lead", cascade = CascadeType.ALL)
     private List<GoogleDriveFile> googleDriveFiles;
 
-    @OneToMany(mappedBy = "lead", cascade = CascadeType.PERSIST)
+    @OneToMany(mappedBy = "lead", cascade = CascadeType.ALL)
     @JsonIgnore
-    private List<Expense> expenses;
+    @ToString.Exclude
+    private List<Expense> expenses =new ArrayList<>();
 
     @ManyToOne
     @JoinColumn(name = "user_id")

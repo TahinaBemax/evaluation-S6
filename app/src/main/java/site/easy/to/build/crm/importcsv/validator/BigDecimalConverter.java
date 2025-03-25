@@ -11,6 +11,7 @@ public class BigDecimalConverter extends AbstractBeanField<BigDecimal, String> {
         }
 
         // Utiliser un regex pour valider la chaîne (chiffres uniquement avec option pour décimales)
+        value = value.replace(",", ".");
         if (!value.matches("^\\d+(\\.\\d+)?$")) {
             throw new IllegalArgumentException("Invalid number format: " + value);
         }

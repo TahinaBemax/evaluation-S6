@@ -43,8 +43,6 @@ public class TicketLeadCsv {
 
     private String priority = "medium";
 
-    @Email
-    private String userMail = "tahina.nambinintsoa@passerellesnumeriques.org";
 
     @Email
     private String employeeMail = "tahina.nambinintsoa@passerellesnumeriques.org";

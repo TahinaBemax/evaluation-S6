@@ -22,6 +22,7 @@ import site.easy.to.build.crm.service.ticket.TicketService;
 import java.math.BigDecimal;
 import java.text.NumberFormat;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.Formatter;
 import java.util.List;
 import java.util.Locale;
@@ -226,11 +227,14 @@ public class ExpenseController {
             }
 
             final Integer newExpenseId = expense.getId();
-            List<Expense> expenses = budget.getExpenses()
-                    .stream().filter(exp -> !exp.getId().equals(newExpenseId)).toList();
+/*            List<Expense> expenses = budget.getExpenses()
+                    .stream().filter(exp -> !exp.getId().equals(newExpenseId)).toList();*/
+            List<Expense> expenses = new ArrayList<>(budget.getExpenses());  // Rend la liste modifiable
+            expenses.removeIf(exp -> exp.getId().equals(newExpenseId));
 
             budget.setExpenses(expenses);
             BigDecimal totalExpense = budget.getConsomation();
+
             if (confirmation == null && totalExpense.compareTo(budget.getAmount()) > 0){
                 NumberFormat format = NumberFormat.getCurrencyInstance(Locale.ENGLISH);
                 String message = String.format("Budget insufficent! Budget amount: %s but expense amount: %s", format.format(budget.getAmount()), format.format(totalExpense));

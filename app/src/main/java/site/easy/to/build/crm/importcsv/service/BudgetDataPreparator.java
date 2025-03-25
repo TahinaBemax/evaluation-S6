@@ -1,3 +1,4 @@
+/*
 package site.easy.to.build.crm.importcsv.service;
 
 import jakarta.transaction.Transactional;
@@ -41,8 +42,15 @@ public class BudgetDataPreparator {
             final String tempEmail = b.getCustomerEmail();
             Customer c = customerService.findByEmail(tempEmail);
 
-            if (c == null)
-                throw new ImportCsvException(List.of(String.format("Customer %s not found", tempEmail)), -1, "");
+            if (c == null) {
+                c = new Customer();
+                c.setName("temp");
+                c.setEmail(tempEmail);
+                c.setCountry("temp");
+                //Utilisateur authentifier (MANAGER OR EMPLOYE)
+                User user = userService.findById(customerCsv.getUser());
+                c = customerService.save(c);
+            }
 
             temp.setCustomer(c);
             temp.setAmount(b.getBudget());
@@ -67,3 +75,4 @@ public class BudgetDataPreparator {
     }
 
 }
+*/

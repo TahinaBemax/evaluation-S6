@@ -9,6 +9,7 @@ import lombok.ToString;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
@@ -29,7 +30,7 @@ public class Budget {
     @DecimalMax(value = "9999999.99", inclusive = true, message = "Amount must be less than or equal to 9999999.99")
     private BigDecimal amount;
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.PERSIST)
     @JoinColumn(name = "customer_id", nullable=false)
     @JsonIgnoreProperties("budgets")
     @NotNull
@@ -53,12 +54,12 @@ public class Budget {
 
     private String description;
 
-    @OneToMany(mappedBy = "budget", fetch = FetchType.LAZY, cascade = CascadeType.PERSIST)
+    @OneToMany(mappedBy = "budget", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JsonManagedReference
     @ToString.Exclude()
     private List<Expense> expenses = new ArrayList<>();
 
-    @ManyToOne
+    @ManyToOne()
     @JoinColumn(name = "category_id", nullable = false)
     @NotNull
     CategoryBudget categoryBudget;
@@ -83,7 +84,8 @@ public class Budget {
     }
 
     public boolean isAlertRateReached(){
-        BigDecimal pourcentage = this.getConsomation().multiply(BigDecimal.valueOf(100)).divide(this.getAmount());
+        BigDecimal consomation = this.getConsomation();
+        BigDecimal pourcentage = consomation.multiply(BigDecimal.valueOf(100)).divide(this.getAmount(), RoundingMode.HALF_UP);
         return pourcentage.compareTo(BigDecimal.valueOf(this.alertRate)) >= 0;
     }
 }

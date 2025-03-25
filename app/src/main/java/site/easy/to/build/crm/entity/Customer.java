@@ -11,6 +11,7 @@ import lombok.ToString;
 import site.easy.to.build.crm.customValidations.customer.UniqueEmail;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -65,20 +66,20 @@ public class Customer {
     @Column(name = "youtube")
     private String youtube;
 
-    @ManyToOne
+    @ManyToOne()
     @JoinColumn(name = "user_id", nullable=false)
     @JsonIgnoreProperties("customer")
     private User user;
 
-    @OneToOne
+    @OneToOne()
     @JoinColumn(name = "profile_id")
     @JsonIgnore
     private CustomerLoginInfo customerLoginInfo;
 
-    @OneToMany(mappedBy = "customer",fetch = FetchType.LAZY, cascade = CascadeType.PERSIST)
+    @OneToMany(mappedBy = "customer", cascade = CascadeType.ALL)
     @JsonIgnore
     @ToString.Exclude()
-    private List<Budget> budgets;
+    private List<Budget> budgets = new ArrayList<>();
 
     @Column(name = "created_at")
     private LocalDateTime createdAt;
