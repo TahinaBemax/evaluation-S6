@@ -25,6 +25,7 @@ public interface TicketService {
     public List<Ticket> findAll();
 
     public List<Ticket> findCustomerTickets(int id);
+    public List<Ticket> findCustoerTicketsBetweenDate(Integer id, LocalDateTime startDate, LocalDateTime endDate);
 
     List<Ticket> getRecentTickets(int managerId, int limit);
 

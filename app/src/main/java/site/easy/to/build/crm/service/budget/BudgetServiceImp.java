@@ -84,6 +84,16 @@ public class BudgetServiceImp implements BudgetService{
         return null;
     }
 
+    @Override
+    public List<Budget> saveAll(List<Budget> budgets) {
+        return budgetRepository.saveAll(budgets);
+    }
+
+    @Override
+    public List<Budget> findCustomerBudgets(Integer customerId) {
+        return budgetRepository.findCustomerBudgets(customerId);
+    }
+
     private void normalizeDate(LocalDateTime start, LocalDateTime end){
         if(start != null && end == null) {
             end = LocalDateTime.now();

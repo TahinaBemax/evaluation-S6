@@ -27,33 +27,6 @@ public class DatabaseResetService {
     public Set<String> getDbTablesName() throws SQLException {
         Set<EntityType<?>> entities = manager.getMetamodel().getEntities();
         return entities.stream().map(e -> e.getName()).collect(Collectors.toSet());
-/*        Connection connection = null;
-        Set<String> tables = new HashSet<>();
-        try {
-            connection = this.dataSource.getConnection();
-            if (connection == null)
-                throw new SQLException("Failed to get connection");
-
-            String query = "SELECT table_name FROM information_schema.tables WHERE table_schema = 'public'";
-
-            try(Statement stmt = connection.createStatement();
-                    ResultSet rs = stmt.executeQuery(query))
-            {
-                while (rs.next()){
-                    tables.add(rs.getString("table_name"));
-                }
-            }
-            return tables;
-        } catch (SQLException e) {
-            if (connection != null) {
-                connection.rollback();  // Rollback in case of failure
-            }
-            throw new SQLException("Error resetting data", e);
-        } finally {
-            if (connection != null) {
-                connection.close();
-            }
-        }*/
     }
     public boolean resetData() throws SQLException {
         Connection connection = null;
@@ -107,7 +80,9 @@ public class DatabaseResetService {
                 "DELETE FROM trigger_lead",
                 "DELETE FROM trigger_ticket",
                 "DELETE FROM customer",
-                "DELETE FROM customer_login_info"
+                "DELETE FROM customer_login_info",
+                "DELETE FROM budget",
+                "DELETE FROM expense",
         };
 
         // Execute DELETE queries
@@ -131,7 +106,9 @@ public class DatabaseResetService {
                 "ALTER TABLE trigger_lead AUTO_INCREMENT = 1;",
                 "ALTER TABLE trigger_ticket AUTO_INCREMENT = 1;",
                 "ALTER TABLE customer AUTO_INCREMENT = 1;",
-                "ALTER TABLE customer_login_info AUTO_INCREMENT = 1;"
+                "ALTER TABLE customer_login_info AUTO_INCREMENT = 1;",
+                "ALTER TABLE budget AUTO_INCREMENT = 1;",
+                "ALTER TABLE expense AUTO_INCREMENT = 1;"
         };
 
         for (String query : resetAutoIncrementQueries) {

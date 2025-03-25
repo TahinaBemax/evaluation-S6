@@ -30,6 +30,28 @@ public class TicketServiceImpl implements TicketService{
     }
 
     @Override
+    public List<Ticket> findCustoerTicketsBetweenDate(Integer id, LocalDateTime startDate, LocalDateTime endDate) {
+        List<Ticket> resultats = new ArrayList<>();
+
+        if (id != null){
+            if (startDate !=null && endDate != null){
+                resultats = ticketRepository.findByCustomerCustomerIdAndCreatedAtBetween(id, startDate, endDate);
+            } else if (startDate == null && endDate == null){
+                resultats = ticketRepository.findByCustomerCustomerId(id);
+            } else {
+                this.normalizeDate(startDate, endDate);
+                resultats = ticketRepository.findByCustomerCustomerIdAndCreatedAtBetween(id, startDate, endDate);
+            }
+        } else if (startDate !=null || endDate != null){
+            this.normalizeDate(startDate, endDate);
+            resultats = ticketRepository.findByCreatedAtBetween(startDate, endDate);
+        } else {
+            resultats = ticketRepository.findAll();
+        }
+
+        return resultats;
+    }
+    @Override
     public List<StatistiqueTicketDto> statistiqueByCustomerBetweenDate(Integer id, LocalDateTime startDate, LocalDateTime endDate) {
         List<StatistiqueTicketDto> stats = new ArrayList<>();
         List<Map<String, Object>> resultats;
@@ -105,6 +127,8 @@ public class TicketServiceImpl implements TicketService{
     public List<Ticket> findCustomerTickets(int id) {
         return ticketRepository.findByCustomerCustomerId(id);
     }
+
+
 
     @Override
     public List<Ticket> getRecentTickets(int managerId, int limit) {

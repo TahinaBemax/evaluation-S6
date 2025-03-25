@@ -14,4 +14,8 @@ public interface BudgetService {
     public Budget save(Budget budget);
     public void delete(Budget budget);
     public StatistiqueBudgetDto getTotalBudgetAndExpensesByCustomerOrNull(Integer id, LocalDateTime startDate, LocalDateTime endDate);
+
+    List<Budget> saveAll(List<Budget> budgets);
+
+    List<Budget> findCustomerBudgets(Integer customerId);
 }

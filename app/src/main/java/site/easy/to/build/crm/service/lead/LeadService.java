@@ -6,6 +6,7 @@ import site.easy.to.build.crm.entity.Lead;
 import java.util.List;
 
 public interface LeadService {
+    public List<Lead> saveAll(List<Lead> leads);
     public Lead findByLeadId(int id);
 
     public List<Lead> findAll();

@@ -42,12 +42,14 @@ public class Expense {
 
     private String description;
 
-    @ManyToOne
+    @ManyToOne()
     @JoinColumn(name = "ticket_id")
+    @JsonIgnoreProperties("expense")
     Ticket ticket;
 
     @ManyToOne
     @JoinColumn(name = "lead_id")
+    @JsonIgnoreProperties("expenses")
     Lead lead;
 
 }

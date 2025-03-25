@@ -90,9 +90,11 @@ public class ImportCsvController {
         }
 
         try {
+            this.importCsvService.uploadCustomersCsvDataFirst(importCsvDTO);
             this.importCsvService.uploadCsvData(importCsvDTO);
             redirectAttributes.addFlashAttribute("importSuccessMessage","Data uploaded successfuly.");
         } catch (ImportCsvException e) {
+
             redirectAttributes.addFlashAttribute("importErrorMessage","Can't upload csv file." + e.getMessage());
         } catch (TableNameNotFoundException e) {
             redirectAttributes.addFlashAttribute("importErrorMessage", e.getMessage());

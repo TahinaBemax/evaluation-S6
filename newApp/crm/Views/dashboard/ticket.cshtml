@@ -1,6 +1,21 @@
 @{
     ViewData["Title"] = "Dashboard";
 }
+
+@{
+
+    int[] totalParMois = ViewData["totalPerMonth"] as int[] ?? new int[12];
+    List<Dictionary<string, object>>? tickets = ViewData["tickets"] as List<Dictionary<string, object>>;
+    var customers = ViewData["customers"] as List<Customer>;
+    int selectedCustomer = Convert.ToInt32(ViewData["customerId"]);
+    int year = Convert.ToInt32(ViewData["year"]);
+    DateTime? startDate = ViewData["startDate"] as DateTime?;
+    DateTime? endDate = ViewData["endDate"] as DateTime?;
+
+    int currentYear = DateTime.Today.Year;
+}
+
+
 @section Styles {
     <!-- Inclure la bibliothèque Plotly -->
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
@@ -16,16 +31,11 @@
                 <div class="row">
                     <div class="col-md-12">
                         <h4 class="mt-4">Filter by Year</h4>
-                        <form method="get" action="">
+                        <form method="get" action="/manager/tickets">
                             <div class="row">
                                 <div class="col-4">
                                     <label class="form-label">Year:</label>
-                                    <select class="form-control" aria-label="">
-                                        <option selected>Chose a Year</option>
-                                        <option value="1">2025</option>
-                                        <option value="2">2024</option>
-                                        <option value="3">2023</option>
-                                    </select>
+                                    <input type="number" step=any value="@year" name="year" class="form-control">
                                 </div>
                                 <div class="col-1 align-self-end">
                                     <input type="submit" value="Filter" class="btn-primary form-control">
@@ -38,7 +48,7 @@
                         <h4>Ticket statistic</h1>
 
                             <!-- Diagramme circulaire -->
-                        <div id="ticketChart"></div>
+                            <div id="ticketChart"></div>
                     </div>
                 </div>
             </div>
@@ -55,24 +65,29 @@
                 <div class="row">
                     <div class="col-12">
                         <h4 class="mt-4">Filter by Customer</h4>
-                        <form method="get" action="">
+                        <form method="get" action="/manager/tickets">
                             <div class="row">
                                 <div class="col-4">
                                     <label class="form-label">Customer:</label>
-                                    <select class="form-control" aria-label="">
+                                    <select name="id" class="form-control" aria-label="">
                                         <option selected>Chose...</option>
-                                        <option value="1">One</option>
-                                        <option value="2">Two</option>
-                                        <option value="3">Three</option>
+                                        @foreach (var c in customers ?? new List<Customer>())
+                                        {
+                                            <option value="@(c.CustomerId)"
+                                                selected="@(c.CustomerId == selectedCustomer ? "selected" : "")">@c.Name
+                                            </option>
+                                        }
                                     </select>
                                 </div>
                                 <div class="col-2">
                                     <label class="form-label">From</label>
-                                    <input type="date" class="form-control" aria-label="First name">
+                                    <input type="date" value="@startDate?.Date.ToString("yyyy-MM-dd")" name="startDate"
+                                        class="form-control" aria-label="First name">
                                 </div>
                                 <div class="col-2">
                                     <label class="form-label">To</label>
-                                    <input type="date" class="form-control" aria-label="Last name">
+                                    <input type="date" value="@endDate?.Date.ToString("yyyy-MM-dd")" name="endDate"
+                                        class="form-control" aria-label="Last name">
                                 </div>
                                 <div class="col align-self-end">
                                     <input type="submit" value="Filter" class="btn-primary form-control">
@@ -81,29 +96,45 @@
                         </form>
                     </div>
 
-                <div class="col-12 my-5">
-                    <h4 class="card-title">Ticket</h4>
-                    <div class="table-responsive ">
-                        <table id="config-table" class="table display table-bordered table-striped no-wrap">
-                            <thead>
-                                <tr>
-                                    <th>#</th>
-                                    <th>Customer</th>
-                                    <th>Total Ticket</th>
-                                    <th>Total Expense</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>1</td>
-                                    <td>Tahina Bemax</td>
-                                    <td class="text-right"><a href="/manager/customer/1/tickets">30</a></td>
-                                    <td class="text-right"><a href="/manager/customer/1/tickets">30</a></td>
-                                </tr>
-                            </tbody>
-                        </table>
+                    <div class="col-12 my-5">
+                        <h4 class="card-title">Ticket</h4>
+                        <div class="table-responsive ">
+                            <table id="config-table" class="table display table-bordered table-striped no-wrap">
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Customer</th>
+                                        <th>Total Ticket</th>
+                                        <th>Total Expense</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (Dictionary<string, object> t in tickets ?? new List<Dictionary<string,
+                                                                        object>>())
+                                    {
+                                        <tr>
+                                            <td>@t["customerId"]</td>
+                                            <td>@t["customerName"]</td>
+                                            <td class="text-right">
+                                                <form method="get" action="@($"/manager/customers/{@t["customerId"]}/tickets")">
+                                                    <input type="hidden" value="@startDate?.Date.ToString("yyyy-MM-dd")" name="startDate">
+                                                    <input type="hidden" value="@endDate?.Date.ToString("yyyy-MM-dd")" name="endDate">
+                                                    <input type="submit" value="@string.Format("{0:C2}",t["totalTicket"]??0)"# class="btn-outline-primary form-control">
+                                                </form>
+                                            </td>
+                                            <td class="text-right">
+                                                <form method="get" action="@($"/manager/customers/{@t["customerId"]}/expenses")">
+                                                    <input type="hidden" value="@startDate?.Date.ToString("yyyy-MM-dd")" name="startDate">
+                                                    <input type="hidden" value="@endDate?.Date.ToString("yyyy-MM-dd")" name="endDate">
+                                                    <input type="submit" value="@string.Format("{0:C2}",t["totalExpense"]??0)"# class="btn-outline-primary form-control">
+                                                </form>
+                                            </td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
-            </div>
                 </div>
             </div>
         </div>
@@ -116,8 +147,9 @@
 
 @section Scripts {
     <script>
-        // Ticket data for each month
-        const ticketsPerMonth = [120, 150, 170, 200, 220, 190, 210, 240, 180, 160, 210, 230];
+        // Convertir le tableau C# en tableau JavaScript
+        const ticketsPerMonth = [@Html.Raw(string.Join(",", totalParMois ?? new int[12]))];
+
 
         // Plotly bar chart trace
         const trace = {

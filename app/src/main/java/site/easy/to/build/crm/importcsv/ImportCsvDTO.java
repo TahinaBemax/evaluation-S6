@@ -8,11 +8,13 @@ import org.springframework.web.multipart.MultipartFile;
 @Data
 public class ImportCsvDTO {
     @NotNull
-    MultipartFile file;
+    MultipartFile customerFile;
 
     @NotNull
-    @NotEmpty
-    String tableName;
+    MultipartFile ticketFile;
+
+    @NotNull
+    MultipartFile budgetFile;
 
     @NotNull
     @NotEmpty

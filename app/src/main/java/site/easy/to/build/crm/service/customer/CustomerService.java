@@ -24,4 +24,5 @@ public interface CustomerService {
     long countByUserId(int userId);
 
     List<Customer> saveAll(List<Customer> customers);
+    List<Customer> saveAllAndFlush(List<Customer> customers);
 }

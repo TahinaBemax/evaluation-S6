@@ -47,7 +47,7 @@ public class CustomerDataPreparator {
         //parse le fichier csv et extraire les données
         List<CustomerCsv> customerCsvList = importCsvService.parseCSVFile(file, CustomerCsv.class, separator);
         //validation des données
-        customerCsvList = importCsvService.validateDataCsv(customerCsvList);
+        customerCsvList = importCsvService.validateDataCsv(customerCsvList, file);
 
         Set<Customer> customers = new HashSet<>();
 
@@ -83,10 +83,10 @@ public class CustomerDataPreparator {
         return customerLoginInfoService.save(customerLoginInfo);
     }
 
-    @Transactional(rollbackOn = {IOException.class, ImportCsvException.class})
+
     public List<Customer> uploadOptionsData(ImportCsvService importCsvService, MultipartFile file, String separator) throws IOException, ImportCsvException {
-        List<Customer> Customers = this.prepareCustomerInstance(importCsvService, file, separator);
-        return this.customerService.saveAll(Customers);
+        return this.prepareCustomerInstance(importCsvService, file, separator);
+        //return this.customerService.saveAllAndFlush(Customers);
     }
 
 }

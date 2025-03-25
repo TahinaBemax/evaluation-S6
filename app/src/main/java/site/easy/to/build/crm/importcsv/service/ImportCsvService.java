@@ -5,24 +5,22 @@ import com.opencsv.bean.CsvToBeanBuilder;
 import jakarta.transaction.Transactional;
 import jakarta.validation.ConstraintViolation;
 import jakarta.validation.Validator;
-import jakarta.validation.constraints.NotNull;
+
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.Authentication;
-import org.springframework.security.core.context.SecurityContextHolder;
+
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
+
 import site.easy.to.build.crm.entity.Customer;
 import site.easy.to.build.crm.importcsv.ImportCsvDTO;
 import site.easy.to.build.crm.importcsv.ImportCsvServiceDependence;
 import site.easy.to.build.crm.importcsv.exception.ImportCsvException;
 import site.easy.to.build.crm.importcsv.exception.TableNameNotFoundException;
-import site.easy.to.build.crm.importcsv.model.CustomerCsv;
+
 
 import java.io.*;
-import java.math.BigDecimal;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
@@ -30,13 +28,15 @@ import java.util.Set;
 public class ImportCsvService {
     private final Validator validator;
     private final CustomerDataPreparator customer;
+    private final BudgetDataPreparator budget;
     private final TicketDataPreparator ticket;
 
     @Autowired
-    public ImportCsvService(ImportCsvServiceDependence dependence) {
+    public ImportCsvService(ImportCsvServiceDependence dependence, BudgetDataPreparator budget) {
         this.validator = dependence.getValidator();
         this.customer = dependence.getCustomerDataPreparator();
         this.ticket = dependence.getTicketDataPreparator();
+        this.budget = budget;
     }
 
     public <T> List<T> parseCSVFile(MultipartFile file, Class<T> type, String separator) throws IOException {
@@ -54,7 +54,7 @@ public class ImportCsvService {
         }
     }
 
-    public <T> List<T> validateDataCsv(List<T> list) throws ImportCsvException {
+    public <T> List<T> validateDataCsv(List<T> list, MultipartFile file) throws ImportCsvException {
         int ligne = 1;
         List<T> valides = new ArrayList<>();
 
@@ -65,8 +65,8 @@ public class ImportCsvService {
                 for (ConstraintViolation<T> violation : violations) {
                     messages.add(violation.getMessage());
                 }
-
-                throw new ImportCsvException(messages, ligne);
+                 String fileName = file.getOriginalFilename();
+                throw new ImportCsvException(messages, ligne, fileName);
             }
 
             valides.add(t);
@@ -79,11 +79,14 @@ public class ImportCsvService {
 
 
     @Transactional(rollbackOn = {IOException.class, ImportCsvException.class})
-    public List<?> uploadCsvData(ImportCsvDTO info) throws ImportCsvException, IOException, TableNameNotFoundException {
-        return switch (info.getTableName().toLowerCase()) {
-            case "customer" -> this.customer.uploadOptionsData(this, info.getFile(), info.getSeparator());
-            case "ticket" -> this.ticket.uploadTicketData(this, info.getFile(), info.getSeparator());
-            default -> throw new TableNameNotFoundException(info.getTableName());
-        };
+    public void uploadCsvData(ImportCsvDTO info) throws ImportCsvException, IOException, TableNameNotFoundException {
+        List<Customer> customers = this.customer.uploadOptionsData(this, info.getCustomerFile(), info.getSeparator());
+        this.budget.uploadBudgetData(this, info.getBudgetFile(), info.getSeparator());
+        this.ticket.uploadTicketData(this, info.getTicketFile(), info.getSeparator());
+        this.ticket.uploadLeadData(this, info.getTicketFile(), info.getSeparator());
+    }
+
+    public void uploadCustomersCsvDataFirst(ImportCsvDTO info) throws ImportCsvException, IOException, TableNameNotFoundException {
+        this.customer.uploadOptionsData(this, info.getCustomerFile(), info.getSeparator());
     }
 }

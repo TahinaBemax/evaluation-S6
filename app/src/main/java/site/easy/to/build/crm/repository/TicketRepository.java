@@ -20,6 +20,8 @@ public interface TicketRepository extends JpaRepository<Ticket, Integer> {
     public List<Ticket> findByEmployeeId(int id);
 
     List<Ticket> findByCustomerCustomerId(Integer customerId);
+    List<Ticket> findByCustomerCustomerIdAndCreatedAtBetween(Integer customerId, LocalDateTime startDate, LocalDateTime endDate);
+    List<Ticket> findByCreatedAtBetween(LocalDateTime startDate, LocalDateTime endDate);
 
     List<Ticket> findByManagerIdOrderByCreatedAtDesc(int managerId, Pageable pageable);
 

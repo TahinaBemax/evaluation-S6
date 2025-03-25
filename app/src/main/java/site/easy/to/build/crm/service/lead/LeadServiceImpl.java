@@ -19,6 +19,11 @@ public class LeadServiceImpl implements LeadService {
     }
 
     @Override
+    public List<Lead> saveAll(List<Lead> leads) {
+        return leadRepository.saveAll(leads);
+    }
+
+    @Override
     public Lead findByLeadId(int id) {
         return leadRepository.findByLeadId(id);
     }

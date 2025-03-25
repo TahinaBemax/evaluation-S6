@@ -34,6 +34,7 @@ public class SecurityConfig {
 
     private final Environment environment;
 
+    @Autowired
     public SecurityConfig( OAuthLoginSuccessHandler oAuth2LoginSuccessHandler, CustomOAuth2UserService oauthUserService, CrmUserDetails crmUserDetails, CustomerUserDetails customerUserDetails, Environment environment) {
         this.oAuth2LoginSuccessHandler = oAuth2LoginSuccessHandler;
         this.oauthUserService = oauthUserService;
@@ -42,12 +43,12 @@ public class SecurityConfig {
         this.environment = environment;
     }
 
-    @Autowired
 
 
-    /**
+/*    *//**
      * Security for REST API (Used by C# Client)
      */
+/*
     @Bean
     @Order(1)
     public SecurityFilterChain apiSecurityFilterChain(HttpSecurity http) throws Exception {
@@ -63,7 +64,7 @@ public class SecurityConfig {
                 .authenticationProvider(authenticationProvider());
 
         return http.build();
-    }
+    }*/
 
     @Bean
     @Order(2)

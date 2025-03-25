@@ -5,6 +5,9 @@
 @{
     var customers = ViewData["customers"] as List<Customer>;
     var budget = ViewData["budget"] as Dashboard;
+    int selectedCustomer = Convert.ToInt32(ViewData["customerId"]);
+    DateTime? startDate = ViewData["startDate"] as DateTime?;
+    DateTime? endDate = ViewData["endDate"] as DateTime?;
 }
 
 @section Styles {
@@ -18,24 +21,28 @@
             <div class="row">
                 <div class="col-md-12">
                     <h4 class="mt-4">Filter</h4>
-                    <form method="get" action="">
+                    <form method="get" action="/manager">
                         <div class="row">
                             <div class="col-4">
                                 <label class="form-label">Customer:</label>
-                                <select class="form-control" aria-label="">
-                                    <option selected>Chose...</option>
+                                <select name="customerId" class="form-control" aria-label="">
+                                    <option value="">Chose...</option>
                                     @foreach(var c in customers ?? new List<Customer>()){
-                                        <option value="@c.CustomerId">@c.Name</option>
+                                        @if (c.CustomerId == selectedCustomer){
+                                            <option value="@c.CustomerId" selected>@c.Name</option>
+                                        } else {
+                                            <option value="@c.CustomerId">@c.Name</option>
+                                        }
                                     }
                                 </select>
                             </div>
                             <div class="col-2">
                                 <label class="form-label">From</label>
-                                <input type="date" class="form-control" name="startDate">
+                                <input type="date" value="@startDate?.Date.ToString("yyyy-MM-dd")" class="form-control" name="startDate">
                             </div>
                             <div class="col-2">
                                 <label class="form-label">To</label>
-                                <input type="date" class="form-control" name="endDate">
+                                <input type="date" value="@endDate?.Date.ToString("yyyy-MM-dd")" class="form-control" name="endDate">
                             </div>
                             <div class="col align-self-end">
                                 <input type="submit" value="Filter" class="btn-primary form-control">
@@ -128,8 +135,8 @@
             showlegend: true,
             plot_bgcolor: '#f0f8ff',  // Fond du graphique
             paper_bgcolor: '#ffffff',  // Fond général
-            height: 400,
-            width: 400,
+            height: 500,
+            width: 500,
             margin: { t: 30, b: 30, l: 30, r: 30 }
         };
 

@@ -3,6 +3,7 @@ package site.easy.to.build.crm.entity;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Pattern;
+import net.minidev.json.annotate.JsonIgnore;
 
 import java.time.LocalDateTime;
 import java.util.List;
@@ -44,6 +45,10 @@ public class Lead {
 
     @OneToMany(mappedBy = "lead", cascade = CascadeType.ALL)
     private List<GoogleDriveFile> googleDriveFiles;
+
+    @OneToMany(mappedBy = "lead", cascade = CascadeType.PERSIST)
+    @JsonIgnore
+    private List<Expense> expenses;
 
     @ManyToOne
     @JoinColumn(name = "user_id")

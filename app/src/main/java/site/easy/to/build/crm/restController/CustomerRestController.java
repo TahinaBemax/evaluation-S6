@@ -1,12 +1,13 @@
 package site.easy.to.build.crm.restController;
 
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import site.easy.to.build.crm.entity.Customer;
+import site.easy.to.build.crm.entity.Expense;
 import site.easy.to.build.crm.service.customer.CustomerService;
+import site.easy.to.build.crm.service.expense.ExpenseService;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 @RestController
@@ -23,4 +24,14 @@ public class CustomerRestController {
         List<Customer> all = customerService.findAll();
         return ResponseEntity.ok(all);
     }
+
+/*    @GetMapping("{customerId}/expenses")
+    public ResponseEntity<?> customerExpense(
+            @PathVariable(value = "customerId") Integer customerId,
+            @RequestParam(value = "startDate",required = false) LocalDateTime start,
+            @RequestParam(value = "endDate",required = false) LocalDateTime end)
+    {
+        //List<Expense> all = expenseService.findCustomerExpenseBetweenDate(customerId, start, end);
+        return ResponseEntity.ok();
+    }*/
 }

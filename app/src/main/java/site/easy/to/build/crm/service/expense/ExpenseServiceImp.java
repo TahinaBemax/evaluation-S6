@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 import site.easy.to.build.crm.entity.Expense;
 import site.easy.to.build.crm.repository.ExpenseRepository;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Service
@@ -49,5 +50,11 @@ public class ExpenseServiceImp implements ExpenseService {
     @Override
     public List<Expense> findAllByBudgetId(Integer id) {
         return expenseRepository.findAllByBudgetId(id);
+    }
+
+    @Override
+    public List<Expense> findCustomerExpenseBetweenDate(Integer customerId, LocalDateTime start, LocalDateTime end) {
+        //return expenseRepository.findByCustomerCustomerId(customerId);
+        return null;
     }
 }

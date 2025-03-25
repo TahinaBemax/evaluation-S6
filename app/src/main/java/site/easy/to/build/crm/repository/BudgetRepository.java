@@ -20,6 +20,9 @@ public interface BudgetRepository extends JpaRepository<Budget, Integer> {
     @Query("SELECT b FROM Budget b WHERE b.achivedAt is null AND b.customer.customerId = :id AND :now BETWEEN b.startDate and (COALESCE(b.endDate, :now) )")
     List<Budget> findAllByCustomerCustomerId(Integer id, LocalDateTime now);
 
+    @Query("SELECT b FROM Budget b WHERE b.achivedAt is null AND b.customer.customerId = :id")
+    List<Budget> findCustomerBudgets(Integer id);
+
 
     @Query(value = "SELECT\n" +
             "    COALESCE(SUM(vbe.budget_amount), 0) as totalBudget,\n" +

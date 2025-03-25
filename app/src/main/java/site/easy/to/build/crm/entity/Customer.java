@@ -6,6 +6,7 @@ import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.groups.Default;
+import lombok.Data;
 import lombok.ToString;
 import site.easy.to.build.crm.customValidations.customer.UniqueEmail;
 
@@ -14,6 +15,7 @@ import java.util.List;
 
 @Entity
 @Table(name = "customer")
+@Data
 public class Customer {
 
     public interface CustomerUpdateValidationGroupInclusion {}
@@ -73,8 +75,8 @@ public class Customer {
     @JsonIgnore
     private CustomerLoginInfo customerLoginInfo;
 
-    @OneToMany(mappedBy = "customer",fetch = FetchType.LAZY)
-    @JsonIgnoreProperties("customer")
+    @OneToMany(mappedBy = "customer",fetch = FetchType.LAZY, cascade = CascadeType.PERSIST)
+    @JsonIgnore
     @ToString.Exclude()
     private List<Budget> budgets;
 
