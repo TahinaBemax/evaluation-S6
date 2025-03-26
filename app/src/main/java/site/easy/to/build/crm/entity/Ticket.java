@@ -44,7 +44,7 @@ public class Ticket {
     @JoinColumn(name = "manager_id")
     private User manager;
 
-    @OneToMany(mappedBy = "ticket", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "ticket", cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
     @JsonIgnoreProperties({"ticket", "budget"})
     @ToString.Exclude
     private List<Expense> expense = new ArrayList<>();
@@ -53,7 +53,7 @@ public class Ticket {
     @JoinColumn(name = "employee_id")
     private User employee;
 
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne(cascade = {CascadeType.PERSIST})
     @JoinColumn(name = "customer_id")
     private Customer customer;
 

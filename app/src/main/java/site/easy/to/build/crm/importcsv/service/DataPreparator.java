@@ -31,6 +31,7 @@ import java.math.BigDecimal;
 import java.nio.charset.StandardCharsets;
 import java.time.LocalDateTime;
 import java.util.*;
+import java.util.concurrent.ThreadLocalRandom;
 
 @Service
 public class DataPreparator {
@@ -138,7 +139,7 @@ public class DataPreparator {
             temp.setCustomer(c);
             temp.setAlertRate(80);
             temp.setAmount(b.getBudget());
-            temp.setCreatedAt(LocalDateTime.now());
+            temp.setCreatedAt(getRandomLocalDateTime().withYear(2010));
             temp.setStartDate(LocalDateTime.now().withYear(2010));
             temp.setDescription("");
 
@@ -168,7 +169,7 @@ public class DataPreparator {
                 temp.setCustomer(newCustomer);
                 temp.setManager(managerUser);
                 temp.setEmployee(managerUser);
-                temp.setCreatedAt(LocalDateTime.now());
+                temp.setCreatedAt(getRandomLocalDateTime());
 
                 temp.getExpense().add(createNewExpense(ticketCsv, newCustomer, temp, null));
             }
@@ -192,7 +193,7 @@ public class DataPreparator {
                 temp.setCustomer(customer);
                 temp.setManager(user);
                 temp.setEmployee(user);
-                temp.setCreatedAt(LocalDateTime.now());
+                temp.setCreatedAt(getRandomLocalDateTime());
                 temp.getExpenses().add(createNewExpense(lead, customer, null, temp));
             }
         }
@@ -200,7 +201,7 @@ public class DataPreparator {
     private List<Customer> prepareCustomerInstance() throws IOException, ImportCsvException {
         for (CustomerCsv customerCsv : customerFromCsv) {
             boolean isExiste = true;
-            Customer customer = getCustomerByEmail(customerCsv.getEmail());
+            Customer customer = this.getCustomerByEmail(customerCsv.getEmail());
 
             if (customer == null){
                 customer = new Customer();
@@ -275,6 +276,7 @@ public class DataPreparator {
         c.setName("temp");
         c.setEmail(email);
         c.setCountry("temp");
+        c.setCreatedAt(LocalDateTime.now());
 
         c.setUser(this.getManagerUser());
 
@@ -295,5 +297,22 @@ public class DataPreparator {
     }
     private User getManagerUser(){
         return this.user;
+    }
+
+    public static LocalDateTime getRandomLocalDateTime() {
+        LocalDateTime start = LocalDateTime.now();
+        LocalDateTime end = LocalDateTime.now();
+        start = start.withYear(end.getYear() - 3);
+
+        if (start.isAfter(end)) {
+            throw new IllegalArgumentException("La date de début doit être avant la date de fin.");
+        }
+
+        long startEpoch = start.toEpochSecond(java.time.ZoneOffset.UTC);
+        long endEpoch = end.toEpochSecond(java.time.ZoneOffset.UTC);
+
+        long randomEpoch = ThreadLocalRandom.current().nextLong(startEpoch, endEpoch);
+
+        return LocalDateTime.ofEpochSecond(randomEpoch, 0, java.time.ZoneOffset.UTC);
     }
 }

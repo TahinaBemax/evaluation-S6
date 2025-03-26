@@ -1,5 +1,6 @@
 package site.easy.to.build.crm.service.budget;
 
+import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import site.easy.to.build.crm.entity.Budget;
@@ -21,6 +22,20 @@ public class BudgetServiceImp implements BudgetService{
     @Autowired
     public BudgetServiceImp(BudgetRepository budgetRepository) {
         this.budgetRepository = budgetRepository;
+    }
+
+    @Override
+    @Transactional
+    public List<Budget> updateAlertRate(double alertRate) {
+        if(alertRate <= 0){
+            throw new RuntimeException("Alert Rate must be positive number");
+        }
+
+        List<Budget> all = budgetRepository.findAll();
+        for (Budget budget : all) {
+            budget.setAlertRate(alertRate);
+        }
+        return budgetRepository.saveAll(all);
     }
 
     @Override

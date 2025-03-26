@@ -50,7 +50,7 @@ public class Lead {
     @OneToMany(mappedBy = "lead", cascade = CascadeType.ALL)
     private List<GoogleDriveFile> googleDriveFiles;
 
-    @OneToMany(mappedBy = "lead", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "lead", cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
     @JsonIgnore
     @ToString.Exclude
     private List<Expense> expenses =new ArrayList<>();

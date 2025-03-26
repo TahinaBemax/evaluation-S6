@@ -24,6 +24,8 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
 builder.Services.AddControllersWithViews();
 builder.Services.AddHttpClient<DashboardService>();
 builder.Services.AddHttpClient<CustomerService>();
+builder.Services.AddHttpClient<LeadService>();
+builder.Services.AddHttpClient<TicketService>();
 
 
 
@@ -44,8 +46,8 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
+app.UseExceptionHandler("/Error/Error");
 
-app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",

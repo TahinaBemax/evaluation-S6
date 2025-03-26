@@ -1,8 +1,10 @@
 package site.easy.to.build.crm.repository;
 
+import jakarta.persistence.Tuple;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 import site.easy.to.build.crm.entity.Customer;
 import site.easy.to.build.crm.entity.Ticket;
@@ -13,6 +15,33 @@ import java.util.Map;
 
 @Repository
 public interface TicketRepository extends JpaRepository<Ticket, Integer> {
+    @Query("""
+    SELECT COUNT(t) AS totalTicket, 
+           EXTRACT(MONTH FROM t.createdAt) AS month, 
+           COALESCE(SUM(e.amount), 0) AS totalAmount
+    FROM Ticket t
+    LEFT JOIN t.expense e 
+    WHERE (:year IS NULL OR EXTRACT(YEAR FROM t.createdAt) = :year)
+    GROUP BY month
+""")
+    List<Tuple> monthlyStatisticTicket(@Param("year") Integer year);
+
+    @Query("""
+    SELECT l.ticketId as ticketId, l.subject as subject, l.customer.email as email, COALESCE(e.amount, 0) as amount, COALESCE(e.id, 0) as expenseId
+    FROM Ticket l 
+    LEFT JOIN l.expense e 
+    WHERE (:year IS NULL OR EXTRACT(YEAR FROM l.createdAt) = :year)
+""")
+    List<Tuple> getDetailMonthlyStatistiqueTicket(@Param("year") Integer year);
+
+    @Query("""
+        SELECT l.ticketId as ticketId, l.subject as subject, l.customer.email as email, COALESCE(e.amount, 0) as amount, COALESCE(e.id, 0) as expenseId
+        FROM Ticket l 
+        LEFT JOIN l.expense e 
+        WHERE e.id = :id
+    """)
+    Tuple getByExpenseIdDetailMonthlyStatTicket(@Param("id") Integer id);
+
     public Ticket findByTicketId(int ticketId);
 
     public List<Ticket> findByManagerId(int id);

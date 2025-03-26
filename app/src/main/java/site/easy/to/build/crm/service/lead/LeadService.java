@@ -2,10 +2,15 @@ package site.easy.to.build.crm.service.lead;
 
 import site.easy.to.build.crm.entity.Customer;
 import site.easy.to.build.crm.entity.Lead;
+import site.easy.to.build.crm.service.lead.dto.DetailStatisticTicketLead;
+import site.easy.to.build.crm.service.lead.dto.StatisticTicketLead;
 
 import java.util.List;
 
 public interface LeadService {
+    public List<StatisticTicketLead> getMonthlyStatistiqueLead(Integer year);
+    public List<DetailStatisticTicketLead> getDetailMonthlyStatistiqueLead(Integer year);
+    public DetailStatisticTicketLead getByExpenseIdDetailMonthlyStatLead(Integer year);
     public List<Lead> saveAll(List<Lead> leads);
     public Lead findByLeadId(int id);
 

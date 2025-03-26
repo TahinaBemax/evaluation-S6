@@ -8,6 +8,7 @@ import java.time.LocalDateTime;
 import java.util.List;
 
 public interface BudgetService {
+    public List<Budget> updateAlertRate(double alertRate);
     public List<Budget> findAll();
     public List<Budget> findAllByCustomer(Integer id, LocalDateTime now);
     public Budget findById(Integer id);

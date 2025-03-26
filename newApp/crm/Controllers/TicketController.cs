@@ -7,45 +7,36 @@ using crm.Models.dto;
 namespace crm.Controllers;
 
 [Route("manager")]
-public class ManagerController : Controller
+public class TicketController : Controller
 {
-    private readonly ILogger<ManagerController> _logger;
+    private readonly ILogger<TicketController> _logger;
     private readonly DashboardService _dashboardService;
     private readonly CustomerService _customerService;
-    private readonly LeadService _leadService;
+    private readonly TicketService _ticketService;
 
-    public ManagerController(ILogger<ManagerController> logger, DashboardService dashboardService, CustomerService customerService, LeadService leadService)
+    public TicketController(ILogger<TicketController> logger, DashboardService dashboardService, CustomerService customerService, TicketService leadService)
     {
         _logger = logger;
         _dashboardService = dashboardService;
         _customerService = customerService;
-        _leadService = leadService;
+        _ticketService = leadService;
     }
 
-    [HttpGet("")]
-    public async Task<IActionResult> Index(int? customerId, DateTime? startDate,  DateTime? endDate)
-    {
-        ViewData["customerId"] = customerId;
-        ViewData["startDate"] = startDate;
-        ViewData["endDate"] = endDate;
-        ViewData["budget"] = await _dashboardService.GetBudgetStatisticAsync(customerId, startDate, endDate);
-        ViewData["customers"] = await _customerService.GetCustomersAsync();
-        return View("~/Views/dashboard/index.cshtml", ViewData);
-    }
 
-    [HttpGet("leads/monthly-statistic")]
-    public async Task<IActionResult> GetMonthlyStatistiqueLeadAsync(int? year)
+    [HttpGet("tickets/monthly-statistic")]
+    public async Task<IActionResult> GetMonthlyStatistiqueAsync(int? year)
     {
         try
         {
-            List<StatisticLead> statistics = await _leadService.GetMonthlyStatistiqueLeadAsync(year);
+            List<StatisticLead> statistics = await _ticketService.GetMonthlyStatistiqueTicketAsync(year);
             decimal sommeAmount = statistics.Sum( s => s.TotalAmount);
             decimal sommeLead = statistics.Sum( s => s.Total);
             ViewData["statistics"] = statistics;
             ViewData["selectedYear"] = year;
             ViewData["sommeAmount"] = sommeAmount;
             ViewData["sommeLead"] = sommeLead;
-            ViewData["page"] = "lead";
+            ViewData["sommeLead"] = sommeLead;
+            ViewData["page"] = "ticket";
 
             return View("~/Views/dashboard/TicketLead.cshtml", statistics);
         }
@@ -56,44 +47,15 @@ public class ManagerController : Controller
         }
     }
 
-    [HttpGet("budgets/alertRate")]
-    public  IActionResult AlertRatePageAsync()
+    [HttpGet("tickets/monthly-statistic-detail")]
+    public async Task<IActionResult> GetDetailMonthlyStatistiquetTicketAsync(int? year)
     {
         try
         {
-            return View("~/Views/dashboard/AlertRateForm.cshtml");
-        }
-        catch (Exception ex)
-        {
-            ViewBag.ErrorMessage = ex.Message;
-            return View("Error");
-        }
-    }
-
-    [HttpPost("budgets/save-new-alertRate")]
-    public  async Task<IActionResult> AlertRatePageAsync(decimal alertRate)
-    {
-        try
-        {
-            await _dashboardService.UpdateAlertRate(alertRate);
-            return Redirect("/manager");
-        }
-        catch (Exception ex)
-        {
-            ViewBag.ErrorMessage = ex.Message;
-            return View("Error");
-        }
-    }
-
-    [HttpGet("leads/monthly-statistic-detail")]
-    public async Task<IActionResult> GetDetailMonthlyStatistiqueLeadAsync(int? year)
-    {
-        try
-        {
-            List<DetailStatisticLead> statistics = await _leadService.GetDetailMonthlyStatistiqueLeadAsync(year);
+            List<DetailStatisticLead> statistics = await _ticketService.GetDetailMonthlyStatistiqueTicketAsync(year);
             ViewData["statistics"] = statistics;
             ViewData["selectedYear"] = year;
-            ViewData["page"] = "lead";
+            ViewData["page"] = "ticket";
 
             return View("~/Views/dashboard/List.cshtml");
         }

@@ -34,7 +34,7 @@ public class Expense {
     @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm")
     private LocalDateTime expenseDate;
 
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne(cascade = {CascadeType.PERSIST, })
     @JoinColumn(name = "budget_id", nullable = false)
     @JsonIgnoreProperties("expenses")
     @NotNull
@@ -42,12 +42,12 @@ public class Expense {
 
     private String description;
 
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne(cascade = {CascadeType.PERSIST})
     @JoinColumn(name = "ticket_id")
     @JsonIgnoreProperties("expense")
     Ticket ticket;
 
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne(cascade = {CascadeType.PERSIST})
     @JoinColumn(name = "lead_id")
     @JsonIgnoreProperties("expenses")
     Lead lead;

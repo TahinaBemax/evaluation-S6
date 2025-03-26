@@ -9,11 +9,14 @@ using Microsoft.AspNetCore.Mvc.Routing;
 public class DashboardService
 {
     private readonly HttpClient _httpClient;
+    private readonly ILogger<CustomerService> _logger;
 
-    public DashboardService(HttpClient httpClient)
+    public DashboardService(HttpClient httpClient, ILogger<CustomerService> logger)
     {
         _httpClient = httpClient;
+        _logger = logger;
     }
+
 
     public async Task<Dashboard?> GetBudgetStatisticAsync(int? custumerId, DateTime? start,  DateTime? end)
     {
@@ -65,15 +68,62 @@ public class DashboardService
         return null;
     }
 
-    public async Task<bool> DeleteCustomerTicket(int Id)
+    public async Task<bool> DeleteCustomerTicketOrLead(int Id, int isTicket)
     {
-        string url = $"http://localhost:8080/api/crm/customers/tickets/{Id}";
+        try{
+            string url = $"http://localhost:8080/api/crm/customers/TicketLead/{Id}?isTicket={isTicket}";
 
-        var response = await _httpClient.DeleteAsync(url);
-        if(response.IsSuccessStatusCode){
-            return true;
+            // Envoi de la requête Delete avec le JSON
+            HttpResponseMessage response = await _httpClient.DeleteAsync(url);
+
+            if (!response.IsSuccessStatusCode)
+            {
+                _logger.LogError($"API error: {response.StatusCode}");
+                throw new HttpRequestException($"API request failed with status code {response.StatusCode}");
+            }
+
+            var apiResponse = await response.Content.ReadFromJsonAsync<ApiResponse<bool>>();
+            return apiResponse?.Data??false;
         }
-        return false;
+        catch (HttpRequestException ex)
+        {
+            _logger.LogError($"HTTP Request failed: {ex.Message}");
+            throw;
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError($"Unexpected error: {ex.Message}");
+            throw new Exception("An error occurred while fetching updating expense");
+        }
+    }
+
+    public async Task<bool> UpdateAlertRate(decimal alertRate)
+    {
+        try{
+            string url = $"http://localhost:8080/api/crm/budgets/update-alert-rate?rate={alertRate}";
+
+            // Envoi de la requête Delete avec le JSON
+            HttpResponseMessage response = await _httpClient.GetAsync(url);
+
+            if (!response.IsSuccessStatusCode)
+            {
+                _logger.LogError($"API error: {response.StatusCode}");
+                throw new HttpRequestException($"API request failed with status code {response.StatusCode}");
+            }
+
+            var apiResponse = await response.Content.ReadFromJsonAsync<ApiResponse<bool>>();
+            return apiResponse?.Data??false;
+        }
+        catch (HttpRequestException ex)
+        {
+            _logger.LogError($"HTTP Request failed: {ex.Message}");
+            throw;
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError($"Unexpected error: {ex.Message}");
+            throw new Exception("An error occurred while fetching updating expense");
+        }
     }
 
     public async Task<List<Dictionary<string, object>>?> GetCustomersTicketBetweenDateAsync(int custumerId, DateTime? start,  DateTime? end)

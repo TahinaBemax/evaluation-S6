@@ -45,29 +45,22 @@ public class SecurityConfig {
 
 
 
-/*    *//**
-     * Security for REST API (Used by C# Client)
-     */
-/*
     @Bean
-    @Order(1)
+    @Order(1) // Priorité élevée pour l'API REST
     public SecurityFilterChain apiSecurityFilterChain(HttpSecurity http) throws Exception {
         http
-                .csrf(AbstractHttpConfigurer::disable)
-                .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
+                .securityMatcher("/api/crm/**") // Appliquer cette config uniquement aux endpoints REST
+                .csrf(AbstractHttpConfigurer::disable)  // Désactiver CSRF pour l'API REST
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/api/auth/**").permitAll() // Public login endpoint
-                        .requestMatchers("/api/public/**").permitAll() // Public API endpoints
-                        .requestMatchers("/api/crm/**").permitAll() // Public API endpoints
-                        .anyRequest().authenticated()
-                )
-                .authenticationProvider(authenticationProvider());
+                        .anyRequest().permitAll()  // Autoriser toutes les requêtes sur l’API REST
+                );
 
         return http.build();
-    }*/
+    }
+
 
     @Bean
-    @Order(2)
+    @Order(3)
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
 
         HttpSessionCsrfTokenRepository httpSessionCsrfTokenRepository = new HttpSessionCsrfTokenRepository();
@@ -76,6 +69,7 @@ public class SecurityConfig {
         http.csrf((csrf) -> csrf
                 .csrfTokenRepository(httpSessionCsrfTokenRepository)
         );
+        //http.csrf(AbstractHttpConfigurer::disable);
 
         http.
                 authorizeHttpRequests((authorize) -> authorize
@@ -125,7 +119,7 @@ public class SecurityConfig {
     }
 
     @Bean
-    @Order(1)
+    @Order(2)
     public SecurityFilterChain customerSecurityFilterChain(HttpSecurity http) throws Exception {
 
 

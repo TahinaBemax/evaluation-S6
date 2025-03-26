@@ -54,7 +54,7 @@ public class Budget {
 
     private String description;
 
-    @OneToMany(mappedBy = "budget", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "budget", cascade = CascadeType.ALL)
     @JsonManagedReference
     @ToString.Exclude()
     private List<Expense> expenses = new ArrayList<>();

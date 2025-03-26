@@ -22,16 +22,32 @@ build_property._RazorSourceGeneratorDebug =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcYnVkZ2V0XGxpc3QuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/TahinaBemax/Desktop/Evaluation S6/evaluation/evaluation-S6/newApp/crm/Views/dashboard/AlertRateForm.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcZGFzaGJvYXJkXEFsZXJ0UmF0ZUZvcm0uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/TahinaBemax/Desktop/Evaluation S6/evaluation/evaluation-S6/newApp/crm/Views/dashboard/index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcZGFzaGJvYXJkXGluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/TahinaBemax/Desktop/Evaluation S6/evaluation/evaluation-S6/newApp/crm/Views/dashboard/List.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcZGFzaGJvYXJkXExpc3QuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/TahinaBemax/Desktop/Evaluation S6/evaluation/evaluation-S6/newApp/crm/Views/dashboard/ticket.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcZGFzaGJvYXJkXHRpY2tldC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/TahinaBemax/Desktop/Evaluation S6/evaluation/evaluation-S6/newApp/crm/Views/expense/form.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcZXhwZW5zZVxmb3JtLmNzaHRtbA==
+[C:/Users/TahinaBemax/Desktop/Evaluation S6/evaluation/evaluation-S6/newApp/crm/Views/dashboard/TicketLead.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcZGFzaGJvYXJkXFRpY2tldExlYWQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/TahinaBemax/Desktop/Evaluation S6/evaluation/evaluation-S6/newApp/crm/Views/Error/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXJyb3JcRXJyb3IuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/TahinaBemax/Desktop/Evaluation S6/evaluation/evaluation-S6/newApp/crm/Views/expense/Form.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcZXhwZW5zZVxGb3JtLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/TahinaBemax/Desktop/Evaluation S6/evaluation/evaluation-S6/newApp/crm/Views/expense/list.cshtml]

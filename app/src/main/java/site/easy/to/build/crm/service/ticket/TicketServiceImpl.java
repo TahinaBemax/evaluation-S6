@@ -1,11 +1,17 @@
 package site.easy.to.build.crm.service.ticket;
 
+import jakarta.persistence.Tuple;
+import jakarta.transaction.Transactional;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import site.easy.to.build.crm.entity.Customer;
+import site.easy.to.build.crm.entity.Expense;
+import site.easy.to.build.crm.repository.ExpenseRepository;
 import site.easy.to.build.crm.repository.TicketRepository;
 import site.easy.to.build.crm.entity.Ticket;
+import site.easy.to.build.crm.service.lead.dto.DetailStatisticTicketLead;
+import site.easy.to.build.crm.service.lead.dto.StatisticTicketLead;
 import site.easy.to.build.crm.service.ticket.dto.StatistiqueTicketDto;
 
 import java.math.BigDecimal;
@@ -13,14 +19,19 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Service
 public class TicketServiceImpl implements TicketService{
     private final TicketRepository ticketRepository;
+    private final ExpenseRepository expenseRepository;
 
-    public TicketServiceImpl(TicketRepository ticketRepository) {
+    public TicketServiceImpl(TicketRepository ticketRepository, ExpenseRepository expenseRepository) {
         this.ticketRepository = ticketRepository;
+        this.expenseRepository = expenseRepository;
     }
+
     private void normalizeDate(LocalDateTime start, LocalDateTime end){
         if(start != null && end == null) {
             end = LocalDateTime.now();
@@ -51,6 +62,63 @@ public class TicketServiceImpl implements TicketService{
 
         return resultats;
     }
+    @Override
+    public DetailStatisticTicketLead getByExpenseIdDetailMonthlyStatTicket(Integer id) {
+        Tuple tuple = ticketRepository.getByExpenseIdDetailMonthlyStatTicket(id);
+
+        return new DetailStatisticTicketLead(
+                ((Number) tuple.get("ticketId")).intValue(),
+                tuple.get("subject").toString(),
+                tuple.get("email").toString(),
+                (BigDecimal) tuple.get("amount"),
+                ((Number) tuple.get("expenseId")).intValue()
+        );
+    }
+    @Override
+    public List<DetailStatisticTicketLead> getDetailMonthlyStatisticTicket(Integer year) {
+        List<Tuple> detailMonthlyStatistiqueLead = ticketRepository.getDetailMonthlyStatistiqueTicket(year);
+
+        return detailMonthlyStatistiqueLead.stream()
+                .map(tuple -> new DetailStatisticTicketLead(
+                        ((Number) tuple.get("ticketId")).intValue(),
+                        tuple.get("subject").toString(),
+                        tuple.get("email").toString(),
+                        (BigDecimal) tuple.get("amount"),
+                        ((Number) tuple.get("expenseId")).intValue()
+                ))
+                .collect(Collectors.toList());
+    }
+
+    @Override
+    public List<StatisticTicketLead> getMonthlyStatisticTicket(Integer year) {
+        List<StatisticTicketLead> statisticTicketLeads = getStatistics(year);
+        List<StatisticTicketLead> newStatisticTicketLeads = new ArrayList<>();
+
+        for (int start = 1; start <= 12; start++) {
+            final int startMonth = start;
+            Optional<StatisticTicketLead> first = (statisticTicketLeads.stream().filter(s -> s.getMonth() == startMonth)).findFirst();
+
+            if (first.isPresent()){
+                newStatisticTicketLeads.add(first.get());
+            } else {
+                newStatisticTicketLeads.add(new StatisticTicketLead(start, 0, BigDecimal.valueOf(0)));
+            }
+        }
+
+        return newStatisticTicketLeads;
+    }
+    private List<StatisticTicketLead> getStatistics(Integer year) {
+        List<Tuple> result = ticketRepository.monthlyStatisticTicket(year);
+
+        return result.stream()
+                .map(tuple -> new StatisticTicketLead(
+                        ((Number) tuple.get("month")).intValue(),
+                        ((Long) tuple.get("totalTicket")).intValue(),
+                        (BigDecimal) tuple.get("totalAmount")
+                ))
+                .collect(Collectors.toList());
+    }
+
     @Override
     public List<StatistiqueTicketDto> statistiqueByCustomerBetweenDate(Integer id, LocalDateTime startDate, LocalDateTime endDate) {
         List<StatistiqueTicketDto> stats = new ArrayList<>();
@@ -104,6 +172,7 @@ public class TicketServiceImpl implements TicketService{
     }
 
     @Override
+    @Transactional
     public void delete(Ticket ticket) {
         ticketRepository.delete(ticket);
     }

@@ -1,0 +1,63 @@
+@{
+    ViewData["title"] = "Detail-Monthly-statistic";
+    string page = ViewData["page"] as string?? "";
+    string prefix = (page == "ticket") ? "/manager/expenses/ticket" : "/manager/expenses/lead";
+    int isTicket = (page == "ticket") ? 1 : -1;
+
+    List<DetailStatisticLead> statistics = ViewData["statistics"] as List<DetailStatisticLead> ?? [];
+    int? year = ViewData["selectedYear"] as int?;
+}
+
+<!-- ============================================================== -->
+<!-- Start Page Content -->
+<!-- ============================================================== -->
+<div class="row">
+    <div class="col-lg-12">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Leads @(year)</h4>
+                <div class="table-responsive m-t-40">
+                    <table id="config-table" class="table display table-bordered table-striped no-wrap">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>name October Subject</th>
+                                <th>Customer</th>
+                                <th>Expense</th>
+                                <th>Edit</th>
+                                <th>Delete</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var stat in statistics)
+                            {
+                                <tr>
+                                    <td>@stat.LeadId</td>
+                                    <td>@stat.Name</td>
+                                    <td>@stat.Email</td>
+                                    <td>@stat.Amount</td>
+                                    @if(stat.ExpenseId > 0){
+                                        <td><a href="@($"{prefix}/{stat.ExpenseId}/edit")"><i
+                                                    class="fas fa-edit"></i></a></td>
+                                        <td>
+                                            <form action="@($"/manager/expenses/{stat.LeadId}/delete?isTicket={isTicket}")" method="post">
+                                                <button type="submit" class="btn btn-primary">
+                                                    <i class="mdi mdi-delete"></i>
+                                                </button>
+                                            </form>
+                                        </td>
+                                    } else {
+                                        <td colspan="2" class="text-info">There is no Expense yet</td>
+                                    }
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- ============================================================== -->
+<!-- End Page Content -->
+<!-- ============================================================== -->

@@ -1,10 +1,13 @@
 package site.easy.to.build.crm.restController;
 
+import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import site.easy.to.build.crm.entity.Lead;
 import site.easy.to.build.crm.entity.Ticket;
+import site.easy.to.build.crm.service.lead.LeadService;
 import site.easy.to.build.crm.service.ticket.TicketService;
 import site.easy.to.build.crm.service.ticket.dto.StatistiqueTicketDto;
 
@@ -16,10 +19,12 @@ import java.util.Map;
 @RequestMapping("/api/crm/customers")
 public class TicketRestController {
     private final TicketService ticketService;
+    private final LeadService leadService;
 
     @Autowired
-    public TicketRestController(TicketService ticketService) {
+    public TicketRestController(TicketService ticketService, LeadService leadService) {
         this.ticketService = ticketService;
+        this.leadService = leadService;
     }
 
     @GetMapping("/tickets/statistic-global")
@@ -49,19 +54,33 @@ public class TicketRestController {
         return ResponseEntity.ok(stat);
     }
 
-    @DeleteMapping("/tickets/{id}")
-    public ResponseEntity<?> ticketsByCustomers( @PathVariable(value = "id") Integer id)
+    @DeleteMapping("/TicketLead/{id}")
+    public ResponseEntity<?> ticketsByCustomers(@PathVariable(value = "id") Integer id, @RequestParam("isTicket") int isTicket)
     {
-        if (id == null){
-            return (ResponseEntity<?>) ResponseEntity.badRequest();
-        }
-        Ticket t = ticketService.findByTicketId(id);
+        try{
+            if (id == null){
+                return (ResponseEntity<?>) ResponseEntity.badRequest();
+            }
 
-        if (t == null) {
-            return new ResponseEntity<>("Ticket not found",HttpStatus.NOT_FOUND);
+            if (isTicket == 1){
+                Ticket t = ticketService.findByTicketId(id);
+                if (t == null) {
+                    return new ResponseEntity<>(new ApiResponse<>(500, "Internal server error", true), HttpStatus.INTERNAL_SERVER_ERROR);
+                }
+                ticketService.delete(t);
+
+            } else {
+                Lead byLeadId = leadService.findByLeadId(id);
+                if (byLeadId == null){
+                    return new ResponseEntity<>(new ApiResponse<>(500, "Internal server error", true), HttpStatus.INTERNAL_SERVER_ERROR);
+                }
+                leadService.delete(byLeadId);
+            }
+        } catch (Exception e){
+            return new ResponseEntity<>(new ApiResponse<>(500, "Internal server error", true), HttpStatus.INTERNAL_SERVER_ERROR);
         }
 
-        ticketService.delete(t);
-        return new ResponseEntity<>(HttpStatus.OK);
+
+        return ResponseEntity.ok(new ApiResponse<>(200, "Deleting successfuly", true));
     }
 }

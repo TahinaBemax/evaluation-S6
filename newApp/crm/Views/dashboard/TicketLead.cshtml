@@ -1,0 +1,160 @@
+@{
+    ViewData["Title"] = "Lead-Dashboard";
+
+    string page = ViewData["page"] as string?? "";
+    string prefix = (page == "ticket") ? "/manager/tickets" : "/manager/leads";
+
+    List<StatisticLead>? statistics = ViewData["statistics"] as List<StatisticLead>;
+    decimal sommeAmount = Convert.ToDecimal(ViewData["sommeAmount"]);
+    int sommeLead = Convert.ToInt32(ViewData["sommeLead"]);
+
+    int? selectedYear = Convert.ToInt32(ViewData["selectedYear"]);
+    int currentYear = DateTime.Today.Year;
+
+    if(!selectedYear.HasValue){
+        selectedYear = currentYear;
+    }
+}
+
+
+@section Styles {
+    <!-- Inclure la bibliothèque Plotly -->
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+}
+<!-- ============================================================== -->
+<!-- Info box -->
+<!-- ============================================================== -->
+<div class="row">
+    <div class="col-12">
+        <!--Filtre -->
+        <div class="card">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h4 class="mt-4">Filter by Year</h4>
+                        <form method="get" action="@($"{prefix}/monthly-statistic")">
+                            <div class="row">
+                                <div class="col-4">
+                                    <label class="form-label">Year:</label>
+                                    <input type="number" step=any value="@(selectedYear)" name="year"
+                                        class="form-control">
+                                </div>
+                                <div class="col-1 align-self-end">
+                                    <input type="submit" value="Filter" class="btn-primary form-control">
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+
+                    <div class="col-12">
+                        <div class="card-group">
+                            <div class="card-body">
+                                <table id="config-table" class="table display table-bordered table-striped no-wrap">
+                                    <thead>
+                                    <tr class="text-center">
+                                        <th>Total Lead</th>
+                                        <th>Total Amount</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="text-center">
+                                        <td><a href="@($"{prefix}/monthly-statistic-detail")"><h3>@(sommeLead)</h3></a></td>
+                                        <td><a href="@($"{prefix}/monthly-statistic-detail")"><h3>@(sommeAmount)</h3></a></td>
+                                    </tr>
+                                </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 my-5">
+                    <h4>Lead statistic</h1>
+                        <div id="totalLeadChart" style="width: 100%; height: 400px;"></div>
+                        <div id="totalAmountChart" style="width: 100%; height: 400px; margin-top: 20px;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--End Filtre -->
+</div>
+
+
+<!-- ============================================================== -->
+<!-- End Info box -->
+<!-- ============================================================== -->
+
+@section Scripts {
+    <script>
+        // Convertir les tableaux C# en tableaux JavaScript
+        // Convertir les tableaux C# en tableaux JavaScript
+        const ticketsPerMonth = [@Html.Raw(string.Join(",", statistics?.Select(s => s.Total).ToArray() ?? new int[12]))];
+        const totalBudgetPerMonth = [@Html.Raw(string.Join(",", statistics?.Select(s => s.TotalAmount).ToArray() ?? new decimal[12]))];
+
+        // Labels des mois
+        const months = ['January', 'February', 'March', 'April', 'May', 'June',
+            'July', 'August', 'September', 'October', 'November', 'December'];
+
+        // 🎯 1️⃣ Graphique pour le Total des Leads
+        const traceTickets = {
+            x: months,
+            y: ticketsPerMonth,
+            name: 'Total Leads',
+            type: 'bar',
+            marker: {
+                color: 'rgb(54, 162, 235)',  // Couleur des barres
+                line: { color: 'rgb(33, 128, 206)', width: 2 }
+            }
+        };
+
+        // 🎯 2️⃣ Graphique pour le Total du Budget
+        const traceBudget = {
+            x: months,
+            y: totalBudgetPerMonth,
+            name: 'Total Budget (€)',
+            type: 'bar',
+            marker: {
+                color: 'rgb(255, 99, 132)',  // Couleur des barres
+                line: { color: 'rgb(220, 80, 120)', width: 2 }
+            }
+        };
+
+        // 📊 Layout commun
+        const layoutCommon = {
+            xaxis: {
+                title: 'Month',
+                tickangle: -45,
+                tickfont: { size: 14, family: 'Roboto, sans-serif', color: '#555' },
+                showgrid: false,
+                zeroline: false
+            },
+            yaxis: {
+                rangemode: 'tozero',
+                showgrid: true,
+                zeroline: true,
+                gridcolor: '#e6e6e6'
+            },
+            paper_bgcolor: '#f7f7f7',
+            plot_bgcolor: '#ffffff',
+            font: { family: 'Roboto, sans-serif', color: '#333' },
+            margin: { t: 50, b: 80, l: 50, r: 50 },
+            hovermode: 'closest'
+        };
+
+        // 📌 1️⃣ Affichage du Graphique des Leads
+        Plotly.newPlot('totalLeadChart', [traceTickets], {
+            ...layoutCommon,
+            title: { text: 'Total Ticket/Leads per Month', font: { size: 18 } },
+            yaxis: { ...layoutCommon.yaxis, title: 'Number of Leads' }
+        });
+
+        // 📌 2️⃣ Affichage du Graphique du Budget
+        Plotly.newPlot('totalAmountChart', [traceBudget], {
+            ...layoutCommon,
+            title: { text: 'Total Budget per Month (€)', font: { size: 18 } },
+            yaxis: { ...layoutCommon.yaxis, title: 'Total Budget (€)' }
+        });
+
+    </script>
+}
