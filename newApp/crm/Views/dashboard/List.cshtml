@@ -15,7 +15,7 @@
     <div class="col-lg-12">
         <div class="card">
             <div class="card-body">
-                <h4 class="card-title">Leads @(year)</h4>
+                <h4 class="card-title">@($"{page} {year}")</h4>
                 <div class="table-responsive m-t-40">
                     <table id="config-table" class="table display table-bordered table-striped no-wrap">
                         <thead>
@@ -35,7 +35,7 @@
                                     <td>@stat.LeadId</td>
                                     <td>@stat.Name</td>
                                     <td>@stat.Email</td>
-                                    <td>@stat.Amount</td>
+                                    <td>@string.Format("{0:C2}",stat.Amount)</td>
                                     @if(stat.ExpenseId > 0){
                                         <td><a href="@($"{prefix}/{stat.ExpenseId}/edit")"><i
                                                     class="fas fa-edit"></i></a></td>

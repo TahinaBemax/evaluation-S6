@@ -162,7 +162,7 @@ public class DataPreparator {
                     throw new UsernameNotFoundException("Username not found");
 
                 temp.setSubject(ticketCsv.getSubject());
-                temp.setStatus(ticketCsv.getStatus());
+                temp.setStatus("open");
                 temp.setPriority(ticketCsv.getPriority());
 
                 newCustomer = getCustomer(ticketCsv.getCustomerMail());
@@ -181,7 +181,7 @@ public class DataPreparator {
                 Lead temp = new Lead();
 
                 temp.setName(lead.getSubject());
-                temp.setStatus(lead.getStatus());
+                temp.setStatus("meeting-to-schedule");
 
                 //Utilisateur authentifier (MANAGER OR EMPLOYE)
                 User user = getManagerUser();
@@ -263,12 +263,15 @@ public class DataPreparator {
         expense.setExpenseDate(LocalDateTime.now());
 
         Budget budget = getBudget(customer);
+
         expense.setBudget(budget);
         expense.setDescription("");
         expense.setTicket(ticket);
         expense.setLead(lead);
 
-        budget.getExpenses().add(expense);
+        if (budget != null) {
+            budget.getExpenses().add(expense);
+        }
         return expense;
     }
     private Customer createNewCustomer(String email){
