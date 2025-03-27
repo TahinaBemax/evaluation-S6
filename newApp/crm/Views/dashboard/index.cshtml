@@ -1,0 +1,154 @@
+@{
+    ViewData["Title"] = "Dashboard";
+}
+
+@{
+    var customers = ViewData["customers"] as List<Customer>;
+    var budget = ViewData["budget"] as Dashboard;
+    int selectedCustomer = Convert.ToInt32(ViewData["customerId"]);
+    DateTime? startDate = ViewData["startDate"] as DateTime?;
+    DateTime? endDate = ViewData["endDate"] as DateTime?;
+}
+
+@section Styles {
+        <!-- Inclure la bibliothèque Plotly -->
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+}
+<div class="card-group">
+    <!--Filtre -->
+    <div class="card">
+        <div class="card-body">
+            <div class="row">
+                <div class="col-md-12">
+                    <h4 class="mt-4">Filter</h4>
+                    <form method="get" action="/manager">
+                        <div class="row">
+                            <div class="col-4">
+                                <label class="form-label">Customer:</label>
+                                <select name="customerId" class="form-control" aria-label="">
+                                    <option value="">Chose...</option>
+                                    @foreach(var c in customers ?? new List<Customer>()){
+                                        @if (c.CustomerId == selectedCustomer){
+                                            <option value="@c.CustomerId" selected>@c.Name</option>
+                                        } else {
+                                            <option value="@c.CustomerId">@c.Name</option>
+                                        }
+                                    }
+                                </select>
+                            </div>
+                            <div class="col-2">
+                                <label class="form-label">From</label>
+                                <input type="date" value="@startDate?.Date.ToString("yyyy-MM-dd")" class="form-control" name="startDate">
+                            </div>
+                            <div class="col-2">
+                                <label class="form-label">To</label>
+                                <input type="date" value="@endDate?.Date.ToString("yyyy-MM-dd")" class="form-control" name="endDate">
+                            </div>
+                            <div class="col align-self-end">
+                                <input type="submit" value="Filter" class="btn-primary form-control">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--End Filtre -->
+</div>
+<!-- ============================================================== -->
+<!-- Info box -->
+<!-- ============================================================== -->
+<div class="card-group">
+    <!--Filtre -->
+    <div class="card">
+        <div class="card-body">
+            <div class="row">
+                <div class="col-9">
+                    <h4>Budget analyze</h1>
+
+                    <!-- Diagramme circulaire -->
+                    <div id="pieChart"></div>
+                </div>
+
+                <div class="col-3">
+                    <div class="table-responsive m-t-40">
+                        <table id="config-table" class="table display table-bordered no-wrap text-center">
+                            <tbody>
+                                <tr>
+                                    <th>Total Budget</th>
+                                </tr>
+                                <tr class="text-right">
+                                    <td><a href="@("/manager/customer/1/budgets")" class="counter text-primary">@string.Format("{0:C2}", budget?.TotalBudget?? 0)</a></td>
+                                </tr>
+                                <tr>
+                                    <th>Total Expense</th>
+                                </tr>
+                                <tr class="text-right">
+                                    <td><a href="@("/manager/customer/1/expenses")" class="counter text-purple">@string.Format("{0:C2}", @budget?.TotalExpense?? 0)</a></td>
+                                </tr>
+                                <tr>
+                                    <th>Total Rest</th>
+                                </tr>
+                                <tr class="text-right">
+                                    <td><a href="#" class="counter text-info">@string.Format("{0:C2}", budget?.TotalRest?? 0)</a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- ============================================================== -->
+<!-- End Info box -->
+<!-- ============================================================== -->
+
+@section Scripts {
+    <script>
+        // Données fictives
+        const clientName = "Client ABC";
+        const totalBudget = @budget?.TotalBudget??0;
+        const totalDepense = @budget?.TotalExpense??0;
+        const reste = totalBudget - totalDepense;
+
+        // Diagramme circulaire avec Plotly
+        var data = [{
+            values: [totalDepense, reste],  // Dépenses et reste
+            labels: ['Dépenses', 'Reste'],   // Étiquettes
+            type: 'pie',
+            textinfo: 'label+percent',  // Afficher les étiquettes et pourcentages
+            hoverinfo: 'label+value',  // Informations à afficher au survol
+            pull: [0.1, 0],  // Déplacer légèrement le segment des dépenses pour attirer l'attention
+            marker: {
+                colors: ['#ab8ce4', '#03a9f3'],  // Couleurs attrayantes des segments
+                line: {
+                    width: 1,
+                    color: '#ffffff'  // Bordures blanches pour un contraste net
+                }
+            },
+            opacity: 0.85
+        }];
+
+        var layout = {
+            title: ``,
+            showlegend: true,
+            plot_bgcolor: '#f0f8ff',  // Fond du graphique
+            paper_bgcolor: '#ffffff',  // Fond général
+            height: 500,
+            width: 500,
+            margin: { t: 30, b: 30, l: 30, r: 30 }
+        };
+
+        // Création du graphique
+        Plotly.newPlot('pieChart', data, layout);
+
+        // Fermer la modale si l'utilisateur clique à l'extérieur de celle-ci
+        window.onclick = function (event) {
+            var modal = document.getElementById("myModal");
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        };
+    </script>
+}

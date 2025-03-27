@@ -6,12 +6,17 @@ import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.groups.Default;
+import lombok.Data;
+import lombok.ToString;
 import site.easy.to.build.crm.customValidations.customer.UniqueEmail;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "customer")
+@Data
 public class Customer {
 
     public interface CustomerUpdateValidationGroupInclusion {}
@@ -61,15 +66,20 @@ public class Customer {
     @Column(name = "youtube")
     private String youtube;
 
-    @ManyToOne
+    @ManyToOne()
     @JoinColumn(name = "user_id", nullable=false)
     @JsonIgnoreProperties("customer")
     private User user;
 
-    @OneToOne
+    @OneToOne()
     @JoinColumn(name = "profile_id")
     @JsonIgnore
     private CustomerLoginInfo customerLoginInfo;
+
+    @OneToMany(mappedBy = "customer", cascade = CascadeType.ALL)
+    @JsonIgnore
+    @ToString.Exclude()
+    private List<Budget> budgets = new ArrayList<>();
 
     @Column(name = "created_at")
     private LocalDateTime createdAt;
@@ -95,6 +105,7 @@ public class Customer {
         this.user = user;
         this.customerLoginInfo = customerLoginInfo;
         this.createdAt = createdAt;
+        this.budgets = new ArrayList<>();
     }
 
     public Integer getCustomerId() {

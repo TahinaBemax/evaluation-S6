@@ -62,4 +62,9 @@ public class CustomerServiceImpl implements CustomerService {
     public List<Customer> saveAll(List<Customer> customers) {
         return customerRepository.saveAll(customers);
     }
+
+    @Override
+    public List<Customer> saveAllAndFlush(List<Customer> customers) {
+        return customerRepository.saveAllAndFlush(customers);
+    }
 }

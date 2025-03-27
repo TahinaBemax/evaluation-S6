@@ -1,14 +1,21 @@
 package site.easy.to.build.crm.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Pattern;
+import lombok.Data;
+import lombok.ToString;
 import org.hibernate.mapping.ToOne;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "trigger_ticket")
+@Data
 public class Ticket {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -37,11 +44,16 @@ public class Ticket {
     @JoinColumn(name = "manager_id")
     private User manager;
 
+    @OneToMany(mappedBy = "ticket", cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
+    @JsonIgnoreProperties({"ticket", "budget"})
+    @ToString.Exclude
+    private List<Expense> expense = new ArrayList<>();
+
     @ManyToOne
     @JoinColumn(name = "employee_id")
     private User employee;
 
-    @ManyToOne
+    @ManyToOne(cascade = {CascadeType.PERSIST})
     @JoinColumn(name = "customer_id")
     private Customer customer;
 

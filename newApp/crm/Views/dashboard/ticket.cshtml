@@ -1,0 +1,224 @@
+@{
+    ViewData["Title"] = "Dashboard";
+}
+
+@{
+
+    int[] totalParMois = ViewData["totalPerMonth"] as int[] ?? new int[12];
+    List<Dictionary<string, object>>? tickets = ViewData["tickets"] as List<Dictionary<string, object>>;
+    var customers = ViewData["customers"] as List<Customer>;
+    int selectedCustomer = Convert.ToInt32(ViewData["customerId"]);
+    int year = Convert.ToInt32(ViewData["year"]);
+    DateTime? startDate = ViewData["startDate"] as DateTime?;
+    DateTime? endDate = ViewData["endDate"] as DateTime?;
+
+    int currentYear = DateTime.Today.Year;
+}
+
+
+@section Styles {
+    <!-- Inclure la bibliothèque Plotly -->
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+}
+<!-- ============================================================== -->
+<!-- Info box -->
+<!-- ============================================================== -->
+<div class="row">
+    <div class="col-12">
+        <!--Filtre -->
+        <div class="card">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h4 class="mt-4">Filter by Year</h4>
+                        <form method="get" action="/manager/tickets">
+                            <div class="row">
+                                <div class="col-4">
+                                    <label class="form-label">Year:</label>
+                                    <input type="number" step=any value="@year" name="year" class="form-control">
+                                </div>
+                                <div class="col-1 align-self-end">
+                                    <input type="submit" value="Filter" class="btn-primary form-control">
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+
+                    <div class="col-12 my-5">
+                        <h4>Ticket statistic</h1>
+
+                            <!-- Diagramme circulaire -->
+                            <div id="ticketChart"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--End Filtre -->
+</div>
+
+<div class="row">
+    <div class="col">
+        <!--Filtre -->
+        <div class="card">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-12">
+                        <h4 class="mt-4">Filter by Customer</h4>
+                        <form method="get" action="/manager/tickets">
+                            <div class="row">
+                                <div class="col-4">
+                                    <label class="form-label">Customer:</label>
+                                    <select name="id" class="form-control" aria-label="">
+                                        <option selected>Chose...</option>
+                                        @foreach (var c in customers ?? new List<Customer>())
+                                        {
+                                            <option value="@(c.CustomerId)"
+                                                selected="@(c.CustomerId == selectedCustomer ? "selected" : "")">@c.Name
+                                            </option>
+                                        }
+                                    </select>
+                                </div>
+                                <div class="col-2">
+                                    <label class="form-label">From</label>
+                                    <input type="date" value="@startDate?.Date.ToString("yyyy-MM-dd")" name="startDate"
+                                        class="form-control" aria-label="First name">
+                                </div>
+                                <div class="col-2">
+                                    <label class="form-label">To</label>
+                                    <input type="date" value="@endDate?.Date.ToString("yyyy-MM-dd")" name="endDate"
+                                        class="form-control" aria-label="Last name">
+                                </div>
+                                <div class="col align-self-end">
+                                    <input type="submit" value="Filter" class="btn-primary form-control">
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+
+                    <div class="col-12 my-5">
+                        <h4 class="card-title">Ticket</h4>
+                        <div class="table-responsive ">
+                            <table id="config-table" class="table display table-bordered table-striped no-wrap">
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Customer</th>
+                                        <th>Total Ticket</th>
+                                        <th>Total Expense</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (Dictionary<string, object> t in tickets ?? new List<Dictionary<string,
+                                                                        object>>())
+                                    {
+                                        <tr>
+                                            <td>@t["customerId"]</td>
+                                            <td>@t["customerName"]</td>
+                                            <td class="text-right">
+                                                <form method="get" action="@($"/manager/customers/{@t["customerId"]}/tickets")">
+                                                    <input type="hidden" value="@startDate?.Date.ToString("yyyy-MM-dd")" name="startDate">
+                                                    <input type="hidden" value="@endDate?.Date.ToString("yyyy-MM-dd")" name="endDate">
+                                                    <input type="submit" value="@string.Format("{0:C2}",t["totalTicket"]??0)"# class="btn-outline-primary form-control">
+                                                </form>
+                                            </td>
+                                            <td class="text-right">
+                                                <form method="get" action="@($"/manager/customers/{@t["customerId"]}/expenses")">
+                                                    <input type="hidden" value="@startDate?.Date.ToString("yyyy-MM-dd")" name="startDate">
+                                                    <input type="hidden" value="@endDate?.Date.ToString("yyyy-MM-dd")" name="endDate">
+                                                    <input type="submit" value="@string.Format("{0:C2}",t["totalExpense"]??0)"# class="btn-outline-primary form-control">
+                                                </form>
+                                            </td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--End Filtre -->
+    </div>
+</div>
+<!-- ============================================================== -->
+<!-- End Info box -->
+<!-- ============================================================== -->
+
+@section Scripts {
+    <script>
+        // Convertir le tableau C# en tableau JavaScript
+        const ticketsPerMonth = [@Html.Raw(string.Join(",", totalParMois ?? new int[12]))];
+
+
+        // Plotly bar chart trace
+        const trace = {
+            x: ['January', 'February', 'March', 'April', 'May', 'June',
+                'July', 'August', 'September', 'October', 'November', 'December'],  // Months
+            y: ticketsPerMonth,  // Number of tickets per month
+            type: 'bar',  // Bar chart type
+            marker: {
+                color: 'rgb(54, 162, 235)',  // Bar color
+                line: {
+                    color: 'rgb(33, 128, 206)',  // Bar border color
+                    width: 2
+                }
+            }
+        };
+
+        const layout = {
+            title: {
+                text: 'Tickets per Month',
+                font: {
+                    size: 18,
+                    family: 'Poppins, sans-serif',
+                    color: '#333'
+                },
+                x: 0.5,
+                y: 0.95,
+                xanchor: 'center',
+                yanchor: 'top'
+            },
+            xaxis: {
+                title: 'Month',
+                tickangle: -45,  // Rotate month labels for better readability
+                tickfont: {
+                    size: 14,
+                    family: 'Roboto, sans-serif',
+                    color: '#555'
+                },
+                showgrid: false,  // Hide grid under X axis
+                zeroline: false  // Hide the zero line
+            },
+            yaxis: {
+                title: 'Number of Tickets',
+                tickfont: {
+                    size: 14,
+                    family: 'Roboto, sans-serif',
+                    color: '#555'
+                },
+                rangemode: 'tozero',  // Start Y axis at zero
+                showgrid: true,
+                zeroline: true,
+                gridcolor: '#e6e6e6'  // Light grid lines
+            },
+            paper_bgcolor: '#f7f7f7',  // Background color for the page
+            plot_bgcolor: '#ffffff',  // Background color for the plot
+            showlegend: false,  // Hide legend
+            font: {
+                family: 'Roboto, sans-serif',
+                color: '#333'
+            },
+            margin: {
+                t: 80,  // Top margin
+                b: 80,  // Bottom margin
+                l: 50,  // Left margin
+                r: 50   // Right margin
+            },
+            hovermode: 'closest',  // Show hover details on the closest point
+        };
+
+        // Create the plot with Plotly
+        Plotly.newPlot('ticketChart', [trace], layout);
+    </script>
+}

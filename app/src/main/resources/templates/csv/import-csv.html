@@ -13,11 +13,11 @@
 <!-- wysihtml5 CSS -->
 <link th:href="@{/css/bootstrap-material-datetimepicker.css}" rel="stylesheet">
 
-<link th:href="@{/css/bootstrap-datepicker.min.css}" rel="stylesheet" type="text/css" />
+<link th:href="@{/css/bootstrap-datepicker.min.css}" rel="stylesheet" type="text/css"/>
 
 <link th:href="@{/css/jquery-clockpicker.min.css}" rel="stylesheet">
 
-<link th:href="@{/css/tagify.css}" rel="stylesheet" type="text/css" />
+<link th:href="@{/css/tagify.css}" rel="stylesheet" type="text/css"/>
 <!--    <link  />-->
 <link rel="stylesheet" th:href="@{/css/bootstrap-wysihtml5.css}"/>
 <!-- Custom CSS -->
@@ -39,135 +39,153 @@
 <!-- Preloader - style you can find in spinners.css -->
 <!-- ============================================================== -->
 <div class="preloader">
-  <div class="loader">
-    <div class="loader__figure"></div>
-    <p class="loader__label">Elite admin</p>
-  </div>
+    <div class="loader">
+        <div class="loader__figure"></div>
+        <p class="loader__label">Elite admin</p>
+    </div>
 </div>
 <!-- ============================================================== -->
 <!-- Main wrapper - style you can find in pages.scss -->
 <!-- ============================================================== -->
 <div id="main-wrapper">
-  <!-- ============================================================== -->
-  <!-- Topbar header - style you can find in pages.scss -->
-  <!-- ============================================================== -->
-  <div th:insert="~{/general/header.html}"></div>
-  <!-- ============================================================== -->
-  <!-- End Topbar header -->
-  <!-- ============================================================== -->
-  <!-- ============================================================== -->
-  <!-- Left Sidebar - style you can find in sidebar.scss  -->
-  <!-- ============================================================== -->
-  <div th:insert="~{/general/left-sidebar.html}"></div>
-  <!-- ============================================================== -->
-  <!-- End Left Sidebar - style you can find in sidebar.scss  -->
-  <!-- ============================================================== -->
-  <!-- ============================================================== -->
-  <!-- Page wrapper  -->
-  <!-- ============================================================== -->
-  <div class="page-wrapper">
     <!-- ============================================================== -->
-    <!-- Container fluid  -->
+    <!-- Topbar header - style you can find in pages.scss -->
     <!-- ============================================================== -->
-    <div class="container-fluid">
-      <!-- ============================================================== -->
-      <!-- Bread crumb and right sidebar toggle -->
-      <!-- ============================================================== -->
-      <div th:insert="~{/general/page-titles.html}"></div>
-      <!-- ============================================================== -->
-      <!-- End Bread crumb and right sidebar toggle -->
-      <!-- ============================================================== -->
+    <div th:insert="~{/general/header.html}"></div>
+    <!-- ============================================================== -->
+    <!-- End Topbar header -->
+    <!-- ============================================================== -->
+    <!-- ============================================================== -->
+    <!-- Left Sidebar - style you can find in sidebar.scss  -->
+    <!-- ============================================================== -->
+    <div th:insert="~{/general/left-sidebar.html}"></div>
+    <!-- ============================================================== -->
+    <!-- End Left Sidebar - style you can find in sidebar.scss  -->
+    <!-- ============================================================== -->
+    <!-- ============================================================== -->
+    <!-- Page wrapper  -->
+    <!-- ============================================================== -->
+    <div class="page-wrapper">
+        <!-- ============================================================== -->
+        <!-- Container fluid  -->
+        <!-- ============================================================== -->
+        <div class="container-fluid">
+            <!-- ============================================================== -->
+            <!-- Bread crumb and right sidebar toggle -->
+            <!-- ============================================================== -->
+            <div th:insert="~{/general/page-titles.html}"></div>
+            <!-- ============================================================== -->
+            <!-- End Bread crumb and right sidebar toggle -->
+            <!-- ============================================================== -->
 
-      <!-- ============================================================== -->
-      <!-- Start Page Content -->
-      <!-- ============================================================== -->
-      <div class="row">
-        <div class="col-md-6">
-          <div class="card">
-            <div class="card-body">
-              <h4 class="card-title">Reinitialize data</h4>
-              <div th:if="${deleteDataScuccessMessage}" class="alert alert-success" th:text="${deleteDataScuccessMessage}"></div>
-              <div th:if="${deleteDataErrorMessage}" class="alert alert-danger" th:text="${deleteDataErrorMessage}"></div>
+            <!-- ============================================================== -->
+            <!-- Start Page Content -->
+            <!-- ============================================================== -->
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="card-title">Reinitialize data</h4>
+                            <div th:if="${deleteDataScuccessMessage}" class="alert alert-success"
+                                 th:text="${deleteDataScuccessMessage}"></div>
+                            <div th:if="${deleteDataErrorMessage}" class="alert alert-danger"
+                                 th:text="${deleteDataErrorMessage}"></div>
 
-              <div class="card-body b-l m-b-30 p-0">
-                <a class="btn btn-outline-warning" id="delete-data" th:href="@{/manager/delete-data}">Reinitialize data</a>
-              </div>
+                            <div class="card-body b-l m-b-30 p-0">
+                                <a class="btn btn-outline-warning" id="delete-data" th:href="@{/manager/delete-data}">Reinitialize
+                                    data</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="card-title">Import via csv</h4>
+                            <div th:if="${importSuccessMessage}" class="alert alert-success"
+                                 th:text="${importSuccessMessage}"></div>
+                            <div th:if="${importErrorMessage}" class="alert alert-danger"
+                                 th:text="${importErrorMessage}"></div>
+
+
+                            <form th:object="${importCsv}" th:action="@{/manager/upload}" method="post"
+                                  enctype="multipart/form-data">
+                                <label class="m-t-20" for="separator">Separator:</label>
+                                <div class="input-group">
+                                    <select class="form-control" id="separator" th:field="*{separator}">
+                                        <option value=";">;</option>
+                                        <option value=",">,</option>
+                                    </select>
+                                </div>
+                                <div class="input-group">
+                                    <span class="text-danger font-weight-bold" th:if="${#fields.hasErrors('separator')}"
+                                          th:errors="*{separator}" autocomplete="off"></span>
+                                </div>
+
+                                <label class="m-t-20" for="customerFile">Customer File:</label>
+                                <div class="input-group">
+                                    <input type="file" id="customerFile" th:field="*{customerFile}"
+                                           class="form-control">
+                                </div>
+                                <div class="input-group">
+                                    <span class="text-danger font-weight-bold"
+                                          th:if="${#fields.hasErrors('customerFile')}" th:errors="*{customerFile}"
+                                          autocomplete="off"></span>
+                                </div>
+
+                                <label class="m-t-20" for="budgetFile">Budget File:</label>
+                                <div class="input-group">
+                                    <input type="file" id="budgetFile" th:field="*{budgetFile}" class="form-control">
+                                </div>
+                                <div class="input-group">
+                                    <span class="text-danger font-weight-bold"
+                                          th:if="${#fields.hasErrors('budgetFile')}" th:errors="*{budgetFile}"
+                                          autocomplete="off"></span>
+                                </div>
+
+                                <label class="m-t-20" for="file">Ticket File:</label>
+                                <div class="input-group">
+                                    <input type="file" id="file" th:field="*{ticketFile}" class="form-control">
+                                </div>
+                                <div class="input-group">
+                                    <span class="text-danger font-weight-bold"
+                                          th:if="${#fields.hasErrors('ticketFile')}" th:errors="*{ticketFile}"
+                                          autocomplete="off"></span>
+                                </div>
+
+                                <button type="submit" class="btn btn-primary m-t-20">Upload</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
+            <!-- ============================================================== -->
+            <!-- End Page Content -->
+            <!-- ============================================================== -->
+            <!-- ============================================================== -->
+            <!-- Right sidebar -->
+            <!-- ============================================================== -->
+            <!-- .right-sidebar -->
+            <div th:insert="~{/general/right-sidebar.html}"></div>
+            <!-- ============================================================== -->
+            <!-- End Right sidebar -->
+            <!-- ============================================================== -->
         </div>
-
-        <div class="col-lg-12">
-          <div class="card">
-            <div class="card-body">
-              <h4 class="card-title">Import via csv</h4>
-              <div th:if="${importSuccessMessage}" class="alert alert-success" th:text="${importSuccessMessage}"></div>
-              <div th:if="${importErrorMessage}" class="alert alert-danger" th:text="${importErrorMessage}"></div>
-
-
-              <form th:object="${importCsv}" th:action="@{/manager/upload}" method="post" enctype="multipart/form-data">
-
-                <label class="m-t-20" for="tableName">Table name:</label>
-                <div class="input-group">
-                  <select class="form-control" id="tableName" th:field="*{tableName}">
-                    <option th:each="t : ${tablesname}" th:value="${t}" th:text="${t}"></option>
-                  </select>
-
-                </div>
-
-                <div class="input-group">
-                  <span class="text-danger font-weight-bold" th:if="${#fields.hasErrors('tableName')}" th:errors="*{tableName}" autocomplete="off"></span>
-                </div>
-
-                <label class="m-t-20" for="separator">Separator:</label>
-                <div class="input-group">
-                  <select class="form-control" id="separator" th:field="*{separator}">
-                    <option value=";">;</option>
-                    <option value=",">,</option>
-                  </select>
-                </div>
-                <div class="input-group">
-                  <span class="text-danger font-weight-bold" th:if="${#fields.hasErrors('separator')}" th:errors="*{separator}" autocomplete="off"></span>
-                </div>
-
-                <label class="m-t-20" for="file">File:</label>
-                <div class="input-group">
-                  <input type="file" id="file" th:field="*{file}" class="form-control">
-                </div>
-                <div class="input-group">
-                  <span class="text-danger font-weight-bold" th:if="${#fields.hasErrors('file')}" th:errors="*{file}" autocomplete="off"></span>
-                </div>
-                <button type="submit" class="btn btn-primary m-t-20">Upload</button>
-              </form>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- ============================================================== -->
-      <!-- End Page Content -->
-      <!-- ============================================================== -->
-      <!-- ============================================================== -->
-      <!-- Right sidebar -->
-      <!-- ============================================================== -->
-      <!-- .right-sidebar -->
-      <div th:insert="~{/general/right-sidebar.html}"></div>
-      <!-- ============================================================== -->
-      <!-- End Right sidebar -->
-      <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- End Container fluid  -->
+        <!-- ============================================================== -->
     </div>
     <!-- ============================================================== -->
-    <!-- End Container fluid  -->
+    <!-- End Page wrapper  -->
     <!-- ============================================================== -->
-  </div>
-  <!-- ============================================================== -->
-  <!-- End Page wrapper  -->
-  <!-- ============================================================== -->
-  <!-- ============================================================== -->
-  <!-- footer -->
-  <!-- ============================================================== -->
-  <div th:insert="~{/general/footer.html}"></div>
-  <!-- ============================================================== -->
-  <!-- End footer -->
-  <!-- ============================================================== -->
+    <!-- ============================================================== -->
+    <!-- footer -->
+    <!-- ============================================================== -->
+    <div th:insert="~{/general/footer.html}"></div>
+    <!-- ============================================================== -->
+    <!-- End footer -->
+    <!-- ============================================================== -->
 </div>
 <!-- ============================================================== -->
 <!-- End Wrapper -->
@@ -176,16 +194,16 @@
 <!-- All Jquery -->
 <!-- ============================================================== -->
 <script th:inline="javascript">
-  var home = /*[[${home}]]*/ null;
+    var home = /*[[${home}]]*/ null;
 
-  const deleteBtn = document.getElementById('delete-data')
-  deleteBtn.addEventListener('click', (e) => {
-    const isConfirmed = confirm("Etes-vous sûr de vouloir supprimer les données");
+    const deleteBtn = document.getElementById('delete-data')
+    deleteBtn.addEventListener('click', (e) => {
+        const isConfirmed = confirm("Etes-vous sûr de vouloir supprimer les données");
 
-    if (!isConfirmed){
-      e.preventDefault();
-    }
-  })
+        if (!isConfirmed) {
+            e.preventDefault();
+        }
+    })
 </script>
 
 <script th:src="@{/js/library/jquery-3.2.1.min.js}" type="text/javascript"></script>
@@ -204,21 +222,22 @@
 <!--Custom JavaScript -->
 <script th:src="@{/js/library/custom.min.js}" type="text/javascript"></script>
 <script th:inline="javascript">
-  var eventDisplays = /*[[${eventDisplays}]]*/ null;  // Assign the objectList to the JavaScript variable
-  <!--      var startDateTime = new Date("2023-08-08T07:47:00+03:00");-->
-  <!--    var x = new Date(event.startDate + "T" + event.startTime + event.timeZone);-->
-  <!--    var y = new Date(event.endDate + "T" + event.endTime + event.timeZone);-->
+    var eventDisplays = /*[[${eventDisplays}]]*/ null;  // Assign the objectList to the JavaScript variable
+    <!--      var startDateTime = new Date("2023-08-08T07:47:00+03:00");-->
+    <!--    var x = new Date(event.startDate + "T" + event.startTime + event.timeZone);-->
+    <!--    var y = new Date(event.endDate + "T" + event.endTime + event.timeZone);-->
 </script>
-<script  th:src="@{/js/library/jquery-ui.min.js}"></script>
-<script  th:src="@{/js/library/moment.js}"></script>
-<script  th:src="@{/js/library/fullcalendar.min.js}"></script>
+<script th:src="@{/js/library/jquery-ui.min.js}"></script>
+<script th:src="@{/js/library/moment.js}"></script>
+<script th:src="@{/js/library/fullcalendar.min.js}"></script>
 <script th:src="@{/js/library/jquery-clockpicker.min.js}"></script>
 <script th:src="@{/js/library/bootstrap-material-datetimepicker.js}"></script>
 <script th:src="@{/js/library/bootstrap-datepicker.min.js}"></script>
 
 <script th:src="@{/js/library/tagify.min.js}"></script>
 <script th:src="@{/js/library/tagify.polyfills.min.js}"></script>
-<script  th:src="@{/js/cal-init.js}" type="text/javascript" th:data-csrf-token="${_csrf.token}" th:data-csrf-header="${_csrf.headerName}"></script>
+<script th:src="@{/js/cal-init.js}" type="text/javascript" th:data-csrf-token="${_csrf.token}"
+        th:data-csrf-header="${_csrf.headerName}"></script>
 </body>
 
 </html>

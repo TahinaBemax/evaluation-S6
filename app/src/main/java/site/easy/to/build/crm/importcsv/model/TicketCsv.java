@@ -9,7 +9,7 @@ import java.time.LocalDateTime;
 
 @Data
 public class TicketCsv {
-    @CsvBindByName
+    @CsvBindByName(column = "subject_or_name")
     @NotBlank(message = "Subject is required")
     private String subject;
 

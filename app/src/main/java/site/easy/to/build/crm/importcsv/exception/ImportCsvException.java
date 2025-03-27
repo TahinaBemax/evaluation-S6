@@ -7,8 +7,11 @@ import java.util.List;
 @Getter
 public class ImportCsvException extends Exception{
     List<String> messages;
-    public ImportCsvException(List<String> message, int ligne) {
-        super("Il y a une erreur dans la ligne " + ligne + ".\n Erreur: " + message.toString());
+    public ImportCsvException(List<String> message, int ligne, String fileName) {
+        super(String.format("There is an error line at %s, fileName: %s \n Error: %s", String.valueOf(ligne), fileName,message.toString()));
     }
 
+    public ImportCsvException() {
+        this.messages = messages;
+    }
 }

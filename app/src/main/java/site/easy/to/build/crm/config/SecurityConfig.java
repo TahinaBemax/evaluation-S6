@@ -1,31 +1,29 @@
 package site.easy.to.build.crm.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.condition.ConditionalOnBean;
-import org.springframework.boot.autoconfigure.condition.ConditionalOnExpression;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.annotation.Order;
 import org.springframework.core.env.Environment;
+import org.springframework.security.authentication.AuthenticationProvider;
+import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
+import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.access.AccessDeniedHandler;
+import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 import org.springframework.security.web.csrf.HttpSessionCsrfTokenRepository;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 import site.easy.to.build.crm.config.oauth2.CustomOAuth2UserService;
 import site.easy.to.build.crm.config.oauth2.OAuthLoginSuccessHandler;
-import site.easy.to.build.crm.service.user.OAuthUserService;
-import site.easy.to.build.crm.util.StringUtils;
 
-import java.util.Optional;
 
 
 @Configuration
 public class SecurityConfig {
-
-
     private final OAuthLoginSuccessHandler oAuth2LoginSuccessHandler;
 
     private final CustomOAuth2UserService oauthUserService;
@@ -37,8 +35,7 @@ public class SecurityConfig {
     private final Environment environment;
 
     @Autowired
-    public SecurityConfig(OAuthLoginSuccessHandler oAuth2LoginSuccessHandler, CustomOAuth2UserService oauthUserService, CrmUserDetails crmUserDetails,
-                          CustomerUserDetails customerUserDetails, Environment environment) {
+    public SecurityConfig( OAuthLoginSuccessHandler oAuth2LoginSuccessHandler, CustomOAuth2UserService oauthUserService, CrmUserDetails crmUserDetails, CustomerUserDetails customerUserDetails, Environment environment) {
         this.oAuth2LoginSuccessHandler = oAuth2LoginSuccessHandler;
         this.oauthUserService = oauthUserService;
         this.crmUserDetails = crmUserDetails;
@@ -46,8 +43,24 @@ public class SecurityConfig {
         this.environment = environment;
     }
 
+
+
     @Bean
-    @Order(2)
+    @Order(1) // Priorité élevée pour l'API REST
+    public SecurityFilterChain apiSecurityFilterChain(HttpSecurity http) throws Exception {
+        http
+                .securityMatcher("/api/crm/**") // Appliquer cette config uniquement aux endpoints REST
+                .csrf(AbstractHttpConfigurer::disable)  // Désactiver CSRF pour l'API REST
+                .authorizeHttpRequests(auth -> auth
+                        .anyRequest().permitAll()  // Autoriser toutes les requêtes sur l’API REST
+                );
+
+        return http.build();
+    }
+
+
+    @Bean
+    @Order(3)
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
 
         HttpSessionCsrfTokenRepository httpSessionCsrfTokenRepository = new HttpSessionCsrfTokenRepository();
@@ -56,10 +69,11 @@ public class SecurityConfig {
         http.csrf((csrf) -> csrf
                 .csrfTokenRepository(httpSessionCsrfTokenRepository)
         );
+        //http.csrf(AbstractHttpConfigurer::disable);
 
         http.
                 authorizeHttpRequests((authorize) -> authorize
-
+                        .requestMatchers("/api/crm/**").permitAll()
                         .requestMatchers("/register/**").permitAll()
                         .requestMatchers("/set-employee-password/**").permitAll()
                         .requestMatchers("/change-password/**").permitAll()
@@ -105,7 +119,7 @@ public class SecurityConfig {
     }
 
     @Bean
-    @Order(1)
+    @Order(2)
     public SecurityFilterChain customerSecurityFilterChain(HttpSecurity http) throws Exception {
 
 
@@ -145,5 +159,16 @@ public class SecurityConfig {
     @Bean
     public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
+    }
+
+    /**
+     * Authentication Provider
+     */
+    @Bean
+    public AuthenticationProvider authenticationProvider() {
+        DaoAuthenticationProvider authProvider = new DaoAuthenticationProvider();
+        authProvider.setUserDetailsService(crmUserDetails);
+        authProvider.setPasswordEncoder(passwordEncoder());
+        return authProvider;
     }
 }

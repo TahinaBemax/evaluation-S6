@@ -1,0 +1,115 @@
+is_global = true
+build_property.TargetFramework = net8.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = crm
+build_property.RootNamespace = crm
+build_property.ProjectDir = C:\Users\TahinaBemax\Desktop\Evaluation S6\evaluation\evaluation-S6\newApp\crm\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.RazorLangVersion = 8.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\TahinaBemax\Desktop\Evaluation S6\evaluation\evaluation-S6\newApp\crm
+build_property._RazorSourceGeneratorDebug = 
+
+[C:/Users/TahinaBemax/Desktop/Evaluation S6/evaluation/evaluation-S6/newApp/crm/Views/budget/list.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcYnVkZ2V0XGxpc3QuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/TahinaBemax/Desktop/Evaluation S6/evaluation/evaluation-S6/newApp/crm/Views/dashboard/AlertRateForm.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcZGFzaGJvYXJkXEFsZXJ0UmF0ZUZvcm0uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/TahinaBemax/Desktop/Evaluation S6/evaluation/evaluation-S6/newApp/crm/Views/dashboard/index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcZGFzaGJvYXJkXGluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/TahinaBemax/Desktop/Evaluation S6/evaluation/evaluation-S6/newApp/crm/Views/dashboard/List.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcZGFzaGJvYXJkXExpc3QuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/TahinaBemax/Desktop/Evaluation S6/evaluation/evaluation-S6/newApp/crm/Views/dashboard/ticket.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcZGFzaGJvYXJkXHRpY2tldC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/TahinaBemax/Desktop/Evaluation S6/evaluation/evaluation-S6/newApp/crm/Views/dashboard/TicketLead.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcZGFzaGJvYXJkXFRpY2tldExlYWQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/TahinaBemax/Desktop/Evaluation S6/evaluation/evaluation-S6/newApp/crm/Views/Error/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXJyb3JcRXJyb3IuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/TahinaBemax/Desktop/Evaluation S6/evaluation/evaluation-S6/newApp/crm/Views/expense/Form.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcZXhwZW5zZVxGb3JtLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/TahinaBemax/Desktop/Evaluation S6/evaluation/evaluation-S6/newApp/crm/Views/expense/list.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcZXhwZW5zZVxsaXN0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/TahinaBemax/Desktop/Evaluation S6/evaluation/evaluation-S6/newApp/crm/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/TahinaBemax/Desktop/Evaluation S6/evaluation/evaluation-S6/newApp/crm/Views/Home/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/TahinaBemax/Desktop/Evaluation S6/evaluation/evaluation-S6/newApp/crm/Views/login/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcbG9naW5cTG9naW4uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/TahinaBemax/Desktop/Evaluation S6/evaluation/evaluation-S6/newApp/crm/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/TahinaBemax/Desktop/Evaluation S6/evaluation/evaluation-S6/newApp/crm/Views/Shared/_Head.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9IZWFkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/TahinaBemax/Desktop/Evaluation S6/evaluation/evaluation-S6/newApp/crm/Views/Shared/_Header.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9IZWFkZXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/TahinaBemax/Desktop/Evaluation S6/evaluation/evaluation-S6/newApp/crm/Views/Shared/_LeftSideBar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MZWZ0U2lkZUJhci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/TahinaBemax/Desktop/Evaluation S6/evaluation/evaluation-S6/newApp/crm/Views/Shared/_PageTitle.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9QYWdlVGl0bGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/TahinaBemax/Desktop/Evaluation S6/evaluation/evaluation-S6/newApp/crm/Views/Shared/_RightSideBar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9SaWdodFNpZGVCYXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/TahinaBemax/Desktop/Evaluation S6/evaluation/evaluation-S6/newApp/crm/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/TahinaBemax/Desktop/Evaluation S6/evaluation/evaluation-S6/newApp/crm/Views/ticket/form.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcdGlja2V0XGZvcm0uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/TahinaBemax/Desktop/Evaluation S6/evaluation/evaluation-S6/newApp/crm/Views/ticket/list.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcdGlja2V0XGxpc3QuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/TahinaBemax/Desktop/Evaluation S6/evaluation/evaluation-S6/newApp/crm/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/TahinaBemax/Desktop/Evaluation S6/evaluation/evaluation-S6/newApp/crm/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/TahinaBemax/Desktop/Evaluation S6/evaluation/evaluation-S6/newApp/crm/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-t8e8ptj1md

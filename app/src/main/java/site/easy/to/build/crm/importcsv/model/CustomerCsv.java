@@ -2,35 +2,31 @@ package site.easy.to.build.crm.importcsv.model;
 
 
 import com.opencsv.bean.CsvBindByName;
-import com.opencsv.bean.CsvDate;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import lombok.Data;
-
-import javax.validation.constraints.Email;
+import org.springframework.format.annotation.DateTimeFormat;
+import site.easy.to.build.crm.importcsv.annotation.ValidEmail;
 
 import java.time.LocalDateTime;
 
 
 @Data
 public class CustomerCsv {
-    @CsvBindByName
-    @NotNull
+    @CsvBindByName(column = "customer_name")
+    @NotBlank
     String name;
 
-    @CsvBindByName
     @NotBlank
-    String country;
+    String country = "Madagascar";
 
-    @CsvBindByName(column = "user_id")
     @NotNull
-    Integer user; // mettre l'user = 52
+    Integer user = 52; // mettre l'user = 52
 
-    @CsvBindByName(column = "created_at")
-    @CsvDate("dd-MM-yyy HH:mm")
-    LocalDateTime createdAt;
+    @DateTimeFormat(pattern = "yyyy-MM-ddTHH:mm")
+    LocalDateTime createdAt = LocalDateTime.now();
 
-    @CsvBindByName(column = "email")
-    @Email
+    @CsvBindByName(column = "customer_email")
+    @ValidEmail
     String email;
 }

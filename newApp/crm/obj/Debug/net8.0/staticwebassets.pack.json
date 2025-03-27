@@ -1,0 +1,2485 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\crm.bundle.scp.css",
+      "PackagePath": "staticwebassets\\crm.bundle.scp.css"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\css\\all.css",
+      "PackagePath": "staticwebassets\\css\\all.css"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\css\\bootstrap-datepicker.min.css",
+      "PackagePath": "staticwebassets\\css\\bootstrap-datepicker.min.css"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\css\\bootstrap-material-datetimepicker.css",
+      "PackagePath": "staticwebassets\\css\\bootstrap-material-datetimepicker.css"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\css\\bootstrap-wysihtml5.css",
+      "PackagePath": "staticwebassets\\css\\bootstrap-wysihtml5.css"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\css\\dashboard4.css",
+      "PackagePath": "staticwebassets\\css\\dashboard4.css"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\css\\dataTables.bootstrap4.css",
+      "PackagePath": "staticwebassets\\css\\dataTables.bootstrap4.css"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\css\\dropzone.css",
+      "PackagePath": "staticwebassets\\css\\dropzone.css"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\css\\form-icheck.css",
+      "PackagePath": "staticwebassets\\css\\form-icheck.css"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\css\\fullcalendar.css",
+      "PackagePath": "staticwebassets\\css\\fullcalendar.css"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\css\\jquery-clockpicker.min.css",
+      "PackagePath": "staticwebassets\\css\\jquery-clockpicker.min.css"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\css\\jquery.toast.css",
+      "PackagePath": "staticwebassets\\css\\jquery.toast.css"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\css\\jsgrid-theme.min.css",
+      "PackagePath": "staticwebassets\\css\\jsgrid-theme.min.css"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\css\\jsgrid.min.css",
+      "PackagePath": "staticwebassets\\css\\jsgrid.min.css"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\css\\login-register-lock.css",
+      "PackagePath": "staticwebassets\\css\\login-register-lock.css"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\css\\morris.css",
+      "PackagePath": "staticwebassets\\css\\morris.css"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\css\\pages\\error-pages.css",
+      "PackagePath": "staticwebassets\\css\\pages\\error-pages.css"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\css\\pages\\inbox.css",
+      "PackagePath": "staticwebassets\\css\\pages\\inbox.css"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\css\\responsive.dataTables.min.css",
+      "PackagePath": "staticwebassets\\css\\responsive.dataTables.min.css"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\css\\ribbon-page.css",
+      "PackagePath": "staticwebassets\\css\\ribbon-page.css"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\css\\site.css",
+      "PackagePath": "staticwebassets\\css\\site.css"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\css\\style.min.css",
+      "PackagePath": "staticwebassets\\css\\style.min.css"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\css\\tagify.css",
+      "PackagePath": "staticwebassets\\css\\tagify.css"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\css\\wysiwyg-color.css",
+      "PackagePath": "staticwebassets\\css\\wysiwyg-color.css"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\favicon.ico",
+      "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flag-icon.min.css",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flag-icon.min.css"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\ad.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\ad.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\ae.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\ae.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\af.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\af.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\ag.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\ag.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\ai.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\ai.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\al.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\al.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\am.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\am.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\ao.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\ao.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\aq.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\aq.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\ar.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\ar.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\as.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\as.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\at.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\at.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\au.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\au.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\aw.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\aw.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\ax.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\ax.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\az.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\az.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\ba.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\ba.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\bb.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\bb.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\bd.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\bd.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\be.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\be.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\bf.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\bf.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\bg.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\bg.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\bh.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\bh.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\bi.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\bi.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\bj.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\bj.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\bl.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\bl.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\bm.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\bm.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\bn.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\bn.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\bo.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\bo.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\bq.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\bq.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\br.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\br.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\bs.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\bs.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\bt.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\bt.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\bv.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\bv.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\bw.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\bw.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\by.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\by.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\bz.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\bz.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\ca.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\ca.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\cc.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\cc.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\cd.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\cd.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\cf.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\cf.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\cg.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\cg.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\ch.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\ch.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\ci.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\ci.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\ck.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\ck.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\cl.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\cl.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\cm.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\cm.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\cn.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\cn.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\co.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\co.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\cr.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\cr.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\cu.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\cu.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\cv.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\cv.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\cw.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\cw.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\cx.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\cx.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\cy.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\cy.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\cz.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\cz.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\de.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\de.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\dj.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\dj.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\dk.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\dk.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\dm.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\dm.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\do.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\do.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\dz.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\dz.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\ec.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\ec.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\ee.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\ee.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\eg.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\eg.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\eh.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\eh.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\er.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\er.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\es.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\es.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\et.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\et.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\fi.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\fi.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\fj.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\fj.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\fk.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\fk.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\fm.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\fm.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\fo.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\fo.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\fr.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\fr.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\ga.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\ga.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\gb.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\gb.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\gd.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\gd.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\ge.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\ge.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\gf.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\gf.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\gg.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\gg.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\gh.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\gh.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\gi.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\gi.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\gl.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\gl.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\gm.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\gm.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\gn.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\gn.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\gp.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\gp.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\gq.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\gq.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\gr.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\gr.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\gs.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\gs.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\gt.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\gt.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\gu.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\gu.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\gw.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\gw.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\gy.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\gy.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\hk.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\hk.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\hm.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\hm.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\hn.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\hn.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\hr.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\hr.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\ht.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\ht.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\hu.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\hu.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\id.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\id.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\ie.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\ie.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\il.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\il.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\im.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\im.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\in.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\in.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\io.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\io.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\iq.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\iq.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\ir.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\ir.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\is.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\is.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\it.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\it.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\je.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\je.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\jm.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\jm.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\jo.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\jo.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\jp.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\jp.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\ke.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\ke.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\kg.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\kg.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\kh.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\kh.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\ki.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\ki.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\km.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\km.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\kn.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\kn.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\kp.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\kp.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\kr.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\kr.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\kw.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\kw.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\ky.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\ky.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\kz.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\kz.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\la.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\la.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\lb.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\lb.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\lc.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\lc.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\li.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\li.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\lk.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\lk.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\lr.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\lr.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\ls.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\ls.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\lt.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\lt.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\lu.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\lu.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\lv.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\lv.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\ly.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\ly.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\ma.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\ma.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\mc.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\mc.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\md.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\md.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\me.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\me.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\mf.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\mf.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\mg.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\mg.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\mh.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\mh.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\mk.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\mk.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\ml.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\ml.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\mm.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\mm.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\mn.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\mn.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\mo.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\mo.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\mp.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\mp.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\mq.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\mq.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\mr.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\mr.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\ms.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\ms.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\mt.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\mt.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\mu.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\mu.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\mv.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\mv.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\mw.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\mw.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\mx.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\mx.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\my.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\my.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\mz.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\mz.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\na.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\na.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\nc.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\nc.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\ne.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\ne.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\nf.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\nf.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\ng.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\ng.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\ni.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\ni.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\nl.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\nl.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\no.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\no.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\np.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\np.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\nr.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\nr.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\nu.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\nu.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\nz.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\nz.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\om.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\om.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\pa.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\pa.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\pe.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\pe.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\pf.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\pf.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\pg.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\pg.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\ph.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\ph.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\pk.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\pk.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\pl.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\pl.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\pm.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\pm.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\pn.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\pn.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\pr.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\pr.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\ps.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\ps.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\pt.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\pt.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\pw.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\pw.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\py.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\py.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\qa.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\qa.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\re.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\re.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\ro.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\ro.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\rs.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\rs.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\ru.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\ru.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\rw.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\rw.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\sa.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\sa.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\sb.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\sb.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\sc.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\sc.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\sd.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\sd.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\se.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\se.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\sg.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\sg.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\sh.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\sh.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\si.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\si.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\sj.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\sj.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\sk.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\sk.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\sl.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\sl.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\sm.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\sm.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\sn.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\sn.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\so.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\so.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\sr.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\sr.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\ss.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\ss.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\st.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\st.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\sv.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\sv.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\sx.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\sx.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\sy.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\sy.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\sz.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\sz.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\tc.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\tc.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\td.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\td.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\tf.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\tf.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\tg.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\tg.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\th.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\th.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\tj.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\tj.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\tk.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\tk.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\tl.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\tl.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\tm.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\tm.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\tn.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\tn.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\to.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\to.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\tr.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\tr.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\tt.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\tt.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\tv.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\tv.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\tw.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\tw.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\tz.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\tz.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\ua.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\ua.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\ug.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\ug.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\um.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\um.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\us.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\us.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\uy.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\uy.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\uz.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\uz.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\va.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\va.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\vc.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\vc.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\ve.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\ve.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\vg.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\vg.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\vi.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\vi.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\vn.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\vn.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\vu.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\vu.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\wf.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\wf.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\ws.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\ws.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\ye.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\ye.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\yt.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\yt.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\za.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\za.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\zm.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\zm.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flag-icon-css\\flags\\zw.svg",
+      "PackagePath": "staticwebassets\\flag-icon-css\\flags\\zw.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flat\\_all.css",
+      "PackagePath": "staticwebassets\\flat\\_all.css"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flat\\aero.css",
+      "PackagePath": "staticwebassets\\flat\\aero.css"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flat\\aero.png",
+      "PackagePath": "staticwebassets\\flat\\aero.png"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flat\\aero@2x.png",
+      "PackagePath": "staticwebassets\\flat\\aero@2x.png"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flat\\blue.css",
+      "PackagePath": "staticwebassets\\flat\\blue.css"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flat\\blue.png",
+      "PackagePath": "staticwebassets\\flat\\blue.png"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flat\\blue@2x.png",
+      "PackagePath": "staticwebassets\\flat\\blue@2x.png"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flat\\flat.css",
+      "PackagePath": "staticwebassets\\flat\\flat.css"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flat\\flat.png",
+      "PackagePath": "staticwebassets\\flat\\flat.png"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flat\\flat@2x.png",
+      "PackagePath": "staticwebassets\\flat\\flat@2x.png"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flat\\green.css",
+      "PackagePath": "staticwebassets\\flat\\green.css"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flat\\green.png",
+      "PackagePath": "staticwebassets\\flat\\green.png"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flat\\green@2x.png",
+      "PackagePath": "staticwebassets\\flat\\green@2x.png"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flat\\grey.css",
+      "PackagePath": "staticwebassets\\flat\\grey.css"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flat\\grey.png",
+      "PackagePath": "staticwebassets\\flat\\grey.png"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flat\\grey@2x.png",
+      "PackagePath": "staticwebassets\\flat\\grey@2x.png"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flat\\orange.css",
+      "PackagePath": "staticwebassets\\flat\\orange.css"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flat\\orange.png",
+      "PackagePath": "staticwebassets\\flat\\orange.png"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flat\\orange@2x.png",
+      "PackagePath": "staticwebassets\\flat\\orange@2x.png"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flat\\pink.css",
+      "PackagePath": "staticwebassets\\flat\\pink.css"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flat\\pink.png",
+      "PackagePath": "staticwebassets\\flat\\pink.png"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flat\\pink@2x.png",
+      "PackagePath": "staticwebassets\\flat\\pink@2x.png"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flat\\purple.css",
+      "PackagePath": "staticwebassets\\flat\\purple.css"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flat\\purple.png",
+      "PackagePath": "staticwebassets\\flat\\purple.png"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flat\\purple@2x.png",
+      "PackagePath": "staticwebassets\\flat\\purple@2x.png"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flat\\red.css",
+      "PackagePath": "staticwebassets\\flat\\red.css"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flat\\red.png",
+      "PackagePath": "staticwebassets\\flat\\red.png"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flat\\red@2x.png",
+      "PackagePath": "staticwebassets\\flat\\red@2x.png"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flat\\yellow.css",
+      "PackagePath": "staticwebassets\\flat\\yellow.css"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flat\\yellow.png",
+      "PackagePath": "staticwebassets\\flat\\yellow.png"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\flat\\yellow@2x.png",
+      "PackagePath": "staticwebassets\\flat\\yellow@2x.png"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\font-awesome\\css\\all.css",
+      "PackagePath": "staticwebassets\\font-awesome\\css\\all.css"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\font-awesome\\css\\all.min.css",
+      "PackagePath": "staticwebassets\\font-awesome\\css\\all.min.css"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\font-awesome\\css\\brands.css",
+      "PackagePath": "staticwebassets\\font-awesome\\css\\brands.css"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\font-awesome\\css\\brands.min.css",
+      "PackagePath": "staticwebassets\\font-awesome\\css\\brands.min.css"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\font-awesome\\css\\fontawesome.css",
+      "PackagePath": "staticwebassets\\font-awesome\\css\\fontawesome.css"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\font-awesome\\css\\fontawesome.min.css",
+      "PackagePath": "staticwebassets\\font-awesome\\css\\fontawesome.min.css"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\font-awesome\\css\\regular.css",
+      "PackagePath": "staticwebassets\\font-awesome\\css\\regular.css"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\font-awesome\\css\\regular.min.css",
+      "PackagePath": "staticwebassets\\font-awesome\\css\\regular.min.css"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\font-awesome\\css\\solid.css",
+      "PackagePath": "staticwebassets\\font-awesome\\css\\solid.css"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\font-awesome\\css\\solid.min.css",
+      "PackagePath": "staticwebassets\\font-awesome\\css\\solid.min.css"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\font-awesome\\css\\svg-with-js.css",
+      "PackagePath": "staticwebassets\\font-awesome\\css\\svg-with-js.css"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\font-awesome\\css\\svg-with-js.min.css",
+      "PackagePath": "staticwebassets\\font-awesome\\css\\svg-with-js.min.css"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\font-awesome\\css\\v4-shims.css",
+      "PackagePath": "staticwebassets\\font-awesome\\css\\v4-shims.css"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\font-awesome\\css\\v4-shims.min.css",
+      "PackagePath": "staticwebassets\\font-awesome\\css\\v4-shims.min.css"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\font-awesome\\less\\_animated.less",
+      "PackagePath": "staticwebassets\\font-awesome\\less\\_animated.less"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\font-awesome\\less\\_bordered-pulled.less",
+      "PackagePath": "staticwebassets\\font-awesome\\less\\_bordered-pulled.less"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\font-awesome\\less\\_core.less",
+      "PackagePath": "staticwebassets\\font-awesome\\less\\_core.less"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\font-awesome\\less\\_fixed-width.less",
+      "PackagePath": "staticwebassets\\font-awesome\\less\\_fixed-width.less"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\font-awesome\\less\\_icons.less",
+      "PackagePath": "staticwebassets\\font-awesome\\less\\_icons.less"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\font-awesome\\less\\_larger.less",
+      "PackagePath": "staticwebassets\\font-awesome\\less\\_larger.less"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\font-awesome\\less\\_list.less",
+      "PackagePath": "staticwebassets\\font-awesome\\less\\_list.less"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\font-awesome\\less\\_mixins.less",
+      "PackagePath": "staticwebassets\\font-awesome\\less\\_mixins.less"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\font-awesome\\less\\_rotated-flipped.less",
+      "PackagePath": "staticwebassets\\font-awesome\\less\\_rotated-flipped.less"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\font-awesome\\less\\_screen-reader.less",
+      "PackagePath": "staticwebassets\\font-awesome\\less\\_screen-reader.less"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\font-awesome\\less\\_shims.less",
+      "PackagePath": "staticwebassets\\font-awesome\\less\\_shims.less"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\font-awesome\\less\\_stacked.less",
+      "PackagePath": "staticwebassets\\font-awesome\\less\\_stacked.less"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\font-awesome\\less\\_variables.less",
+      "PackagePath": "staticwebassets\\font-awesome\\less\\_variables.less"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\font-awesome\\less\\brands.less",
+      "PackagePath": "staticwebassets\\font-awesome\\less\\brands.less"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\font-awesome\\less\\fontawesome.less",
+      "PackagePath": "staticwebassets\\font-awesome\\less\\fontawesome.less"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\font-awesome\\less\\regular.less",
+      "PackagePath": "staticwebassets\\font-awesome\\less\\regular.less"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\font-awesome\\less\\solid.less",
+      "PackagePath": "staticwebassets\\font-awesome\\less\\solid.less"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\font-awesome\\less\\v4-shims.less",
+      "PackagePath": "staticwebassets\\font-awesome\\less\\v4-shims.less"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\font-awesome\\scss\\_animated.scss",
+      "PackagePath": "staticwebassets\\font-awesome\\scss\\_animated.scss"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\font-awesome\\scss\\_bordered-pulled.scss",
+      "PackagePath": "staticwebassets\\font-awesome\\scss\\_bordered-pulled.scss"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\font-awesome\\scss\\_core.scss",
+      "PackagePath": "staticwebassets\\font-awesome\\scss\\_core.scss"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\font-awesome\\scss\\_fixed-width.scss",
+      "PackagePath": "staticwebassets\\font-awesome\\scss\\_fixed-width.scss"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\font-awesome\\scss\\_icons.scss",
+      "PackagePath": "staticwebassets\\font-awesome\\scss\\_icons.scss"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\font-awesome\\scss\\_larger.scss",
+      "PackagePath": "staticwebassets\\font-awesome\\scss\\_larger.scss"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\font-awesome\\scss\\_list.scss",
+      "PackagePath": "staticwebassets\\font-awesome\\scss\\_list.scss"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\font-awesome\\scss\\_mixins.scss",
+      "PackagePath": "staticwebassets\\font-awesome\\scss\\_mixins.scss"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\font-awesome\\scss\\_rotated-flipped.scss",
+      "PackagePath": "staticwebassets\\font-awesome\\scss\\_rotated-flipped.scss"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\font-awesome\\scss\\_screen-reader.scss",
+      "PackagePath": "staticwebassets\\font-awesome\\scss\\_screen-reader.scss"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\font-awesome\\scss\\_shims.scss",
+      "PackagePath": "staticwebassets\\font-awesome\\scss\\_shims.scss"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\font-awesome\\scss\\_stacked.scss",
+      "PackagePath": "staticwebassets\\font-awesome\\scss\\_stacked.scss"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\font-awesome\\scss\\_variables.scss",
+      "PackagePath": "staticwebassets\\font-awesome\\scss\\_variables.scss"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\font-awesome\\scss\\brands.scss",
+      "PackagePath": "staticwebassets\\font-awesome\\scss\\brands.scss"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\font-awesome\\scss\\fontawesome.scss",
+      "PackagePath": "staticwebassets\\font-awesome\\scss\\fontawesome.scss"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\font-awesome\\scss\\regular.scss",
+      "PackagePath": "staticwebassets\\font-awesome\\scss\\regular.scss"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\font-awesome\\scss\\solid.scss",
+      "PackagePath": "staticwebassets\\font-awesome\\scss\\solid.scss"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\font-awesome\\scss\\v4-shims.scss",
+      "PackagePath": "staticwebassets\\font-awesome\\scss\\v4-shims.scss"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\font-awesome\\webfonts\\fa-brands-400.eot",
+      "PackagePath": "staticwebassets\\font-awesome\\webfonts\\fa-brands-400.eot"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\font-awesome\\webfonts\\fa-brands-400.svg",
+      "PackagePath": "staticwebassets\\font-awesome\\webfonts\\fa-brands-400.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\font-awesome\\webfonts\\fa-brands-400.ttf",
+      "PackagePath": "staticwebassets\\font-awesome\\webfonts\\fa-brands-400.ttf"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\font-awesome\\webfonts\\fa-brands-400.woff",
+      "PackagePath": "staticwebassets\\font-awesome\\webfonts\\fa-brands-400.woff"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\font-awesome\\webfonts\\fa-brands-400.woff2",
+      "PackagePath": "staticwebassets\\font-awesome\\webfonts\\fa-brands-400.woff2"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\font-awesome\\webfonts\\fa-regular-400.eot",
+      "PackagePath": "staticwebassets\\font-awesome\\webfonts\\fa-regular-400.eot"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\font-awesome\\webfonts\\fa-regular-400.svg",
+      "PackagePath": "staticwebassets\\font-awesome\\webfonts\\fa-regular-400.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\font-awesome\\webfonts\\fa-regular-400.ttf",
+      "PackagePath": "staticwebassets\\font-awesome\\webfonts\\fa-regular-400.ttf"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\font-awesome\\webfonts\\fa-regular-400.woff",
+      "PackagePath": "staticwebassets\\font-awesome\\webfonts\\fa-regular-400.woff"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\font-awesome\\webfonts\\fa-regular-400.woff2",
+      "PackagePath": "staticwebassets\\font-awesome\\webfonts\\fa-regular-400.woff2"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\font-awesome\\webfonts\\fa-solid-900.eot",
+      "PackagePath": "staticwebassets\\font-awesome\\webfonts\\fa-solid-900.eot"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\font-awesome\\webfonts\\fa-solid-900.svg",
+      "PackagePath": "staticwebassets\\font-awesome\\webfonts\\fa-solid-900.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\font-awesome\\webfonts\\fa-solid-900.ttf",
+      "PackagePath": "staticwebassets\\font-awesome\\webfonts\\fa-solid-900.ttf"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\font-awesome\\webfonts\\fa-solid-900.woff",
+      "PackagePath": "staticwebassets\\font-awesome\\webfonts\\fa-solid-900.woff"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\font-awesome\\webfonts\\fa-solid-900.woff2",
+      "PackagePath": "staticwebassets\\font-awesome\\webfonts\\fa-solid-900.woff2"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\fonts\\Material-Design-Iconic-Font.eot",
+      "PackagePath": "staticwebassets\\fonts\\Material-Design-Iconic-Font.eot"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\fonts\\Material-Design-Iconic-Font.svg",
+      "PackagePath": "staticwebassets\\fonts\\Material-Design-Iconic-Font.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\fonts\\Material-Design-Iconic-Font.ttf",
+      "PackagePath": "staticwebassets\\fonts\\Material-Design-Iconic-Font.ttf"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\fonts\\Material-Design-Iconic-Font.woff",
+      "PackagePath": "staticwebassets\\fonts\\Material-Design-Iconic-Font.woff"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\fonts\\Material-Design-Iconic-Font.woff2",
+      "PackagePath": "staticwebassets\\fonts\\Material-Design-Iconic-Font.woff2"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\fonts\\Simple-Line-Icons.eot",
+      "PackagePath": "staticwebassets\\fonts\\Simple-Line-Icons.eot"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\fonts\\Simple-Line-Icons.svg",
+      "PackagePath": "staticwebassets\\fonts\\Simple-Line-Icons.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\fonts\\Simple-Line-Icons.ttf",
+      "PackagePath": "staticwebassets\\fonts\\Simple-Line-Icons.ttf"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\fonts\\Simple-Line-Icons.woff",
+      "PackagePath": "staticwebassets\\fonts\\Simple-Line-Icons.woff"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\fonts\\Simple-Line-Icons.woff2",
+      "PackagePath": "staticwebassets\\fonts\\Simple-Line-Icons.woff2"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\fonts\\cryptocoins-colors.css",
+      "PackagePath": "staticwebassets\\fonts\\cryptocoins-colors.css"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\fonts\\cryptocoins.css",
+      "PackagePath": "staticwebassets\\fonts\\cryptocoins.css"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\fonts\\cryptocoins.ttf",
+      "PackagePath": "staticwebassets\\fonts\\cryptocoins.ttf"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\fonts\\cryptocoins.woff",
+      "PackagePath": "staticwebassets\\fonts\\cryptocoins.woff"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\fonts\\cryptocoins.woff2",
+      "PackagePath": "staticwebassets\\fonts\\cryptocoins.woff2"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\fonts\\fontawesome-webfont.ttf",
+      "PackagePath": "staticwebassets\\fonts\\fontawesome-webfont.ttf"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\fonts\\icomoon.eot",
+      "PackagePath": "staticwebassets\\fonts\\icomoon.eot"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\fonts\\icomoon.svg",
+      "PackagePath": "staticwebassets\\fonts\\icomoon.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\fonts\\icomoon.ttf",
+      "PackagePath": "staticwebassets\\fonts\\icomoon.ttf"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\fonts\\icomoon.woff",
+      "PackagePath": "staticwebassets\\fonts\\icomoon.woff"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\fonts\\materialdesignicons-webfont.eot",
+      "PackagePath": "staticwebassets\\fonts\\materialdesignicons-webfont.eot"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\fonts\\materialdesignicons-webfont.svg",
+      "PackagePath": "staticwebassets\\fonts\\materialdesignicons-webfont.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\fonts\\materialdesignicons-webfont.ttf",
+      "PackagePath": "staticwebassets\\fonts\\materialdesignicons-webfont.ttf"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\fonts\\materialdesignicons-webfont.woff",
+      "PackagePath": "staticwebassets\\fonts\\materialdesignicons-webfont.woff"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\fonts\\materialdesignicons-webfont.woff2",
+      "PackagePath": "staticwebassets\\fonts\\materialdesignicons-webfont.woff2"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\fonts\\themify.eot",
+      "PackagePath": "staticwebassets\\fonts\\themify.eot"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\fonts\\themify.svg",
+      "PackagePath": "staticwebassets\\fonts\\themify.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\fonts\\themify.ttf",
+      "PackagePath": "staticwebassets\\fonts\\themify.ttf"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\fonts\\themify.woff",
+      "PackagePath": "staticwebassets\\fonts\\themify.woff"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\fonts\\weathericons-regular-webfont.eot",
+      "PackagePath": "staticwebassets\\fonts\\weathericons-regular-webfont.eot"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\fonts\\weathericons-regular-webfont.svg",
+      "PackagePath": "staticwebassets\\fonts\\weathericons-regular-webfont.svg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\fonts\\weathericons-regular-webfont.ttf",
+      "PackagePath": "staticwebassets\\fonts\\weathericons-regular-webfont.ttf"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\fonts\\weathericons-regular-webfont.woff",
+      "PackagePath": "staticwebassets\\fonts\\weathericons-regular-webfont.woff"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\fonts\\weathericons-regular-webfont.woff2",
+      "PackagePath": "staticwebassets\\fonts\\weathericons-regular-webfont.woff2"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\futurico\\futurico.css",
+      "PackagePath": "staticwebassets\\futurico\\futurico.css"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\futurico\\futurico.png",
+      "PackagePath": "staticwebassets\\futurico\\futurico.png"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\futurico\\futurico@2x.png",
+      "PackagePath": "staticwebassets\\futurico\\futurico@2x.png"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\images\\1.jpg",
+      "PackagePath": "staticwebassets\\images\\1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\images\\2.jpg",
+      "PackagePath": "staticwebassets\\images\\2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\images\\3.jpg",
+      "PackagePath": "staticwebassets\\images\\3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\images\\4.jpg",
+      "PackagePath": "staticwebassets\\images\\4.jpg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\images\\5.jpg",
+      "PackagePath": "staticwebassets\\images\\5.jpg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\images\\6.jpg",
+      "PackagePath": "staticwebassets\\images\\6.jpg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\images\\7.jpg",
+      "PackagePath": "staticwebassets\\images\\7.jpg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\images\\8.jpg",
+      "PackagePath": "staticwebassets\\images\\8.jpg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\images\\dots.png",
+      "PackagePath": "staticwebassets\\images\\dots.png"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\images\\error-bg.jpg",
+      "PackagePath": "staticwebassets\\images\\error-bg.jpg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\images\\favicon.png",
+      "PackagePath": "staticwebassets\\images\\favicon.png"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\images\\folder.png",
+      "PackagePath": "staticwebassets\\images\\folder.png"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\images\\google-docs.png",
+      "PackagePath": "staticwebassets\\images\\google-docs.png"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\images\\google.png",
+      "PackagePath": "staticwebassets\\images\\google.png"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\images\\img1.jpg",
+      "PackagePath": "staticwebassets\\images\\img1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\images\\img2.jpg",
+      "PackagePath": "staticwebassets\\images\\img2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\images\\img3.jpg",
+      "PackagePath": "staticwebassets\\images\\img3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\images\\img4.jpg",
+      "PackagePath": "staticwebassets\\images\\img4.jpg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\images\\img5.jpg",
+      "PackagePath": "staticwebassets\\images\\img5.jpg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\images\\img6.jpg",
+      "PackagePath": "staticwebassets\\images\\img6.jpg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\images\\login-register.jpg",
+      "PackagePath": "staticwebassets\\images\\login-register.jpg"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\images\\logo-icon.png",
+      "PackagePath": "staticwebassets\\images\\logo-icon.png"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\images\\logo-light-icon.png",
+      "PackagePath": "staticwebassets\\images\\logo-light-icon.png"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\images\\logo-light-text.png",
+      "PackagePath": "staticwebassets\\images\\logo-light-text.png"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\images\\logo-text.png",
+      "PackagePath": "staticwebassets\\images\\logo-text.png"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\images\\pp.png",
+      "PackagePath": "staticwebassets\\images\\pp.png"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\images\\sheets.png",
+      "PackagePath": "staticwebassets\\images\\sheets.png"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\images\\slides.png",
+      "PackagePath": "staticwebassets\\images\\slides.png"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\js\\budget-script.js",
+      "PackagePath": "staticwebassets\\js\\budget-script.js"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\js\\cal-init.js",
+      "PackagePath": "staticwebassets\\js\\cal-init.js"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\js\\custom-dropzone.js",
+      "PackagePath": "staticwebassets\\js\\custom-dropzone.js"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\js\\custom-email-template.js",
+      "PackagePath": "staticwebassets\\js\\custom-email-template.js"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\js\\custom-unlayer.js",
+      "PackagePath": "staticwebassets\\js\\custom-unlayer.js"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\js\\custom.js",
+      "PackagePath": "staticwebassets\\js\\custom.js"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\js\\dashboard4.js",
+      "PackagePath": "staticwebassets\\js\\dashboard4.js"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\js\\db.js",
+      "PackagePath": "staticwebassets\\js\\db.js"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\js\\drive.js",
+      "PackagePath": "staticwebassets\\js\\drive.js"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\js\\general-dropzone.js",
+      "PackagePath": "staticwebassets\\js\\general-dropzone.js"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\js\\library\\bootstrap-datepicker.min.js",
+      "PackagePath": "staticwebassets\\js\\library\\bootstrap-datepicker.min.js"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\js\\library\\bootstrap-material-datetimepicker.js",
+      "PackagePath": "staticwebassets\\js\\library\\bootstrap-material-datetimepicker.js"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\js\\library\\bootstrap-wysihtml5.js",
+      "PackagePath": "staticwebassets\\js\\library\\bootstrap-wysihtml5.js"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\js\\library\\bootstrap.js",
+      "PackagePath": "staticwebassets\\js\\library\\bootstrap.js"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\js\\library\\bootstrap.min.js",
+      "PackagePath": "staticwebassets\\js\\library\\bootstrap.min.js"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\js\\library\\bootstrap.min.js.map",
+      "PackagePath": "staticwebassets\\js\\library\\bootstrap.min.js.map"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\js\\library\\custom.min.js",
+      "PackagePath": "staticwebassets\\js\\library\\custom.min.js"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\js\\library\\dataTables.responsive.min.js",
+      "PackagePath": "staticwebassets\\js\\library\\dataTables.responsive.min.js"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\js\\library\\dff.js",
+      "PackagePath": "staticwebassets\\js\\library\\dff.js"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\js\\library\\dropzone.js",
+      "PackagePath": "staticwebassets\\js\\library\\dropzone.js"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\js\\library\\fullcalendar.min.js",
+      "PackagePath": "staticwebassets\\js\\library\\fullcalendar.min.js"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\js\\library\\icheck.init.js",
+      "PackagePath": "staticwebassets\\js\\library\\icheck.init.js"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\js\\library\\icheck.min.js",
+      "PackagePath": "staticwebassets\\js\\library\\icheck.min.js"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\js\\library\\jquery-3.2.1.min.js",
+      "PackagePath": "staticwebassets\\js\\library\\jquery-3.2.1.min.js"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\js\\library\\jquery-clockpicker.min.js",
+      "PackagePath": "staticwebassets\\js\\library\\jquery-clockpicker.min.js"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\js\\library\\jquery-ui.min.js",
+      "PackagePath": "staticwebassets\\js\\library\\jquery-ui.min.js"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\js\\library\\jquery.dataTables.min.js",
+      "PackagePath": "staticwebassets\\js\\library\\jquery.dataTables.min.js"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\js\\library\\jquery.sparkline.min.js",
+      "PackagePath": "staticwebassets\\js\\library\\jquery.sparkline.min.js"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\js\\library\\jquery.toast.js",
+      "PackagePath": "staticwebassets\\js\\library\\jquery.toast.js"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\js\\library\\jsgrid-init.js",
+      "PackagePath": "staticwebassets\\js\\library\\jsgrid-init.js"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\js\\library\\jsgrid.min.js",
+      "PackagePath": "staticwebassets\\js\\library\\jsgrid.min.js"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\js\\library\\moment.js",
+      "PackagePath": "staticwebassets\\js\\library\\moment.js"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\js\\library\\morris.min.js",
+      "PackagePath": "staticwebassets\\js\\library\\morris.min.js"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\js\\library\\perfect-scrollbar.jquery.min.js",
+      "PackagePath": "staticwebassets\\js\\library\\perfect-scrollbar.jquery.min.js"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\js\\library\\popper.min.js",
+      "PackagePath": "staticwebassets\\js\\library\\popper.min.js"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\js\\library\\raphael-min.js",
+      "PackagePath": "staticwebassets\\js\\library\\raphael-min.js"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\js\\library\\sidebarmenu.js",
+      "PackagePath": "staticwebassets\\js\\library\\sidebarmenu.js"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\js\\library\\skycons.js",
+      "PackagePath": "staticwebassets\\js\\library\\skycons.js"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\js\\library\\sticky-kit.min.js",
+      "PackagePath": "staticwebassets\\js\\library\\sticky-kit.min.js"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\js\\library\\tagify.min.js",
+      "PackagePath": "staticwebassets\\js\\library\\tagify.min.js"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\js\\library\\tagify.polyfills.min.js",
+      "PackagePath": "staticwebassets\\js\\library\\tagify.polyfills.min.js"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\js\\library\\waves.js",
+      "PackagePath": "staticwebassets\\js\\library\\waves.js"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\js\\library\\wysihtml5-0.3.0.js",
+      "PackagePath": "staticwebassets\\js\\library\\wysihtml5-0.3.0.js"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\js\\site.js",
+      "PackagePath": "staticwebassets\\js\\site.js"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "PackagePath": "staticwebassets\\lib\\bootstrap"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\LICENSE.md"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.js"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.min.js"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.js"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery\\LICENSE.txt"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.js"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.js"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\line\\_all.css",
+      "PackagePath": "staticwebassets\\line\\_all.css"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\line\\aero.css",
+      "PackagePath": "staticwebassets\\line\\aero.css"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\line\\blue.css",
+      "PackagePath": "staticwebassets\\line\\blue.css"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\line\\green.css",
+      "PackagePath": "staticwebassets\\line\\green.css"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\line\\grey.css",
+      "PackagePath": "staticwebassets\\line\\grey.css"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\line\\line.css",
+      "PackagePath": "staticwebassets\\line\\line.css"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\line\\line.png",
+      "PackagePath": "staticwebassets\\line\\line.png"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\line\\line@2x.png",
+      "PackagePath": "staticwebassets\\line\\line@2x.png"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\line\\orange.css",
+      "PackagePath": "staticwebassets\\line\\orange.css"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\line\\pink.css",
+      "PackagePath": "staticwebassets\\line\\pink.css"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\line\\purple.css",
+      "PackagePath": "staticwebassets\\line\\purple.css"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\line\\red.css",
+      "PackagePath": "staticwebassets\\line\\red.css"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\line\\yellow.css",
+      "PackagePath": "staticwebassets\\line\\yellow.css"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\minimal\\_all.css",
+      "PackagePath": "staticwebassets\\minimal\\_all.css"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\minimal\\aero.css",
+      "PackagePath": "staticwebassets\\minimal\\aero.css"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\minimal\\aero.png",
+      "PackagePath": "staticwebassets\\minimal\\aero.png"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\minimal\\aero@2x.png",
+      "PackagePath": "staticwebassets\\minimal\\aero@2x.png"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\minimal\\blue.css",
+      "PackagePath": "staticwebassets\\minimal\\blue.css"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\minimal\\blue.png",
+      "PackagePath": "staticwebassets\\minimal\\blue.png"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\minimal\\blue@2x.png",
+      "PackagePath": "staticwebassets\\minimal\\blue@2x.png"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\minimal\\green.css",
+      "PackagePath": "staticwebassets\\minimal\\green.css"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\minimal\\green.png",
+      "PackagePath": "staticwebassets\\minimal\\green.png"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\minimal\\green@2x.png",
+      "PackagePath": "staticwebassets\\minimal\\green@2x.png"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\minimal\\grey.css",
+      "PackagePath": "staticwebassets\\minimal\\grey.css"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\minimal\\grey.png",
+      "PackagePath": "staticwebassets\\minimal\\grey.png"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\minimal\\grey@2x.png",
+      "PackagePath": "staticwebassets\\minimal\\grey@2x.png"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\minimal\\minimal.css",
+      "PackagePath": "staticwebassets\\minimal\\minimal.css"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\minimal\\minimal.png",
+      "PackagePath": "staticwebassets\\minimal\\minimal.png"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\minimal\\minimal@2x.png",
+      "PackagePath": "staticwebassets\\minimal\\minimal@2x.png"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\minimal\\orange.css",
+      "PackagePath": "staticwebassets\\minimal\\orange.css"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\minimal\\orange.png",
+      "PackagePath": "staticwebassets\\minimal\\orange.png"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\minimal\\orange@2x.png",
+      "PackagePath": "staticwebassets\\minimal\\orange@2x.png"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\minimal\\pink.css",
+      "PackagePath": "staticwebassets\\minimal\\pink.css"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\minimal\\pink.png",
+      "PackagePath": "staticwebassets\\minimal\\pink.png"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\minimal\\pink@2x.png",
+      "PackagePath": "staticwebassets\\minimal\\pink@2x.png"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\minimal\\purple.css",
+      "PackagePath": "staticwebassets\\minimal\\purple.css"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\minimal\\purple.png",
+      "PackagePath": "staticwebassets\\minimal\\purple.png"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\minimal\\purple@2x.png",
+      "PackagePath": "staticwebassets\\minimal\\purple@2x.png"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\minimal\\red.css",
+      "PackagePath": "staticwebassets\\minimal\\red.css"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\minimal\\red.png",
+      "PackagePath": "staticwebassets\\minimal\\red.png"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\minimal\\red@2x.png",
+      "PackagePath": "staticwebassets\\minimal\\red@2x.png"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\minimal\\yellow.css",
+      "PackagePath": "staticwebassets\\minimal\\yellow.css"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\minimal\\yellow.png",
+      "PackagePath": "staticwebassets\\minimal\\yellow.png"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\minimal\\yellow@2x.png",
+      "PackagePath": "staticwebassets\\minimal\\yellow@2x.png"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\polaris\\polaris.css",
+      "PackagePath": "staticwebassets\\polaris\\polaris.css"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\polaris\\polaris.png",
+      "PackagePath": "staticwebassets\\polaris\\polaris.png"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\polaris\\polaris@2x.png",
+      "PackagePath": "staticwebassets\\polaris\\polaris@2x.png"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\square\\_all.css",
+      "PackagePath": "staticwebassets\\square\\_all.css"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\square\\aero.css",
+      "PackagePath": "staticwebassets\\square\\aero.css"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\square\\aero.png",
+      "PackagePath": "staticwebassets\\square\\aero.png"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\square\\aero@2x.png",
+      "PackagePath": "staticwebassets\\square\\aero@2x.png"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\square\\blue.css",
+      "PackagePath": "staticwebassets\\square\\blue.css"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\square\\blue.png",
+      "PackagePath": "staticwebassets\\square\\blue.png"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\square\\blue@2x.png",
+      "PackagePath": "staticwebassets\\square\\blue@2x.png"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\square\\green.css",
+      "PackagePath": "staticwebassets\\square\\green.css"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\square\\green.png",
+      "PackagePath": "staticwebassets\\square\\green.png"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\square\\green@2x.png",
+      "PackagePath": "staticwebassets\\square\\green@2x.png"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\square\\grey.css",
+      "PackagePath": "staticwebassets\\square\\grey.css"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\square\\grey.png",
+      "PackagePath": "staticwebassets\\square\\grey.png"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\square\\grey@2x.png",
+      "PackagePath": "staticwebassets\\square\\grey@2x.png"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\square\\orange.css",
+      "PackagePath": "staticwebassets\\square\\orange.css"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\square\\orange.png",
+      "PackagePath": "staticwebassets\\square\\orange.png"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\square\\orange@2x.png",
+      "PackagePath": "staticwebassets\\square\\orange@2x.png"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\square\\pink.css",
+      "PackagePath": "staticwebassets\\square\\pink.css"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\square\\pink.png",
+      "PackagePath": "staticwebassets\\square\\pink.png"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\square\\pink@2x.png",
+      "PackagePath": "staticwebassets\\square\\pink@2x.png"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\square\\purple.css",
+      "PackagePath": "staticwebassets\\square\\purple.css"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\square\\purple.png",
+      "PackagePath": "staticwebassets\\square\\purple.png"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\square\\purple@2x.png",
+      "PackagePath": "staticwebassets\\square\\purple@2x.png"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\square\\red.css",
+      "PackagePath": "staticwebassets\\square\\red.css"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\square\\red.png",
+      "PackagePath": "staticwebassets\\square\\red.png"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\square\\red@2x.png",
+      "PackagePath": "staticwebassets\\square\\red@2x.png"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\square\\square.css",
+      "PackagePath": "staticwebassets\\square\\square.css"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\square\\square.png",
+      "PackagePath": "staticwebassets\\square\\square.png"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\square\\square@2x.png",
+      "PackagePath": "staticwebassets\\square\\square@2x.png"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\square\\yellow.css",
+      "PackagePath": "staticwebassets\\square\\yellow.css"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\square\\yellow.png",
+      "PackagePath": "staticwebassets\\square\\yellow.png"
+    },
+    {
+      "Id": "C:\\Users\\TahinaBemax\\Desktop\\Evaluation S6\\evaluation\\evaluation-S6\\newApp\\crm\\wwwroot\\square\\yellow@2x.png",
+      "PackagePath": "staticwebassets\\square\\yellow@2x.png"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.crm.props",
+      "PackagePath": "build\\crm.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.crm.props",
+      "PackagePath": "buildMultiTargeting\\crm.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.crm.props",
+      "PackagePath": "buildTransitive\\crm.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.crm.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

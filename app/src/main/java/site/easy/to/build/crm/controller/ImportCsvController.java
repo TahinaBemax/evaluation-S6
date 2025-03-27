@@ -1,53 +1,36 @@
 package site.easy.to.build.crm.controller;
 
-import jakarta.persistence.EntityManager;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.validation.BindingResultUtils;
+
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
-import org.springframework.web.servlet.view.RedirectView;
-import site.easy.to.build.crm.entity.*;
-import site.easy.to.build.crm.enums.TableName;
-import site.easy.to.build.crm.google.model.calendar.EventDisplay;
-import site.easy.to.build.crm.google.model.calendar.EventDisplayList;
-import site.easy.to.build.crm.google.service.acess.GoogleAccessService;
-import site.easy.to.build.crm.google.service.calendar.GoogleCalendarApiService;
+
 import site.easy.to.build.crm.importcsv.ImportCsvDTO;
 import site.easy.to.build.crm.importcsv.exception.ImportCsvException;
-import site.easy.to.build.crm.importcsv.exception.TableNameNotFoundException;
-import site.easy.to.build.crm.importcsv.service.DatabaseResetService;
-import site.easy.to.build.crm.importcsv.service.ImportCsvService;
-import site.easy.to.build.crm.service.contract.ContractService;
-import site.easy.to.build.crm.service.customer.CustomerLoginInfoService;
-import site.easy.to.build.crm.service.customer.CustomerService;
-import site.easy.to.build.crm.service.lead.LeadService;
-import site.easy.to.build.crm.service.ticket.TicketService;
-import site.easy.to.build.crm.service.weather.WeatherService;
-import site.easy.to.build.crm.util.AuthenticationUtils;
-import site.easy.to.build.crm.util.AuthorizationUtil;
 
-import javax.sql.DataSource;
+import site.easy.to.build.crm.importcsv.service.DataPreparator;
+import site.easy.to.build.crm.importcsv.service.DatabaseResetService;
+
+import site.easy.to.build.crm.util.AuthorizationUtil;
 import java.io.IOException;
-import java.security.GeneralSecurityException;
 import java.sql.SQLException;
-import java.util.List;
+
 
 @Controller
 @RequestMapping("/manager")
 public class ImportCsvController {
     private final DatabaseResetService databaseResetService;
-    private final ImportCsvService importCsvService;
+    private final DataPreparator dataPreparator;
 
     @Autowired
-    public ImportCsvController(DatabaseResetService databaseResetService, ImportCsvService importCsvService) {
+    public ImportCsvController(DatabaseResetService databaseResetService, DataPreparator dataPreparator) {
         this.databaseResetService = databaseResetService;
-        this.importCsvService = importCsvService;
+        this.dataPreparator = dataPreparator;
     }
 
     @GetMapping("/import-csv")
@@ -90,12 +73,11 @@ public class ImportCsvController {
         }
 
         try {
-            this.importCsvService.uploadCsvData(importCsvDTO);
+            dataPreparator.initParse(importCsvDTO.getCustomerFile(),importCsvDTO.getBudgetFile(),importCsvDTO.getTicketFile(), importCsvDTO.getSeparator());
+            dataPreparator.uploadData();
             redirectAttributes.addFlashAttribute("importSuccessMessage","Data uploaded successfuly.");
         } catch (ImportCsvException e) {
             redirectAttributes.addFlashAttribute("importErrorMessage","Can't upload csv file." + e.getMessage());
-        } catch (TableNameNotFoundException e) {
-            redirectAttributes.addFlashAttribute("importErrorMessage", e.getMessage());
         }
         return "redirect:/manager/import-csv";
     }
