@@ -105,6 +105,7 @@ public class Customer {
         this.user = user;
         this.customerLoginInfo = customerLoginInfo;
         this.createdAt = createdAt;
+        this.budgets = new ArrayList<>();
     }
 
     public Integer getCustomerId() {

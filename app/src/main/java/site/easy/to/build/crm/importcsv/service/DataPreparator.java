@@ -233,10 +233,35 @@ public class DataPreparator {
     private Budget getBudget(Customer customer){
         Optional<Budget> budget = customer.getBudgets()
                 .stream()
-                .filter(b -> b.getConsomation().compareTo(b.getAmount()) < 0)
+                .filter(b -> b.getConsomation().compareTo(b.getAmount()) <= 0)
                 .findFirst();
 
-        return budget.orElse(null);
+        if (budget.isEmpty()){
+            if (customer.getBudgets() != null && customer.getBudgets().size() > 0){
+                return customer.getBudgets().get(0);
+            }
+            return createBudget(customer);
+        }
+
+        return budget.get();
+    }
+
+    private Budget createBudget(Customer customer){
+        Budget b = new Budget();
+        CategoryBudget cb = new CategoryBudget();
+        cb.setId("CAT001");
+        cb.setCategoryName("Service");
+
+        b.setCategoryBudget(cb);
+        b.setAmount(BigDecimal.valueOf(0));
+        b.setCustomer(customer);
+        b.setStartDate(LocalDateTime.now());
+        b.setEndDate(LocalDateTime.now());
+        b.setCreatedAt(LocalDateTime.now());
+        b.setAlertRate(80);
+        customer.getBudgets().add(b);
+
+        return b;
     }
     private Customer getCustomer(String email){
         Optional<Customer> customer = this.customers.stream()
